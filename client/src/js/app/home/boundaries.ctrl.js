@@ -51,9 +51,6 @@
         }
 
         function showPolygon (latLngArray) {
-            //var latLngArray = gmapServices.setlatLngArrayToLatLngObjects(latLngArrayParam);
-            //console.log('latlng array>: ',latLngArray);
-
             if (polygon) {
                 polygon.setPath(latLngArray);
                 return;

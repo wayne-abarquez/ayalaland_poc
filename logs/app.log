@@ -1010,3 +1010,5 @@
 2017-09-01 19:42:56,293 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
 2017-09-01 19:43:28,474 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
 2017-09-01 19:50:11,373 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 19:50:51,612 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 19:50:51,817 INFO - run.py <module>: Starting app
