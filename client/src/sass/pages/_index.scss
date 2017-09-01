@@ -1,0 +1,39 @@
+#index-container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+//body {
+//  overflow:hidden;
+//}
+
+/* Remove Padding on Menu */
+md-menu-content {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* Buttons on index page */
+
+#toggle-boundary-details-btn {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  //@media screen and (max-width: 456px) {
+  //  left: 10px;
+  //}
+}
+
+
+#powered-by {
+  position: absolute;
+  bottom: 15px;
+  right: calc(23% + 3px);
+
+  img {
+    width: 120px;
+    height: auto;
+  }
+}

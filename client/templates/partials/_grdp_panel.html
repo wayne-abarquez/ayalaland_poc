@@ -1,0 +1,25 @@
+{% raw %}
+<div class="md-whiteframe-2dp" id="grdp-panel" flex layout-wrap
+     ng-controller="grdpPanelController as vm"
+     ng-show="showGRDPPanel">
+    <table class="mdtTableContainer" flex layout-wrap>
+        <thead>
+            <tr>
+                <th>{{ vm.region }}</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="(key, val) in vm.boundary.grdp">
+                <td>{{key}}</td>
+                <td>{{val[0].amount | number}}</td>
+                <td>{{val[1].amount | number}}</td>
+                <td>{{val[2].amount | number}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endraw %}

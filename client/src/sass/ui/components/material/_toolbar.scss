@@ -1,0 +1,14 @@
+$toolbar-height: 45px;
+
+md-toolbar {
+  height: $toolbar-height;
+  min-height: $toolbar-height;
+
+  .md-toolbar-tools {
+    height: $toolbar-height;
+  }
+
+  h4 {
+    margin: 0;
+  }
+}

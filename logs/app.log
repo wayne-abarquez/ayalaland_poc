@@ -1,0 +1,964 @@
+2016-02-01 15:35:35,258 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-01 15:35:35,459 INFO - run.py <module>: Starting app
+2016-02-01 18:23:10,682 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-01 18:23:10,846 INFO - run.py <module>: Starting app
+2016-02-01 18:24:39,220 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-01 18:24:39,244 INFO - run.py <module>: Starting app
+2016-02-01 18:27:27,055 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-01 18:27:27,075 INFO - run.py <module>: Starting app
+2016-02-01 18:35:12,295 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-01 18:35:12,314 INFO - run.py <module>: Starting app
+2016-02-02 13:11:34,675 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-02 13:11:36,266 INFO - run.py <module>: Starting app
+2016-02-03 19:07:19,050 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-03 19:07:19,560 INFO - run.py <module>: Starting app
+2016-02-03 20:43:05,988 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-03 20:43:06,142 INFO - run.py <module>: Starting app
+2016-02-11 20:29:03,916 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-11 20:29:04,491 INFO - run.py <module>: Starting app
+2016-02-17 14:47:28,056 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-02-17 14:47:28,279 INFO - run.py <module>: Starting app
+2016-03-03 18:09:35,588 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-03-03 18:09:35,846 INFO - run.py <module>: Starting app
+2016-03-17 15:40:32,285 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-03-17 15:40:32,406 INFO - run.py <module>: Starting app
+2016-05-04 16:12:27,110 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:12:27,242 INFO - run.py <module>: Starting app
+2016-05-04 16:13:59,865 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:13:59,874 INFO - run.py <module>: Starting app
+2016-05-04 16:15:39,574 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:15:39,583 INFO - run.py <module>: Starting app
+2016-05-04 16:17:02,531 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:17:02,539 INFO - run.py <module>: Starting app
+2016-05-04 16:17:53,824 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:17:53,832 INFO - run.py <module>: Starting app
+2016-05-04 16:18:10,853 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:18:10,861 INFO - run.py <module>: Starting app
+2016-05-04 16:18:40,785 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:18:40,792 INFO - run.py <module>: Starting app
+2016-05-04 16:18:54,373 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:18:54,385 INFO - run.py <module>: Starting app
+2016-05-04 16:21:47,261 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:21:47,270 INFO - run.py <module>: Starting app
+2016-05-04 16:23:23,954 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:23:23,962 INFO - run.py <module>: Starting app
+2016-05-04 16:23:49,905 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:23:49,914 INFO - run.py <module>: Starting app
+2016-05-04 16:26:43,328 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:26:43,337 INFO - run.py <module>: Starting app
+2016-05-04 16:26:57,771 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:26:57,779 INFO - run.py <module>: Starting app
+2016-05-04 16:29:03,331 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:29:03,339 INFO - run.py <module>: Starting app
+2016-05-04 16:34:24,004 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:34:24,013 INFO - run.py <module>: Starting app
+2016-05-04 16:35:04,539 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-05-04 16:35:04,547 INFO - run.py <module>: Starting app
+2016-06-06 17:34:51,843 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-06-06 17:34:51,987 INFO - run.py <module>: Starting app
+2016-06-06 17:35:13,348 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-06-06 17:35:13,356 INFO - run.py <module>: Starting app
+2016-06-06 17:35:28,293 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-06-06 17:35:28,301 INFO - run.py <module>: Starting app
+2016-06-06 17:36:08,046 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-06-06 17:36:08,055 INFO - run.py <module>: Starting app
+2016-06-06 18:05:44,750 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2016-06-06 18:05:44,782 INFO - run.py <module>: Starting app
+2017-06-01 00:48:57,983 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 00:48:58,595 INFO - run.py <module>: Starting app
+2017-06-01 01:54:47,075 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 01:54:47,670 INFO - run.py <module>: Starting app
+2017-06-01 02:05:19,098 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:05:20,824 INFO - run.py <module>: Starting app
+2017-06-01 02:10:34,857 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:10:35,428 INFO - run.py <module>: Starting app
+2017-06-01 02:10:47,306 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:10:47,353 INFO - run.py <module>: Starting app
+2017-06-01 02:10:59,414 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:10:59,462 INFO - run.py <module>: Starting app
+2017-06-01 02:11:20,327 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:11:20,466 INFO - run.py <module>: Starting app
+2017-06-01 02:12:24,584 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:12:24,645 INFO - run.py <module>: Starting app
+2017-06-01 02:12:35,606 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:12:35,656 INFO - run.py <module>: Starting app
+2017-06-01 02:16:31,198 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:16:31,241 INFO - run.py <module>: Starting app
+2017-06-01 02:17:48,145 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:17:48,207 INFO - run.py <module>: Starting app
+2017-06-01 02:18:29,416 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:18:29,457 INFO - run.py <module>: Starting app
+2017-06-01 02:20:58,108 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:20:58,223 INFO - run.py <module>: Starting app
+2017-06-01 02:21:58,780 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:21:58,834 INFO - run.py <module>: Starting app
+2017-06-01 02:22:27,346 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:22:27,473 INFO - run.py <module>: Starting app
+2017-06-01 02:24:50,129 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:24:50,178 INFO - run.py <module>: Starting app
+2017-06-01 02:25:32,771 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:25:32,817 INFO - run.py <module>: Starting app
+2017-06-01 02:26:16,221 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:26:16,270 INFO - run.py <module>: Starting app
+2017-06-01 02:27:04,807 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:27:04,855 INFO - run.py <module>: Starting app
+2017-06-01 02:27:44,483 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:27:44,521 INFO - run.py <module>: Starting app
+2017-06-01 02:28:21,982 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:28:22,054 INFO - run.py <module>: Starting app
+2017-06-01 02:29:11,605 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:29:11,648 INFO - run.py <module>: Starting app
+2017-06-01 02:30:17,137 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:30:17,187 INFO - run.py <module>: Starting app
+2017-06-01 02:30:40,131 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:30:40,217 INFO - run.py <module>: Starting app
+2017-06-01 02:31:43,526 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:31:43,666 INFO - run.py <module>: Starting app
+2017-06-01 02:32:10,713 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:32:10,873 INFO - run.py <module>: Starting app
+2017-06-01 02:32:33,793 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:32:33,841 INFO - run.py <module>: Starting app
+2017-06-01 02:35:03,138 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:35:03,186 INFO - run.py <module>: Starting app
+2017-06-01 02:42:53,333 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:42:53,381 INFO - run.py <module>: Starting app
+2017-06-01 02:43:07,378 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:43:07,427 INFO - run.py <module>: Starting app
+2017-06-01 02:44:02,370 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:44:02,481 INFO - run.py <module>: Starting app
+2017-06-01 02:46:13,423 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:46:13,561 INFO - run.py <module>: Starting app
+2017-06-01 02:48:59,793 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:48:59,852 INFO - run.py <module>: Starting app
+2017-06-01 02:52:36,336 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:52:36,430 INFO - run.py <module>: Starting app
+2017-06-01 02:53:50,232 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:53:50,373 INFO - run.py <module>: Starting app
+2017-06-01 02:54:24,756 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:54:24,804 INFO - run.py <module>: Starting app
+2017-06-01 02:55:07,131 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:55:07,187 INFO - run.py <module>: Starting app
+2017-06-01 02:55:22,463 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 02:55:22,513 INFO - run.py <module>: Starting app
+                                                                                                                                                                                                                                                                                                                                                            2017-06-01 12:55:21,209 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 12:55:23,995 INFO - run.py <module>: Starting app
+2017-06-01 13:07:31,215 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:07:32,603 INFO - run.py <module>: Starting app
+2017-06-01 13:09:14,038 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:09:14,088 INFO - run.py <module>: Starting app
+2017-06-01 13:11:49,534 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:11:49,598 INFO - run.py <module>: Starting app
+2017-06-01 13:12:54,968 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:12:55,020 INFO - run.py <module>: Starting app
+2017-06-01 13:15:08,983 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:15:09,041 INFO - run.py <module>: Starting app
+2017-06-01 13:18:58,696 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:18:58,761 INFO - run.py <module>: Starting app
+2017-06-01 13:22:04,080 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:22:04,135 INFO - run.py <module>: Starting app
+2017-06-01 13:22:46,465 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:22:46,510 INFO - run.py <module>: Starting app
+2017-06-01 13:23:29,793 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:23:29,852 INFO - run.py <module>: Starting app
+2017-06-01 13:24:14,507 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:24:14,555 INFO - run.py <module>: Starting app
+2017-06-01 13:24:53,493 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:24:53,771 INFO - run.py <module>: Starting app
+2017-06-01 13:25:07,236 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:25:07,278 INFO - run.py <module>: Starting app
+2017-06-01 13:26:02,440 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:26:02,576 INFO - run.py <module>: Starting app
+2017-06-01 13:26:56,374 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:26:56,430 INFO - run.py <module>: Starting app
+2017-06-01 13:27:28,948 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:27:29,041 INFO - run.py <module>: Starting app
+2017-06-01 13:27:57,264 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:27:57,314 INFO - run.py <module>: Starting app
+2017-06-01 13:30:36,000 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:30:36,050 INFO - run.py <module>: Starting app
+2017-06-01 13:47:09,273 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:47:09,711 INFO - run.py <module>: Starting app
+2017-06-01 13:48:05,731 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:48:05,842 INFO - run.py <module>: Starting app
+2017-06-01 13:49:03,347 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:49:03,639 INFO - run.py <module>: Starting app
+2017-06-01 13:50:54,200 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:50:54,293 INFO - run.py <module>: Starting app
+2017-06-01 13:51:08,623 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:51:08,745 INFO - run.py <module>: Starting app
+2017-06-01 13:58:43,454 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:58:43,613 INFO - run.py <module>: Starting app
+2017-06-01 13:59:16,720 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:59:16,877 INFO - run.py <module>: Starting app
+2017-06-01 13:59:43,956 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 13:59:44,192 INFO - run.py <module>: Starting app
+2017-06-01 14:00:06,851 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:00:07,012 INFO - run.py <module>: Starting app
+2017-06-01 14:00:29,004 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:00:29,190 INFO - run.py <module>: Starting app
+2017-06-01 14:00:49,676 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:00:50,026 INFO - run.py <module>: Starting app
+2017-06-01 14:07:20,240 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:07:52,590 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:07:53,021 INFO - run.py <module>: Starting app
+2017-06-01 14:20:44,971 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:20:45,578 INFO - run.py <module>: Starting app
+2017-06-01 14:22:17,121 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:22:17,400 INFO - run.py <module>: Starting app
+2017-06-01 14:25:03,651 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:25:06,258 INFO - run.py <module>: Starting app
+2017-06-01 14:26:34,903 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:26:35,106 INFO - run.py <module>: Starting app
+2017-06-01 14:27:16,394 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:27:16,604 INFO - run.py <module>: Starting app
+2017-06-01 14:27:52,030 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:27:52,253 INFO - run.py <module>: Starting app
+2017-06-01 14:28:16,686 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:28:17,139 INFO - run.py <module>: Starting app
+2017-06-01 14:29:04,470 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:29:04,874 INFO - run.py <module>: Starting app
+2017-06-01 14:29:16,398 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:29:16,698 INFO - run.py <module>: Starting app
+2017-06-01 14:31:15,473 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:31:15,737 INFO - run.py <module>: Starting app
+2017-06-01 14:35:07,595 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:35:07,900 INFO - run.py <module>: Starting app
+2017-06-01 14:35:44,289 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:35:44,683 INFO - run.py <module>: Starting app
+2017-06-01 14:36:18,299 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:36:18,806 INFO - run.py <module>: Starting app
+2017-06-01 14:37:16,603 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:37:16,790 INFO - run.py <module>: Starting app
+2017-06-01 14:37:33,143 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:37:33,244 INFO - run.py <module>: Starting app
+2017-06-01 14:38:10,605 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:38:10,715 INFO - run.py <module>: Starting app
+2017-06-01 14:39:17,028 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:39:17,132 INFO - run.py <module>: Starting app
+2017-06-01 14:39:43,152 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 14:39:43,399 INFO - run.py <module>: Starting app
+2017-06-01 16:46:24,060 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 16:46:24,340 INFO - run.py <module>: Starting app
+2017-06-01 16:51:28,901 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 16:51:29,173 INFO - run.py <module>: Starting app
+2017-06-01 16:53:13,448 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 16:53:13,709 INFO - run.py <module>: Starting app
+2017-06-01 17:02:46,346 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:02:46,522 INFO - run.py <module>: Starting app
+2017-06-01 17:06:10,411 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:06:10,688 INFO - run.py <module>: Starting app
+2017-06-01 17:10:42,934 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:10:43,056 INFO - run.py <module>: Starting app
+2017-06-01 17:11:49,152 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:11:49,592 INFO - run.py <module>: Starting app
+2017-06-01 17:17:54,115 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:17:54,210 INFO - run.py <module>: Starting app
+2017-06-01 17:18:28,572 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:18:28,666 INFO - run.py <module>: Starting app
+2017-06-01 17:19:02,450 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-01 17:19:02,569 INFO - run.py <module>: Starting app
+2017-06-02 10:55:34,386 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 10:55:42,113 INFO - run.py <module>: Starting app
+2017-06-02 11:19:43,546 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:19:44,512 INFO - run.py <module>: Starting app
+2017-06-02 11:21:36,187 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:21:36,260 INFO - run.py <module>: Starting app
+2017-06-02 11:30:54,729 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:30:54,809 INFO - run.py <module>: Starting app
+2017-06-02 11:42:02,994 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:42:03,081 INFO - run.py <module>: Starting app
+2017-06-02 11:42:26,206 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:42:26,285 INFO - run.py <module>: Starting app
+2017-06-02 11:54:08,353 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:54:08,494 INFO - run.py <module>: Starting app
+2017-06-02 11:58:59,859 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:59:00,078 INFO - run.py <module>: Starting app
+2017-06-02 11:59:45,074 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 11:59:46,047 INFO - run.py <module>: Starting app
+2017-06-02 12:00:18,782 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:00:18,896 INFO - run.py <module>: Starting app
+2017-06-02 12:16:37,860 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:16:38,001 INFO - run.py <module>: Starting app
+2017-06-02 12:17:01,701 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:17:02,740 INFO - run.py <module>: Starting app
+2017-06-02 12:17:29,727 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:17:29,853 INFO - run.py <module>: Starting app
+2017-06-02 12:26:46,529 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:26:46,637 INFO - run.py <module>: Starting app
+2017-06-02 12:27:38,459 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:27:38,742 INFO - run.py <module>: Starting app
+2017-06-02 12:29:01,451 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:29:01,657 INFO - run.py <module>: Starting app
+2017-06-02 12:30:59,783 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:30:59,909 INFO - run.py <module>: Starting app
+2017-06-02 12:31:46,721 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:31:46,834 INFO - run.py <module>: Starting app
+2017-06-02 12:36:09,481 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:36:09,643 INFO - run.py <module>: Starting app
+2017-06-02 12:37:06,471 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 12:37:06,697 INFO - run.py <module>: Starting app
+2017-06-02 13:23:06,986 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 13:23:07,849 INFO - run.py <module>: Starting app
+2017-06-02 13:23:53,531 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 13:23:53,750 INFO - run.py <module>: Starting app
+2017-06-02 13:24:24,949 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 13:24:25,059 INFO - run.py <module>: Starting app
+2017-06-02 13:24:41,535 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 13:24:41,869 INFO - run.py <module>: Starting app
+2017-06-02 13:26:48,283 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 13:26:48,409 INFO - run.py <module>: Starting app
+2017-06-02 17:32:32,058 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-02 17:32:33,274 INFO - run.py <module>: Starting app
+2017-06-05 12:56:05,668 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 12:56:10,878 INFO - run.py <module>: Starting app
+2017-06-05 12:58:42,265 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 12:58:43,498 INFO - run.py <module>: Starting app
+2017-06-05 18:08:41,527 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:08:42,592 INFO - run.py <module>: Starting app
+2017-06-05 18:10:15,095 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:10:15,355 INFO - run.py <module>: Starting app
+2017-06-05 18:10:28,017 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:10:28,100 INFO - run.py <module>: Starting app
+2017-06-05 18:11:15,414 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:11:15,532 INFO - run.py <module>: Starting app
+2017-06-05 18:12:23,339 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:12:23,435 INFO - run.py <module>: Starting app
+2017-06-05 18:12:57,447 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:12:57,541 INFO - run.py <module>: Starting app
+2017-06-05 18:26:54,104 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:26:54,194 INFO - run.py <module>: Starting app
+2017-06-05 18:27:38,909 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:27:38,987 INFO - run.py <module>: Starting app
+2017-06-05 18:31:37,976 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:31:38,058 INFO - run.py <module>: Starting app
+2017-06-05 18:33:53,886 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:33:53,978 INFO - run.py <module>: Starting app
+2017-06-05 18:34:18,352 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-05 18:34:18,436 INFO - run.py <module>: Starting app
+2017-06-06 09:10:50,461 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 09:10:51,752 INFO - run.py <module>: Starting app
+2017-06-06 15:03:20,570 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 15:03:21,593 INFO - run.py <module>: Starting app
+2017-06-06 15:30:40,860 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 15:30:41,807 INFO - run.py <module>: Starting app
+2017-06-06 16:01:04,290 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:01:05,146 INFO - run.py <module>: Starting app
+2017-06-06 16:01:42,186 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:01:42,376 INFO - run.py <module>: Starting app
+2017-06-06 16:03:21,303 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:03:21,523 INFO - run.py <module>: Starting app
+2017-06-06 16:04:23,360 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:04:23,508 INFO - run.py <module>: Starting app
+2017-06-06 16:05:03,880 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:05:04,126 INFO - run.py <module>: Starting app
+2017-06-06 16:05:27,749 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:05:27,957 INFO - run.py <module>: Starting app
+2017-06-06 16:05:39,242 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:05:39,331 INFO - run.py <module>: Starting app
+2017-06-06 16:06:03,601 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:06:03,808 INFO - run.py <module>: Starting app
+2017-06-06 16:07:17,287 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:07:17,691 INFO - run.py <module>: Starting app
+2017-06-06 16:22:42,945 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-06 16:22:43,826 INFO - run.py <module>: Starting app
+2017-06-07 11:22:17,653 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 11:22:20,041 INFO - run.py <module>: Starting app
+2017-06-07 18:28:04,394 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:31:15,180 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:31:15,983 INFO - run.py <module>: Starting app
+2017-06-07 18:32:46,913 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:32:47,884 INFO - run.py <module>: Starting app
+2017-06-07 18:34:44,185 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:34:44,329 INFO - run.py <module>: Starting app
+2017-06-07 18:35:47,158 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:35:47,236 INFO - run.py <module>: Starting app
+2017-06-07 18:36:22,995 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:36:23,074 INFO - run.py <module>: Starting app
+2017-06-07 18:40:36,396 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:40:36,473 INFO - run.py <module>: Starting app
+2017-06-07 18:41:23,080 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:41:23,156 INFO - run.py <module>: Starting app
+2017-06-07 18:41:48,131 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:41:48,211 INFO - run.py <module>: Starting app
+2017-06-07 18:42:02,620 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:42:02,694 INFO - run.py <module>: Starting app
+2017-06-07 18:42:16,508 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:42:16,580 INFO - run.py <module>: Starting app
+2017-06-07 18:42:39,650 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:42:39,863 INFO - run.py <module>: Starting app
+2017-06-07 18:43:16,055 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:43:16,129 INFO - run.py <module>: Starting app
+2017-06-07 18:44:21,460 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:44:21,542 INFO - run.py <module>: Starting app
+2017-06-07 18:45:21,631 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:45:21,899 INFO - run.py <module>: Starting app
+2017-06-07 18:45:55,804 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:45:55,883 INFO - run.py <module>: Starting app
+2017-06-07 18:47:57,374 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:47:57,654 INFO - run.py <module>: Starting app
+2017-06-07 18:51:28,055 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:51:37,896 INFO - run.py <module>: Starting app
+2017-06-07 18:54:18,420 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:54:19,252 INFO - run.py <module>: Starting app
+2017-06-07 18:55:24,980 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:55:25,062 INFO - run.py <module>: Starting app
+2017-06-07 18:57:18,565 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 18:57:18,844 INFO - run.py <module>: Starting app
+2017-06-07 19:06:59,565 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:07:00,454 INFO - run.py <module>: Starting app
+2017-06-07 19:34:37,832 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:34:37,977 INFO - run.py <module>: Starting app
+2017-06-07 19:35:57,611 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:35:57,730 INFO - run.py <module>: Starting app
+2017-06-07 19:36:28,209 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:36:28,286 INFO - run.py <module>: Starting app
+2017-06-07 19:36:41,608 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:36:41,682 INFO - run.py <module>: Starting app
+2017-06-07 19:37:24,973 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:37:25,150 INFO - run.py <module>: Starting app
+2017-06-07 19:38:01,204 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:38:01,282 INFO - run.py <module>: Starting app
+2017-06-07 19:39:03,245 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:39:03,422 INFO - run.py <module>: Starting app
+2017-06-07 19:39:19,232 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 19:39:19,420 INFO - run.py <module>: Starting app
+2017-06-07 20:09:06,299 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 20:09:07,021 INFO - run.py <module>: Starting app
+2017-06-07 20:09:57,372 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 20:09:58,111 INFO - run.py <module>: Starting app
+2017-06-07 20:24:22,391 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-07 20:24:23,498 INFO - run.py <module>: Starting app
+2017-06-08 11:41:06,565 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 11:41:16,360 INFO - run.py <module>: Starting app
+2017-06-08 14:47:58,212 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 14:47:59,319 INFO - run.py <module>: Starting app
+2017-06-08 14:48:58,615 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 14:48:58,698 INFO - run.py <module>: Starting app
+2017-06-08 14:51:40,315 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 14:51:40,593 INFO - run.py <module>: Starting app
+2017-06-08 14:52:57,596 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 14:52:57,678 INFO - run.py <module>: Starting app
+2017-06-08 14:54:51,917 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 14:54:52,047 INFO - run.py <module>: Starting app
+2017-06-08 15:12:07,056 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 15:12:08,336 INFO - run.py <module>: Starting app
+2017-06-08 15:51:56,403 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 15:52:07,834 INFO - run.py <module>: Starting app
+2017-06-08 16:05:41,998 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:05:42,839 INFO - run.py <module>: Starting app
+2017-06-08 16:07:48,931 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:07:49,005 INFO - run.py <module>: Starting app
+2017-06-08 16:13:07,733 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:13:08,981 INFO - run.py <module>: Starting app
+2017-06-08 16:13:40,357 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:13:40,547 INFO - run.py <module>: Starting app
+2017-06-08 16:28:29,848 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:28:31,172 INFO - run.py <module>: Starting app
+2017-06-08 16:51:19,898 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:51:21,056 INFO - run.py <module>: Starting app
+2017-06-08 16:57:55,060 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:57:55,161 INFO - run.py <module>: Starting app
+2017-06-08 16:59:09,752 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 16:59:09,846 INFO - run.py <module>: Starting app
+2017-06-08 17:01:19,319 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:01:19,620 INFO - run.py <module>: Starting app
+2017-06-08 17:01:54,503 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:01:54,601 INFO - run.py <module>: Starting app
+2017-06-08 17:05:43,509 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:05:43,586 INFO - run.py <module>: Starting app
+2017-06-08 17:07:12,166 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:07:12,312 INFO - run.py <module>: Starting app
+2017-06-08 17:40:57,777 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:40:58,833 INFO - run.py <module>: Starting app
+2017-06-08 17:43:23,978 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:43:24,553 INFO - run.py <module>: Starting app
+2017-06-08 17:44:55,425 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:44:55,510 INFO - run.py <module>: Starting app
+2017-06-08 17:48:31,380 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:48:31,457 INFO - run.py <module>: Starting app
+2017-06-08 17:50:55,144 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:50:55,347 INFO - run.py <module>: Starting app
+2017-06-08 17:51:14,215 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:51:14,312 INFO - run.py <module>: Starting app
+2017-06-08 17:51:55,808 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:51:55,900 INFO - run.py <module>: Starting app
+2017-06-08 17:52:21,967 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:52:22,052 INFO - run.py <module>: Starting app
+2017-06-08 17:59:22,620 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 17:59:22,701 INFO - run.py <module>: Starting app
+2017-06-08 18:00:40,674 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 18:00:40,757 INFO - run.py <module>: Starting app
+2017-06-08 18:01:16,620 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 18:01:16,698 INFO - run.py <module>: Starting app
+2017-06-08 18:03:19,650 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 18:03:19,728 INFO - run.py <module>: Starting app
+2017-06-08 18:09:16,865 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 18:09:16,953 INFO - run.py <module>: Starting app
+2017-06-08 22:37:30,842 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-08 22:37:47,217 INFO - run.py <module>: Starting app
+2017-06-09 14:44:47,109 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 14:44:48,031 INFO - run.py <module>: Starting app
+2017-06-09 15:00:22,129 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:00:22,222 INFO - run.py <module>: Starting app
+2017-06-09 15:02:30,615 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:02:30,695 INFO - run.py <module>: Starting app
+2017-06-09 15:14:10,261 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:14:10,387 INFO - run.py <module>: Starting app
+2017-06-09 15:29:15,813 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:29:16,281 INFO - run.py <module>: Starting app
+2017-06-09 15:30:18,077 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:30:18,184 INFO - run.py <module>: Starting app
+2017-06-09 15:40:28,306 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 15:40:29,313 INFO - run.py <module>: Starting app
+2017-06-09 16:20:23,941 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 16:20:24,864 INFO - run.py <module>: Starting app
+2017-06-09 18:59:11,127 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 18:59:12,145 INFO - run.py <module>: Starting app
+2017-06-09 19:00:45,911 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 19:00:45,988 INFO - run.py <module>: Starting app
+2017-06-09 19:02:36,223 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-09 19:02:36,325 INFO - run.py <module>: Starting app
+2017-06-13 10:47:06,089 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 10:47:09,672 INFO - run.py <module>: Starting app
+2017-06-13 10:57:35,083 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 10:58:18,087 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 10:58:33,743 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:00:36,780 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:02:16,043 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:03:31,123 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:04:39,875 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:05:44,524 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:07:41,189 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:08:58,411 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:09:07,605 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:10:05,267 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:12:20,595 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:14:08,363 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:14:08,446 INFO - run.py <module>: Starting app
+2017-06-13 11:15:02,442 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:16:43,300 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:17:27,109 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:18:33,339 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:20:47,095 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:21:10,129 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:28:01,128 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:28:01,199 INFO - run.py <module>: Starting app
+2017-06-13 11:31:59,715 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:33:01,656 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:35:25,821 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 11:35:25,896 INFO - run.py <module>: Starting app
+2017-06-13 12:39:37,193 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:39:37,268 INFO - run.py <module>: Starting app
+2017-06-13 12:45:41,269 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:45:45,580 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:46:17,800 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:47:05,059 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:47:13,461 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:49:27,885 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:50:42,742 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 12:51:19,359 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:18:33,522 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:18:55,332 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:24:53,246 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:25:03,944 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:25:13,477 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:26:01,157 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:26:07,277 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:26:28,644 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:26:59,530 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:29:38,413 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:33:21,960 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:33:53,617 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:35:14,999 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:39:20,638 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:39:41,839 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:41:19,006 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:41:51,919 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:43:09,790 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:44:41,267 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:44:48,709 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 13:51:22,298 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:06:25,024 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:08:03,522 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:08:32,440 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:08:57,209 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:13:34,077 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:14:33,673 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:14:43,792 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:16:52,255 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:22:47,570 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:25:07,272 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:26:08,509 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:26:26,815 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:26:47,075 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:27:32,281 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:28:35,974 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:28:51,941 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:30:11,957 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:30:55,765 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:32:07,027 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:32:22,970 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:32:29,921 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:33:00,343 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:33:22,179 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:33:46,191 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:33:49,382 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:33:59,915 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:34:34,118 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:35:35,279 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:36:27,954 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:37:03,698 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:37:18,404 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:37:43,136 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:37:56,047 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:38:03,374 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:38:14,194 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:38:58,342 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:39:14,378 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:39:28,291 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:39:41,126 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:39:49,032 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:40:16,919 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:40:41,172 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:40:51,568 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:42:08,777 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:43:00,673 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:43:28,058 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:44:18,042 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:44:37,898 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:44:47,589 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:44:54,554 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:45:05,082 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:47:00,677 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:47:16,683 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:47:25,134 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:47:56,750 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:48:06,805 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:48:48,485 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:48:56,474 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:49:31,109 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:49:52,274 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:51:47,224 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:52:33,352 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:52:59,965 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:53:48,704 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:56:00,703 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 14:57:27,491 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:02:05,286 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:02:38,920 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:30:40,588 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:31:55,064 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:56:10,727 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:56:38,228 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:56:47,905 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:58:25,333 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 15:59:22,571 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:02:22,358 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:02:52,960 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:02:57,949 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:03:05,696 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:03:35,258 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:04:31,976 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:04:59,466 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:10:40,003 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:11:01,250 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:12:24,228 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:12:33,455 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:12:49,217 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:13:16,382 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:13:42,124 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:14:30,086 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:14:51,866 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:15:01,202 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:15:38,255 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:16:38,387 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:17:07,512 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:25:23,432 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:25:31,587 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:25:47,522 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:26:26,694 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:28:23,078 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:29:01,665 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:31:55,186 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:32:43,705 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:33:23,281 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:34:20,109 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:35:42,542 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:36:24,062 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:36:35,475 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:37:34,493 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:40:01,710 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:41:23,379 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:41:53,829 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:42:03,916 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:43:02,868 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:43:21,402 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:45:41,288 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:48:45,310 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:49:30,873 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:50:15,167 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:50:37,390 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:51:15,006 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:52:50,239 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:54:05,274 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:55:50,016 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:58:19,345 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:58:50,364 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 16:59:40,712 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:02:14,235 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:04:10,079 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:04:24,949 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:05:22,712 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:06:04,159 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:06:26,904 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:07:04,958 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:08:04,502 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:09:09,306 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:23:56,396 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:25:10,396 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:25:52,964 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:27:46,286 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:29:50,643 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:30:05,488 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:30:15,322 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:32:51,096 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:36:35,121 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:37:17,856 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:40:34,626 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:41:34,070 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:50:52,624 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:53:01,449 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:54:06,329 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:54:15,684 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 17:56:09,798 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:01:48,146 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:03:00,224 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:03:07,513 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:06:29,681 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:08:20,356 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:08:36,489 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:09:36,855 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:11:22,445 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:11:40,830 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:14:18,919 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:15:50,675 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:17:20,695 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:17:38,465 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:17:54,884 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:19:40,426 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:20:29,989 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:21:12,876 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:22:19,276 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:22:48,972 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:25:10,506 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:27:13,369 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:29:33,968 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:33:11,097 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:38:30,307 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:49:38,982 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:49:48,246 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:50:30,127 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 18:50:56,601 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:16:37,156 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:17:24,703 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:18:10,672 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:18:53,001 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:20:09,379 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:20:58,342 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:21:27,936 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:21:52,393 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:24:33,677 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:25:56,943 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:26:33,724 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:27:14,990 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:28:20,723 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:29:19,741 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:29:47,532 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:29:58,647 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:30:43,733 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:30:48,169 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:31:26,013 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:31:45,208 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:31:52,891 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:32:04,390 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:32:24,077 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:32:37,531 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:33:27,463 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:34:11,449 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:34:46,572 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:38:05,980 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:38:06,091 INFO - run.py <module>: Starting app
+2017-06-13 19:45:46,994 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:45:49,457 INFO - run.py <module>: Starting app
+2017-06-13 19:47:00,895 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:47:01,644 INFO - run.py <module>: Starting app
+2017-06-13 19:47:19,364 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:47:29,670 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:47:29,920 INFO - run.py <module>: Starting app
+2017-06-13 19:48:57,877 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:49:04,047 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:49:04,149 INFO - run.py <module>: Starting app
+2017-06-13 19:50:30,690 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:50:30,935 INFO - run.py <module>: Starting app
+2017-06-13 19:51:06,291 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:51:06,544 INFO - run.py <module>: Starting app
+2017-06-13 19:54:34,436 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:54:34,689 INFO - run.py <module>: Starting app
+2017-06-13 19:55:01,613 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:55:01,863 INFO - run.py <module>: Starting app
+2017-06-13 19:55:19,827 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:55:20,143 INFO - run.py <module>: Starting app
+2017-06-13 19:58:51,092 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:58:51,195 INFO - run.py <module>: Starting app
+2017-06-13 19:59:45,725 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 19:59:45,953 INFO - run.py <module>: Starting app
+2017-06-13 20:00:22,310 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:00:22,485 INFO - run.py <module>: Starting app
+2017-06-13 20:05:25,696 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:05:25,946 INFO - run.py <module>: Starting app
+2017-06-13 20:06:25,915 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:06:26,065 INFO - run.py <module>: Starting app
+2017-06-13 20:08:43,974 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:08:44,072 INFO - run.py <module>: Starting app
+2017-06-13 20:08:56,500 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:08:56,933 INFO - run.py <module>: Starting app
+2017-06-13 20:09:32,982 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:09:33,363 INFO - run.py <module>: Starting app
+2017-06-13 20:09:56,615 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:09:56,945 INFO - run.py <module>: Starting app
+2017-06-13 20:10:17,424 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:10:57,638 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:10:57,931 INFO - run.py <module>: Starting app
+2017-06-13 20:11:36,320 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:11:36,544 INFO - run.py <module>: Starting app
+2017-06-13 20:12:06,610 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:12:06,691 INFO - run.py <module>: Starting app
+2017-06-13 20:12:54,224 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:12:54,457 INFO - run.py <module>: Starting app
+2017-06-13 20:13:05,419 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:13:05,532 INFO - run.py <module>: Starting app
+2017-06-13 20:16:35,873 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:16:36,289 INFO - run.py <module>: Starting app
+2017-06-13 20:17:15,373 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:17:15,522 INFO - run.py <module>: Starting app
+2017-06-13 20:20:34,768 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:20:35,087 INFO - run.py <module>: Starting app
+2017-06-13 20:22:24,139 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:22:24,389 INFO - run.py <module>: Starting app
+2017-06-13 20:27:05,275 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 20:27:05,650 INFO - run.py <module>: Starting app
+2017-06-13 21:06:10,125 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:06:10,963 INFO - run.py <module>: Starting app
+2017-06-13 21:15:48,724 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:19:00,183 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:19:22,473 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:19:29,712 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:20:26,145 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:21:15,830 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:21:43,123 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:22:30,973 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:22:52,884 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:23:36,393 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:24:11,277 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:24:45,400 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:25:14,686 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:27:28,304 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:27:44,478 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:46:38,718 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 21:46:39,808 INFO - run.py <module>: Starting app
+2017-06-13 22:17:00,268 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 22:17:39,909 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 22:18:57,559 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 22:19:24,838 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 22:19:48,081 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 22:20:34,086 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:23:30,605 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:23:58,774 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:24:00,397 INFO - run.py <module>: Starting app
+2017-06-13 23:25:58,332 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:25:59,228 INFO - run.py <module>: Starting app
+2017-06-13 23:28:05,715 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:28:06,135 INFO - run.py <module>: Starting app
+2017-06-13 23:28:36,227 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:28:36,473 INFO - run.py <module>: Starting app
+2017-06-13 23:29:28,164 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:29:28,411 INFO - run.py <module>: Starting app
+2017-06-13 23:30:20,179 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:30:20,695 INFO - run.py <module>: Starting app
+2017-06-13 23:30:59,818 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:31:00,018 INFO - run.py <module>: Starting app
+2017-06-13 23:31:29,109 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:31:29,460 INFO - run.py <module>: Starting app
+2017-06-13 23:32:13,275 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:32:13,640 INFO - run.py <module>: Starting app
+2017-06-13 23:32:59,467 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:32:59,587 INFO - run.py <module>: Starting app
+2017-06-13 23:37:32,987 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:37:45,193 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:37:45,346 INFO - run.py <module>: Starting app
+2017-06-13 23:39:21,522 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:39:21,890 INFO - run.py <module>: Starting app
+2017-06-13 23:43:47,326 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:43:47,463 INFO - run.py <module>: Starting app
+2017-06-13 23:48:54,985 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:48:55,375 INFO - run.py <module>: Starting app
+2017-06-13 23:50:09,221 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:50:09,318 INFO - run.py <module>: Starting app
+2017-06-13 23:54:12,269 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:54:12,776 INFO - run.py <module>: Starting app
+2017-06-13 23:56:23,390 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:56:23,485 INFO - run.py <module>: Starting app
+2017-06-13 23:57:06,625 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:57:06,909 INFO - run.py <module>: Starting app
+2017-06-13 23:58:19,025 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:58:19,415 INFO - run.py <module>: Starting app
+2017-06-13 23:59:40,220 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-13 23:59:40,497 INFO - run.py <module>: Starting app
+2017-06-14 00:01:16,831 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:01:16,948 INFO - run.py <module>: Starting app
+2017-06-14 00:01:49,792 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:01:50,038 INFO - run.py <module>: Starting app
+2017-06-14 00:02:13,365 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:02:13,575 INFO - run.py <module>: Starting app
+2017-06-14 00:03:04,371 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:03:04,650 INFO - run.py <module>: Starting app
+2017-06-14 00:03:48,104 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:03:48,432 INFO - run.py <module>: Starting app
+2017-06-14 00:05:15,809 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:05:15,926 INFO - run.py <module>: Starting app
+2017-06-14 00:08:47,983 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:08:48,270 INFO - run.py <module>: Starting app
+2017-06-14 00:10:34,951 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:10:35,124 INFO - run.py <module>: Starting app
+2017-06-14 00:11:53,761 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:11:53,971 INFO - run.py <module>: Starting app
+2017-06-14 00:12:43,245 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:12:43,351 INFO - run.py <module>: Starting app
+2017-06-14 00:13:22,184 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 00:13:22,481 INFO - run.py <module>: Starting app
+2017-06-14 01:13:38,925 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 01:13:39,831 INFO - run.py <module>: Starting app
+2017-06-14 03:02:47,465 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-06-14 03:02:50,729 INFO - run.py <module>: Starting app
+2017-08-04 14:12:59,421 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:12:59,981 INFO - run.py <module>: Starting app
+2017-08-04 14:20:23,596 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:20:24,516 INFO - run.py <module>: Starting app
+2017-08-04 14:22:54,658 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:22:55,201 INFO - run.py <module>: Starting app
+2017-08-04 14:33:09,956 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:45:04,223 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:58:22,704 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 14:58:22,805 INFO - run.py <module>: Starting app
+2017-08-04 15:05:22,640 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 15:05:22,727 INFO - run.py <module>: Starting app
+2017-08-04 15:06:40,776 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 15:06:40,858 INFO - run.py <module>: Starting app
+2017-08-04 15:09:15,526 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 15:09:15,618 INFO - run.py <module>: Starting app
+2017-08-04 16:10:25,170 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-04 16:10:25,258 INFO - run.py <module>: Starting app
+2017-08-29 14:02:27,939 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-29 14:02:28,566 INFO - run.py <module>: Starting app
+2017-08-29 14:23:25,586 INFO - __init__.py <module>: Will output log to /var/www/places_of_interest/logs/app.log
+2017-08-29 14:23:25,659 INFO - run.py <module>: Starting app

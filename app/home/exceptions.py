@@ -1,0 +1,3 @@
+class BoundaryNotFound(ValueError):
+    pass
+

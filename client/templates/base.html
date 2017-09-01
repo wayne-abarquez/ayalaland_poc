@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body ng-controller="mainController as mainCtl" ng-cloak>
+
+<!-- Your content goes here -->
+<div id="parent-container">
+
+    <md-content layout="row" id="base-container">
+
+        <md-button class="md-fab md-primary"
+                   id="toggle-boundary-details-btn"
+                   ng-click="mainCtl.showBoundaryDetail()"
+                   ng-show="showBoundaryDetailBtn">
+            <md-icon>layers</md-icon>
+        </md-button>
+
+        {% block content %}{% endblock %}
+    </md-content>
+</div>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,places"></script>
+<script src="js/vendor.min.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>

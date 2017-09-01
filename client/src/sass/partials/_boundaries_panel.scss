@@ -1,0 +1,208 @@
+$list-item-height: 25px;
+$list-item-height-2: 38px;
+
+#boundaries-panel {
+
+  md-toolbar {
+    .md-toolbar-tools {
+      button.no-space-right {
+        padding-right: 0;
+        margin-right: 0;
+      }
+
+      h4 {
+        //font-weight: 400;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  md-toolbar.md-default {
+    //background-color: white;
+    background-color: rgba(0, 0, 0, 0.45);
+    //color: rgba(0, 0, 0, 0.8);
+    color: white;
+    md-icon {
+      //color: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+  }
+
+  #barangay-interest-container {
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0.75rem 0;
+
+    md-list {
+      padding: 0;
+
+      md-list-item {
+        min-height: $list-item-height-2;
+        height: $list-item-height-2;
+
+        md-icon {
+          font-size: 1rem;
+          color: #8e44ad;
+          padding: 0 0.25rem;
+        }
+
+        md-progress-circular {
+          display: none;
+        }
+
+        .md-button {
+          //padding: 0 8px;
+          min-height: $list-item-height-2;
+
+          .md-list-item-inner {
+            min-height: $list-item-height-2;
+            height: $list-item-height-2;
+
+            .md-list-item-text {
+              height: $list-item-height-2;
+              //line-height: 1;
+              //font-size: 12.5px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  md-content {
+    max-height: 100%;
+
+    > div:first-of-type {
+      overflow-y: auto;
+      max-height: 30%;
+
+      .place-type-item {
+        margin: 0 15px;
+      }
+
+      .md-subheader {
+        margin: 8px 8px 0;
+
+        .md-subheader-inner {
+          padding: 8px 0;
+        }
+      }
+
+      md-checkbox {
+        margin-bottom: 0;
+
+        .md-label {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    #boundaries-container {
+      max-height: 70%;
+      min-height: 70%;
+      overflow-y: auto;
+
+      v-pane-header {
+        > div {
+          > div {
+            justify-content: space-between;
+          }
+        }
+        md-progress-circular {
+          display: none;
+        }
+      }
+
+      md-list-item {
+        justify-content: space-between;
+
+        md-progress-circular {
+          display: none;
+        }
+      }
+
+      .md-subheader {
+        .md-subheader-inner {
+          padding: 8px 0;
+        }
+      }
+
+      v-pane.has-data, md-list-item.has-data {
+        > v-pane-header {
+          background-color: rgba(231, 76, 60, 0.45) !important;
+        }
+
+        > button {
+          background-color: rgba(231, 76, 60, 0.45) !important;
+        }
+      }
+    }
+
+    v-accordion {
+      max-height: 100%;
+      overflow-y: auto;
+      margin: 5px 8px 0;
+
+      md-list {
+        padding: 0;
+
+        md-list-item {
+          min-height: $list-item-height;
+          height: $list-item-height;
+
+          .md-button {
+            padding: 0 8px;
+            min-height: $list-item-height;
+
+            .md-list-item-inner {
+              min-height: $list-item-height;
+              height: $list-item-height;
+
+              .md-list-item-text {
+                height: 25px;
+                line-height: 2;
+                font-size: 12.5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+$checkbox-size: 18px;
+
+md-checkbox {
+  margin: 5px;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 0;
+  line-height: 10px;
+  min-width: $checkbox-size;
+  min-height: $checkbox-size;
+
+  .md-label {
+    line-height: 1.25;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .md-container {
+    width: $checkbox-size;
+    height: $checkbox-size;
+
+    .md-icon {
+      width: $checkbox-size;
+      height: $checkbox-size;
+
+      &::after {
+        left: 6px !important;
+      }
+    }
+  }
+}
+

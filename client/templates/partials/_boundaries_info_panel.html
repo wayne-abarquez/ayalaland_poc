@@ -1,0 +1,69 @@
+{% raw %}
+<section ng-controller="boundariesInfoController as vm"
+         layout="row"
+         flex
+         id="boundaries-info-panel"
+         ng-cloak>
+
+    <md-sidenav class="md-sidenav-left md-sidenav"
+                md-component-id="boundariesInfoSidenav"
+                md-whiteframe="4"
+                flex>
+
+        <!-- PRIMARY TOOLBAR -->
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+
+                <div layout="column" class="boundary-detail-header">
+                    <h4>
+                        <md-icon>place</md-icon>
+                        {{ vm.boundary.name }}
+                    </h4>
+                    <span class="boundary-type">{{ vm.boundary.type }}</span>
+                </div>
+
+                <span flex></span>
+
+                <md-button class="md-icon-button" ng-click="vm.close()">
+                    <md-icon>arrow_backward</md-icon>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+
+
+        <md-content layout="column" flex ng-cloak>
+
+            <md-list flex style="overflow-y: auto;">
+                <md-subheader class="md-no-sticky md-primary">POIs</md-subheader>
+                <md-list-item ng-repeat="(k, v) in vm.boundary.places track by $index"
+                              ng-click="vm.showPOIByType(k)">
+                    <div class="md-list-item-text" layout="row">
+                        <span>{{ k }}</span>
+                    </div>
+                    <span flex></span>
+                    <span><b>{{ v.length }}</b></span>
+                </md-list-item>
+            </md-list>
+
+            <md-divider></md-divider>
+
+            <div layout="row" flex class="facilities-count" ng-click="vm.toggleFacilities()">
+                <span>Facilities</span>
+                <span flex></span>
+                <span><b>{{vm.boundary.facilities.length}}</b></span>
+            </div>
+
+            <md-divider></md-divider>
+
+            <div layout="row" flex class="boundary-population">
+                <span>Population</span>
+                <span flex></span>
+                <span><b>{{vm.boundary.population | number}}</b></span>
+            </div>
+
+        </md-content>
+
+    </md-sidenav>
+</section>
+{% endraw %}
