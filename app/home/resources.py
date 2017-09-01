@@ -1,7 +1,7 @@
 from flask.ext.restful import Resource, marshal_with
-from .fields import boundary_fields, boundary_complete_fields, boundary_circle_fields
+from .fields import boundary_fields, boundary_complete_fields
 from app import rest_api
-from app.home.services import get_boundaries, get_boundary_detail, get_boundary_minimum_circle, get_places_by_boundary
+from app.home.services import get_boundaries, get_boundary_detail, get_places_by_boundary
 import logging
 from flask import request
 

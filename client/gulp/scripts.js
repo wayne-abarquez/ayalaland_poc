@@ -16,12 +16,16 @@ gulp.task('vendor-scripts', function () {
         paths.bower + 'angular-animate/angular-animate.min.js',
         paths.bower + 'angular-aria/angular-aria.min.js',
         paths.bower + 'angular-cookies/angular-cookies.min.js',
+        paths.bower + 'angular-sanitize/angular-sanitize.min.js',
         paths.bower + 'angular-material/angular-material.js',
         paths.bower + 'restangular/dist/restangular.min.js',
         paths.bower + 'sweetalert/dist/sweetalert.min.js',
         paths.bower + 'ngSweetAlert/SweetAlert.min.js',
         paths.bower + 'v-accordion/dist/v-accordion.min.js',
-        paths.bower + 'map-icons/dist/js/map-icons.js'
+        paths.bower + 'ng-file-upload/ng-file-upload.min.js',
+        paths.bower + 'angular-material-data-table/dist/md-data-table.min.js',
+        paths.bower + 'moment/min/moment.min.js',
+        paths.bower + 'angular-moment/angular-moment.min.js'
     ])
         .pipe($.plumber())
         .pipe($.concat('vendor.min.js'))
@@ -32,7 +36,6 @@ gulp.task('vendor-scripts', function () {
 
 gulp.task('app-scripts', function () {
     return gulp.src([
-        '!' + paths.srcJs + 'app_jq.js',
         paths.srcJs + 'app/*.js',
         paths.srcJs + 'app/**/*.js'
     ])
@@ -50,4 +53,15 @@ gulp.task('app-scripts', function () {
         .pipe($.size());
 });
 
-gulp.task('scripts', ['vendor-scripts', 'app-scripts']);
+gulp.task('login-scripts', function () {
+    return gulp.src([paths.srcLibJs + 'login.js',])
+        .pipe($.eslint())
+        .pipe($.eslint.format())
+        .pipe($.ngAnnotate())
+        .pipe($.concat('login.min.js'))
+        .pipe($.uglify({mangle: true}).on('error', $.util.log))
+        .pipe(gulp.dest(paths.destJs))
+        .pipe($.size());
+});
+
+gulp.task('scripts', ['vendor-scripts', 'app-scripts', 'login-scripts']);

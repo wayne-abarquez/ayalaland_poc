@@ -1,12 +1,10 @@
 #parent-container {
-  height: 100vh;
+  height: calc(100% - 42px);
 }
 
 #base-container {
   padding: 0;
   margin: 0;
   width: 100%;
-  //overflow: hidden;
-  //height: calc(100vh - 43px);
-  height: 100vh;
+  height: 100%;
 }

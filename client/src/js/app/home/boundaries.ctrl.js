@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', 'placesServices', '$mdSidenav', '$timeout', boundariesController]);
+        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', '$timeout', boundariesController]);
 
-    function boundariesController(Boundaries, boundariesService, gmapServices, placesServices, $mdSidenav, $timeout) {
+    function boundariesController(Boundaries, boundariesService, gmapServices, $timeout) {
         var vm = this;
 
         var polygon,

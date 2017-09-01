@@ -6,7 +6,7 @@ from app import db
 from app.authentication.models import Roles, Users
 from app.home.models import BoundaryTable, BoundaryType, Lots, LotDetails, LotLandbank, LotAcquiredLaunches, \
     LotLegalIssues, LotTechnicalIssues
-
+from app.seeds.seeder import BaseSeeder
 
 manager = Manager(app)
 migrate = Migrate(app, db)
@@ -26,6 +26,11 @@ def dropdb():
         db.drop_all()
         print "Database Dropped"
 
+
+@manager.command  
+def create_users():
+    BaseSeeder.load_users()
+    print "Created sample users"
 
 # @manager.option('-f', '--filename', dest='filename')
 # @manager.option('-c', '--clean', dest='cleantable', default=False)

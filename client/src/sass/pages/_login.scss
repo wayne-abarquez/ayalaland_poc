@@ -1,10 +1,24 @@
 .full-bg-image {
-  background-image: url('/resources/images/login-bg.png');
+  background-image: url('/images/login-bg.png');
 }
-.login-frame {
+
+#ui-login {
   md-card {
     max-width: 400px;
     margin: auto;
+
+    .login-company-logo {
+      margin-top: 20px;
+      max-height: 60px;
+    }
+
+    .login-avatar-container {
+      text-align: center;
+    }
+
+    .signin-button {
+      width: 100%;
+    }
   }
   md-checkbox {
     margin: 0;
@@ -17,7 +31,7 @@
     background-color: white;
 
     .md-headline {
-      padding-top:15px;
+      padding-top: 15px;
       color: #888;
       font-size: 25px;
       font-weight: 500;
@@ -46,7 +60,7 @@
         text-align: center;
       }
       label {
-        color: rgba(0,0,0,0.4) !important;
+        color: rgba(0, 0, 0, 0.4) !important;
       }
 
       md-input-container .md-input {

@@ -26,14 +26,6 @@ boundary_type_fields = dict(
 #     geom=PointToLatLng(attribute='geom')
 # )
 
-boundary_circle_fields = dict(
-    id=fields.Integer,
-    name=fields.String,
-    type=fields.String,
-    geometry=PolygonToLatLng(attribute='geometry'),
-    geometry2=PolygonToLatLng(attribute='geometry2')
-)
-
 boundary_complete_fields = copy(boundary_fields)
 boundary_complete_fields['type'] = fields.Nested(boundary_type_fields)
 boundary_complete_fields['geometry'] = PolygonToLatLng(attribute='geometry')

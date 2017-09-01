@@ -18,14 +18,9 @@
 <!-- Your content goes here -->
 <div id="parent-container">
 
-    <md-content layout="row" id="base-container">
+    {% include "partials/sidenavs/_main_menu.html" %}
 
-        <md-button class="md-fab md-primary"
-                   id="toggle-boundary-details-btn"
-                   ng-click="mainCtl.showBoundaryDetail()"
-                   ng-show="showBoundaryDetailBtn">
-            <md-icon>layers</md-icon>
-        </md-button>
+    <md-content layout="row" id="base-container">
 
         {% block content %}{% endblock %}
     </md-content>

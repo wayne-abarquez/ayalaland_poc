@@ -12,17 +12,15 @@
 
   // Partials
   "partials/_top_nav",
+  "partials/sidenav/_main_menu",
   "partials/_boundaries_panel",
-  "partials/_boundaries_info_panel",
-  "partials/_grdp_panel",
 
   // Pages
   "pages/_base",
   "pages/_index",
-//  "pages/_login",
+  "pages/_login",
 
   // Libraries Overrides
-  "libs/_v-accordion",
-  "libs/_map-icons"
+  "libs/_v-accordion"
 
 ;
