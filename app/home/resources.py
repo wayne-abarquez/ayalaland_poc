@@ -1,9 +1,11 @@
-from flask.ext.restful import Resource, marshal_with
-from .fields import boundary_fields, boundary_complete_fields
+from flask.ext.restful import Resource, marshal_with, marshal, abort
+from .fields import boundary_fields, boundary_complete_fields, lot_fields
 from app import rest_api
-from app.home.services import get_boundaries, get_boundary_detail, get_places_by_boundary
-import logging
+from app.fields import success_with_result_fields
+from app.home.services import get_boundaries, get_boundary_detail, get_places_by_boundary, get_lots, upload_shape_file
+from app.resources import UploadResource
 from flask import request
+import logging
 
 log = logging.getLogger(__name__)
 
@@ -43,8 +45,43 @@ class BoundaryDetailCircleResource(Resource):
         return get_places_by_boundary(boundaryid)
 
 
+class LotResource(Resource):
+    """
+    Resource for getting Lots
+    """
+
+    @marshal_with(lot_fields)
+    def get(self):
+        """ GET /lots """
+        return get_lots()
+
+
+class LotUploadResource(UploadResource):
+    """
+    Resource for Lot data uploads
+    """
+
+    def post(self):
+        data = request.form
+
+        log.debug("POST Upload Shape File request : {0}".format(data))
+
+        uploaded_file = request.files['file']
+
+        # print uploaded_file.__dict__
+
+        upload_shape_file(uploaded_file)
+
+        # if uploaded_file and self.allowed_excel_file(uploaded_file.filename):
+        #     result = upload_fraud_data(uploaded_file)
+        #     return marshal(dict(status=200, message="OK", result=result), success_with_result_fields)
+        # else:
+        #     abort(400, message="Invalid parameters")
+
 rest_api.add_resource(BoundaryResource, '/api/boundaries')
 rest_api.add_resource(BoundaryDetailResource, '/api/boundaries/<int:boundaryid>')
 rest_api.add_resource(BoundaryDetailCircleResource, '/api/boundaries/<int:boundaryid>/circle')
+rest_api.add_resource(LotResource, '/api/lots')
+rest_api.add_resource(LotUploadResource, '/api/lots/upload')
 
 

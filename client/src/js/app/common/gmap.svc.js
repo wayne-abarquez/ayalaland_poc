@@ -607,7 +607,7 @@
             }
         }
 
-        function initPolygon(path, _color) {
+        function initPolygon(path, _color, isFilled) {
             if (!service.apiAvailable()) return null;
 
             var strokeColor = _color || '#0000ff';
@@ -618,7 +618,7 @@
                 draggable: false,
                 editable: false,
                 fillColor: strokeColor,
-                fillOpacity: 0,
+                fillOpacity: isFilled ? 0.5 : 0,
                 strokeColor: strokeColor,
                 strokeOpacity: 0.9,
                 strokeWeight: 2,
@@ -627,8 +627,8 @@
             return new google.maps.Polygon(polygonOptions);
         }
 
-        function createPolygon(path, _color) {
-            var polygon = service.initPolygon(path, _color);
+        function createPolygon(path, _color, isFilled) {
+            var polygon = service.initPolygon(path, _color, isFilled);
 
             polygon.setMap(service.map);
 

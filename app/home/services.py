@@ -1,13 +1,18 @@
-from app.home.models import BoundaryTable, BoundaryType
+from app.home.models import BoundaryTable, BoundaryType, Lots
 from .exceptions import BoundaryNotFound
 from sqlalchemy import func, select
 from sqlalchemy.sql.expression import join
 from app import db
-from app.utils.gis_json_fields import PointToLatLng
+import shapefile
+import zipfile
+import StringIO
 import logging
-import json
-import requests
 import shapely
+import os
+from app import app, db
+from werkzeug import secure_filename
+from shapely.geometry import shape
+from app.utils.forms_helper import parse_area
 
 log = logging.getLogger(__name__)
 
@@ -73,3 +78,39 @@ def get_places_by_boundary(boundary_id):
     data = dict(result)
 
     return BoundaryTable.from_dict(data, ['type'])
+
+
+def get_lots():
+    return Lots.query.all()
+
+
+def upload_shape_file(file):
+    filename = secure_filename(file.filename)
+    path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file.save(path)
+
+    zipshape = zipfile.ZipFile(file)
+    cpgname, dbfname, prjname, sbnname, sbxname, shpname, shxname = zipshape.namelist()
+    cloudshp = StringIO.StringIO(zipshape.read(shpname))
+    cloudshx = StringIO.StringIO(zipshape.read(shxname))
+    clouddbf = StringIO.StringIO(zipshape.read(dbfname))
+    shape = shapefile.Reader(shp=cloudshp, shx=cloudshx, dbf=clouddbf)
+    print shape.__dict__
+    # print shape.bbox
+    shapes = shape.shapeRecords()
+
+    for poly in shapes:
+        # print type(poly.shape.__geo_interface__)
+        # shp_geom = shape(first)
+        first = poly.shape.points
+        record = poly.record
+        lot_sheet_no = record[0]
+        project_name = record[1]
+        # print poly.__dict__
+        print "lot sheet no: {0} project name: {1}".format(lot_sheet_no, project_name)
+        shp_geom = parse_area(first, True)
+
+        lot = Lots(project_name=record[1], geom=shp_geom)
+        db.session.add(lot)
+        db.session.commit()
+

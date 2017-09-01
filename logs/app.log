@@ -1012,3 +1012,141 @@
 2017-09-01 19:50:11,373 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
 2017-09-01 19:50:51,612 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
 2017-09-01 19:50:51,817 INFO - run.py <module>: Starting app
+2017-09-01 21:41:02,436 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 21:41:03,366 INFO - run.py <module>: Starting app
+2017-09-01 22:05:01,664 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:06:05,055 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:06:05,300 INFO - run.py <module>: Starting app
+2017-09-01 22:08:33,809 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:10:25,229 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:10:25,382 INFO - run.py <module>: Starting app
+2017-09-01 22:11:57,821 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:11:57,974 INFO - run.py <module>: Starting app
+2017-09-01 22:13:33,064 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:13:33,239 INFO - run.py <module>: Starting app
+2017-09-01 22:13:53,600 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:13:53,761 INFO - run.py <module>: Starting app
+2017-09-01 22:16:37,650 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:16:37,797 INFO - run.py <module>: Starting app
+2017-09-01 22:17:44,221 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:17:44,357 INFO - run.py <module>: Starting app
+2017-09-01 22:19:55,010 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:19:55,136 INFO - run.py <module>: Starting app
+2017-09-01 22:21:21,941 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:21:22,080 INFO - run.py <module>: Starting app
+2017-09-01 22:21:49,332 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:21:49,483 INFO - run.py <module>: Starting app
+2017-09-01 22:22:11,094 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:22:11,244 INFO - run.py <module>: Starting app
+2017-09-01 22:23:45,354 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:23:45,546 INFO - run.py <module>: Starting app
+2017-09-01 22:25:18,327 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:25:18,453 INFO - run.py <module>: Starting app
+2017-09-01 22:29:29,597 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:29:29,779 INFO - run.py <module>: Starting app
+2017-09-01 22:30:32,305 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:30:32,477 INFO - run.py <module>: Starting app
+2017-09-01 22:31:55,773 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:31:55,930 INFO - run.py <module>: Starting app
+2017-09-01 22:34:10,951 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:34:11,095 INFO - run.py <module>: Starting app
+2017-09-01 22:34:59,568 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:34:59,708 INFO - run.py <module>: Starting app
+2017-09-01 22:38:52,701 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:38:52,865 INFO - run.py <module>: Starting app
+2017-09-01 22:39:43,726 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:39:43,868 INFO - run.py <module>: Starting app
+2017-09-01 22:42:00,331 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:42:00,477 INFO - run.py <module>: Starting app
+2017-09-01 22:42:26,629 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:42:26,769 INFO - run.py <module>: Starting app
+2017-09-01 22:45:24,906 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:45:25,016 INFO - run.py <module>: Starting app
+2017-09-01 22:48:10,391 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:48:10,593 INFO - run.py <module>: Starting app
+2017-09-01 22:49:55,228 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:49:55,401 INFO - run.py <module>: Starting app
+2017-09-01 22:51:20,813 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:51:20,959 INFO - run.py <module>: Starting app
+2017-09-01 22:51:46,401 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:51:46,544 INFO - run.py <module>: Starting app
+2017-09-01 22:52:12,201 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:52:12,402 INFO - run.py <module>: Starting app
+2017-09-01 22:55:16,243 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:55:16,414 INFO - run.py <module>: Starting app
+2017-09-01 22:56:28,364 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:56:28,487 INFO - run.py <module>: Starting app
+2017-09-01 22:58:06,138 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:58:06,270 INFO - run.py <module>: Starting app
+2017-09-01 22:58:30,194 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:58:30,333 INFO - run.py <module>: Starting app
+2017-09-01 22:59:12,423 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:59:12,555 INFO - run.py <module>: Starting app
+2017-09-01 22:59:54,635 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 22:59:54,759 INFO - run.py <module>: Starting app
+2017-09-01 23:01:59,806 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:01:59,954 INFO - run.py <module>: Starting app
+2017-09-01 23:02:24,653 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:02:24,778 INFO - run.py <module>: Starting app
+2017-09-01 23:03:26,089 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:03:26,251 INFO - run.py <module>: Starting app
+2017-09-01 23:04:19,373 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:04:19,524 INFO - run.py <module>: Starting app
+2017-09-01 23:07:02,625 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:07:02,902 INFO - run.py <module>: Starting app
+2017-09-01 23:07:31,748 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:07:31,897 INFO - run.py <module>: Starting app
+2017-09-01 23:08:21,779 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:08:21,931 INFO - run.py <module>: Starting app
+2017-09-01 23:10:41,500 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:10:41,656 INFO - run.py <module>: Starting app
+2017-09-01 23:11:53,890 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:11:54,008 INFO - run.py <module>: Starting app
+2017-09-01 23:12:51,836 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:12:51,970 INFO - run.py <module>: Starting app
+2017-09-01 23:14:26,221 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:14:26,373 INFO - run.py <module>: Starting app
+2017-09-01 23:14:59,778 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:14:59,930 INFO - run.py <module>: Starting app
+2017-09-01 23:16:47,481 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:16:47,637 INFO - run.py <module>: Starting app
+2017-09-01 23:17:46,063 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:17:46,223 INFO - run.py <module>: Starting app
+2017-09-01 23:21:34,304 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:21:34,449 INFO - run.py <module>: Starting app
+2017-09-01 23:22:04,301 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:22:04,456 INFO - run.py <module>: Starting app
+2017-09-01 23:22:51,870 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:22:52,007 INFO - run.py <module>: Starting app
+2017-09-01 23:23:23,390 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:23:23,527 INFO - run.py <module>: Starting app
+2017-09-01 23:26:05,673 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:26:05,819 INFO - run.py <module>: Starting app
+2017-09-01 23:26:42,290 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:26:42,442 INFO - run.py <module>: Starting app
+2017-09-01 23:27:04,141 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:27:04,278 INFO - run.py <module>: Starting app
+2017-09-01 23:32:04,915 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:32:05,047 INFO - run.py <module>: Starting app
+2017-09-01 23:32:58,339 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:32:58,507 INFO - run.py <module>: Starting app
+2017-09-01 23:34:26,333 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:34:26,469 INFO - run.py <module>: Starting app
+2017-09-01 23:34:43,966 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:34:44,105 INFO - run.py <module>: Starting app
+2017-09-01 23:36:44,933 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:36:45,062 INFO - run.py <module>: Starting app
+2017-09-01 23:38:17,709 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:38:17,855 INFO - run.py <module>: Starting app
+2017-09-01 23:39:03,850 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:39:03,984 INFO - run.py <module>: Starting app
+2017-09-01 23:39:22,979 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:39:23,136 INFO - run.py <module>: Starting app
+2017-09-01 23:39:58,940 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:39:59,075 INFO - run.py <module>: Starting app
+2017-09-01 23:44:05,346 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-01 23:44:05,483 INFO - run.py <module>: Starting app
+2017-09-01 23:44:49,675 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-02 00:07:54,630 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-02 00:07:57,932 INFO - __init__.py <module>: Will output log to /var/www/ayalaland_poc/logs/app.log
+2017-09-02 00:07:58,115 INFO - run.py <module>: Starting app

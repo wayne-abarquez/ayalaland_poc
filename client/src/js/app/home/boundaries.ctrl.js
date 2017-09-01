@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', '$timeout', boundariesController]);
+        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', '$timeout', 'lotService', boundariesController]);
 
-    function boundariesController(Boundaries, boundariesService, gmapServices, $timeout) {
+    function boundariesController(Boundaries, boundariesService, gmapServices, $timeout, lotService) {
         var vm = this;
 
         var polygon,
@@ -12,6 +12,7 @@
 
         vm.showBoundary = showBoundary;
         vm.expandCallback = expandCallback;
+        vm.uploadShapeFile = uploadShapeFile;
 
         initialize();
 
@@ -24,6 +25,8 @@
                 }, function (error) {
                     console.log('failed to load: ', error);
                 });
+
+            lotService.loadLots();
         }
 
         function showBoundary(brgy) {
@@ -91,6 +94,23 @@
             showBoundary(item);
 
             return;
+        }
+
+        function uploadShapeFile (file, errFiles, event) {
+            event.stopPropagation();
+
+            if (!file || errFiles.length) {
+                alert('File is invalid.');
+                return;
+            }
+
+            boundariesService.uploadShapeFile(file)
+                .then(function (response) {
+                    console.log('successfully uploaded shape file: ', response);
+                    alert('Data uploaded.');
+                }, function (error) {
+                    console.log('error on uploading employee data: ', error);
+                });
         }
 
     }

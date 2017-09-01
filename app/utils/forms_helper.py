@@ -11,11 +11,11 @@ def parse_coordinates(coordinates):
         return dumps(point)
 
 
-def parse_area(area):
+def parse_area(area, isshape):
     if area is None:
         return area
 
-    points = map(get_lng_lat_pair, area)
+    points = area if isshape else map(get_lng_lat_pair, area)
 
     if len(points) == 2:
         polygon = box(points[0][0], points[0][1], points[1][0], points[1][1])

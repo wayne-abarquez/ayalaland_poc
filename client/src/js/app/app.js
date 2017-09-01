@@ -8,9 +8,10 @@
             'ngMaterial',
             'ngAnimate',
             'oitozero.ngSweetAlert',
+            'ngMessages',
             'ngFileUpload',
-            'md.data.table',
             'vAccordion',
+            'md.data.table',
             'angularMoment',
             'demoApp.home'
         ])
