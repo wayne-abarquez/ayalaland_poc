@@ -14,119 +14,22 @@
             flex>
 
     <!-- PRIMARY TOOLBAR -->
-    <md-toolbar ng-class="{'md-default':  vm.showBoundariesPanel}">
+    <md-toolbar class="md-default">
         <div class="md-toolbar-tools">
             <span>
                 <h4>
-                <md-icon>{{ vm.showBoundariesPanel ? 'filter_list' : 'stars'}}</md-icon>
-                {{  vm.showBoundariesPanel ? 'Boundaries' : 'Suggested Barangays' }}
+                <md-icon>filter_list</md-icon>
+                Boundaries
                 </h4>
             </span>
-            <span flex></span>
-
-            <md-button class="md-icon-button" ng-click="vm.toggleBoundariesPanel()">
-                <md-icon>{{ vm.showBoundariesPanel ? 'clear' : 'search'}}</md-icon>
-            </md-button>
-
-            <!--
-            <md-button class="md-icon-button no-space-right" ng-hide="vm.showBoundariesPanel" ng-click="vm.toggleBoundariesPanel()">
-                <md-icon>filter_list</md-icon>
-            </md-button>
-
-            <md-button class="md-icon-button" ng-show="vm.showBoundariesPanel" ng-click="vm.toggleBoundariesPanel()">
-                <md-icon>stars</md-icon>
-            </md-button>
-            -->
         </div>
     </md-toolbar>
 
-    <!-- BARANGAY OF INTERESTS -->
-    <md-content layout="column" flex ng-hide="vm.showBoundariesPanel">
-        <div id="barangay-interest-container">
-
-            <md-list>
-                <md-list-item ng-repeat="item in vm.favoriteBoundaries"
-                              id="{{item.id}}"
-                              ng-click="vm.showBoundary(item);$event.stopPropagation()">
-                    <div class="md-list-item-text" layout="row" flex>
-                        <span flex>{{ item.name }}<md-icon>star</md-icon> </span>
-                        <md-progress-circular
-                                flex="10"
-                                md-mode="indeterminate"
-                                md-diameter="30px"></md-progress-circular>
-                    </div>
-                </md-list-item>
-            </md-list>
-
-        </div>
-    </md-content>
-
     <!-- BOUNDARIES WITH FILTER -->
-    <md-content layout="column" flex ng-show="vm.showBoundariesPanel">
-
-        <div flex="100" class="md-whiteframe-2dp" layout="column" layout-margin>
-            <md-subheader>Place Types</md-subheader>
-            <div flex-wrap class="place-type-item" ng-repeat="type in vm.placeTypes">
-                <md-checkbox ng-model="type.model" ng-change="vm.toggleType(type.name)" aria-label="">
-                    {{ type.name }}
-                </md-checkbox>
-            </div>
-        </div>
-
-        <!--
-        <script type="text/ng-template" id="boundariesTree">
-            {{ item.name }}
-            <ul ng-if="item.children">
-                <li ng-repeat="child in item.children" ng-click="vm.expandCallback(child)" ng-include="'boundariesTree'">
-                    {{ child.name }}
-                </li>
-            </ul>
-        </script>
-
-        <ul>
-            <li ng-repeat="item in vm.boundaries" ng-click="vm.expandCallback(item)" ng-include="'boundariesTree'">{{ item.name }}</li>
-        </ul>
-        -->
-
-        <!--
-        <script type="text/ng-template" id="boundariesTree">
-            <v-accordion class="vAccordion--default" multiple
-                         layout-margin>
-                <v-pane id="{{ item.id }}"
-                        ng-click="vm.expandCallback(item)"
-                        ng-repeat="item in vm.boundaries"
-                        expanded="item.isExpanded">
-                    <v-pane-header>
-                        <span>{{ item.name }}</span>
-                    </v-pane-header>
-                    <v-pane-content>
-
-                    </v-pane-content>
-                </v-pane>
-            </v-accordion>
-        </script>
-        -->
+    <md-content layout="column" flex>
 
         <div class="md-whiteframe-2dp" id="boundaries-container" layout-margin>
-
             <md-subheader class="md-primary">Boundaries</md-subheader>
-
-           <!-- <v-accordion class="vAccordion--default" multiple
-                         layout-margin>
-                <v-pane id="{{ item.id }}"
-                        ng-click="vm.expandCallback(item)"
-                        ng-repeat="item in vm.boundaries"
-                        expanded="item.isExpanded"
-                        ng-include="'boundariesTree'">
-                    <v-pane-header>
-                        <span>{{ item.name }}</span>
-                    </v-pane-header>
-                    <v-pane-content>
-
-                    </v-pane-content>
-                </v-pane>
-            </v-accordion>
-            -->
 
             <v-accordion class="vAccordion--default" multiple
                          layout-margin>

@@ -11,12 +11,12 @@ angular.module('demoApp.home')
         vm.region = '';
 
         function initialize () {
-            $rootScope.$on('boundary_selected', function (e, data) {
-                vm.boundary = angular.copy(data);
-                $rootScope.showGRDPPanel = true;
-
-                vm.region = vm.boundary.grdp[Object.keys(vm.boundary.grdp)[0]][0].boundary;
-            });
+            //$rootScope.$on('boundary_selected', function (e, data) {
+            //    vm.boundary = angular.copy(data);
+            //    $rootScope.showGRDPPanel = true;
+            //
+            //    vm.region = vm.boundary.grdp[Object.keys(vm.boundary.grdp)[0]][0].boundary;
+            //});
         }
 
         initialize();

@@ -3,8 +3,9 @@ from flask.ext.migrate import Migrate, MigrateCommand
 
 from app import app
 from app import db
-from app.home.models import BoundaryTable, BoundaryType, MvBBTechDP, BoundaryPopulation, GrdpType, Grdp
-from app.datareader.services import load_population_from_excel
+from app.authentication.models import Roles, Users
+from app.home.models import BoundaryTable, BoundaryType, Lots, LotDetails, LotLandbank, LotAcquiredLaunches, \
+    LotLegalIssues, LotTechnicalIssues
 
 
 manager = Manager(app)
@@ -37,11 +38,11 @@ def dropdb():
 #         nrhp_service.recluster()
 
 
-@manager.option('-r', '--region', dest='region')
-@manager.option('-f', '--infile', dest='infile')
-def load_population(infile, region):
-    print "Load Population"
-    load_population_from_excel(infile, region)
+# @manager.option('-r', '--region', dest='region')
+# @manager.option('-f', '--infile', dest='infile')
+# def load_population(infile, region):
+#     print "Load Population"
+#     load_population_from_excel(infile, region)
 
 
 if __name__ == '__main__':

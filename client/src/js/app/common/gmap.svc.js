@@ -119,6 +119,8 @@
         service.containsLocation = containsLocation;
         service.triggerEvent = triggerEvent;
         service.createMapIconLabel = createMapIconLabel;
+        service.setlatLngArrayToLatLngObjects = setlatLngArrayToLatLngObjects;
+        service.fitToBoundsByPolygon = fitToBoundsByPolygon;
 
         function apiAvailable() {
             return typeof window.google === 'object';
@@ -936,6 +938,24 @@
 
         function createFacilityMarker (latLng) {
             return service.initMarker(latLng, 'resources/images/markers/wifi.png');
+        }
+
+        function fitToBoundsByPolygon(polygon) {
+            if (!service.map || !polygon) return;
+
+            var bounds = new google.maps.LatLngBounds();
+
+            polygon.getPath().forEach(function (path) {
+                bounds.extend(path);
+            });
+
+            service.map.fitBounds(bounds);
+        }
+
+        function setlatLngArrayToLatLngObjects (latLngArray) {
+            return latLngArray.map(function(latlng){
+               return new google.maps.LatLng(latlng);
+            });
         }
 
         return service;

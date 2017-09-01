@@ -100,8 +100,10 @@ $list-item-height-2: 38px;
     }
 
     #boundaries-container {
-      max-height: 70%;
-      min-height: 70%;
+      //max-height: 70%;
+      //min-height: 70%;
+      max-height: 100%;
+      min-height: 0;
       overflow-y: auto;
 
       v-pane-header {

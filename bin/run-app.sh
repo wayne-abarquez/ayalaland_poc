@@ -2,4 +2,4 @@
 
 
 source venv/bin/activate
-gunicorn -w 2 --preload -b 127.0.0.1:9000 run:app --log-level=DEBUG --timeout=120
+gunicorn -w 2 --preload -b 127.0.0.1:9074 run:app --log-level=DEBUG --timeout=120

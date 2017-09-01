@@ -21,35 +21,21 @@ boundary_type_fields = dict(
     name=fields.String
 )
 
-dp_fields = dict(
-    facility=fields.String,
-    geom=PointToLatLng(attribute='geom')
-)
-
-grdp_fields = dict(
-    type=fields.String,
-    boundaryid=fields.Integer,
-    boundary=fields.String,
-    year=fields.Integer,
-    amount=fields.Float
-)
+# dp_fields = dict(
+#     facility=fields.String,
+#     geom=PointToLatLng(attribute='geom')
+# )
 
 boundary_circle_fields = dict(
     id=fields.Integer,
     name=fields.String,
     type=fields.String,
-    radius=fields.Integer,
-    center=PointToLatLng(attribute='center'),
     geometry=PolygonToLatLng(attribute='geometry'),
-    geometry2=PolygonToLatLng(attribute='geometry2'),
-    places=fields.Raw,
-    facilities=fields.List(fields.Nested(dp_fields)),
-    population=fields.Integer,
-    grdp=fields.List(fields.Nested(grdp_fields))
+    geometry2=PolygonToLatLng(attribute='geometry2')
 )
 
 boundary_complete_fields = copy(boundary_fields)
-# boundary_complete_fields['type'] = fields.Nested(boundary_type_fields)
+boundary_complete_fields['type'] = fields.Nested(boundary_type_fields)
 boundary_complete_fields['geometry'] = PolygonToLatLng(attribute='geometry')
 boundary_complete_fields['geometry2'] = PolygonToLatLng(attribute='geometry2')
 

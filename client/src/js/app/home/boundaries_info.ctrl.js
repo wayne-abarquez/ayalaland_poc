@@ -16,17 +16,17 @@
         /* Controller Functions here */
 
         function initialize() {
-            $rootScope.$on('boundary_selected', function(e, data){
-                vm.boundary = angular.copy(data);
-
-                var allPlaces = [];
-                for (var k in vm.boundary.places) {
-                    vm.boundary.places[k].forEach(function(item){
-                        allPlaces.push(item);
-                    });
-                }
-                vm.boundary.places['all'] = allPlaces;
-            });
+            //$rootScope.$on('boundary_selected', function(e, data){
+            //    vm.boundary = angular.copy(data);
+            //
+            //    var allPlaces = [];
+            //    for (var k in vm.boundary.places) {
+            //        vm.boundary.places[k].forEach(function(item){
+            //            allPlaces.push(item);
+            //        });
+            //    }
+            //    vm.boundary.places['all'] = allPlaces;
+            //});
         }
 
         function showPOIByType (type) {

@@ -9,14 +9,11 @@
 
 echo "CREATE USER demouser WITH PASSWORD 'youcantguess';" | psql -h localhost -U postgres
 
-echo "CREATE DATABASE places_of_interest;" | psql -h localhost -U postgres
+echo "CREATE DATABASE ayalaland_poc;" | psql -h localhost -U postgres
 
-echo "CREATE EXTENSION postgis;" | psql -h localhost -U postgres -d places_of_interest
+echo "CREATE EXTENSION postgis;" | psql -h localhost -U postgres -d ayalaland_poc
 
-echo "GRANT ALL PRIVILEGES ON DATABASE places_of_interest TO demouser;" | psql -h localhost -U postgres
+echo "GRANT ALL PRIVILEGES ON DATABASE ayalaland_poc TO demouser;" | psql -h localhost -U postgres
 
 # execute this if relation error in sqlachemy
 # GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to demouser;
-
-# fix issues on migrations
-# ALTER TABLE mv_bbtech_dp OWNER TO demouser;

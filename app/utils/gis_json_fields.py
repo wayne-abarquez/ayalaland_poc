@@ -44,8 +44,18 @@ class PolygonToLatLng(fields.Raw):
     """
 
     def format(self, value):
-        polygon = to_shape(value)
-        return [dict(lat=point[1], lng=point[0]) for point in polygon.exterior.coords]
+        try:
+            polygon = to_shape(value)
+
+            if polygon.type == 'MultiPolygon':
+                coords = []
+                for poly in polygon.geoms:
+                    coords += poly.exterior.coords[:]
+                return [dict(lat=point[1], lng=point[0]) for point in coords]
+
+            return [dict(lat=point[1], lng=point[0]) for point in polygon.exterior.coords]
+        except AttributeError:
+            return []
 
 
 class LinestringToLatLng(fields.Raw):

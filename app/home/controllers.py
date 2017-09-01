@@ -1,10 +1,17 @@
+from app import app
 from . import home
 from flask import render_template
+from flask_login import login_required, current_user
 import logging
 
 log = logging.getLogger(__name__)
 
+GOOGLE_MAP_API_KEY = app.config['GOOGLE_MAP_API_KEY']
+
+
 @home.route('/', methods=['GET', 'POST'])
 @home.route('/index', methods=['GET', 'POST'])
 def index():
-    return render_template('/index.html')
+    # if not current_user.is_admin():
+    #     return render_template('/sales.html', gmap_api_key=GOOGLE_MAP_API_KEY)
+    return render_template('/index.html', gmap_api_key=GOOGLE_MAP_API_KEY)

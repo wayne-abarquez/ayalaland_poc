@@ -2,7 +2,7 @@
 1) cd /var/www
 2) sudo mkdir project_name
 3) sudo chown user:user project_name
-4) git clone https://github.com/wayne-abarquez/places_of_interest.git project_name
+4) git clone https://github.com/wayne-abarquez/ayalaland_poc.git project_name
 5) cd project_name/
 6) bin/setup.sh
 7) bin/createdb.sh
