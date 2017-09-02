@@ -3,7 +3,7 @@ from .fields import boundary_fields, boundary_complete_fields, lot_fields, lot_o
 from app import rest_api
 # from app.fields import success_with_result_fields
 from app.home.services import get_boundaries, get_boundaries_by_type, get_boundary_detail, get_places_by_boundary, get_lots, upload_shape_file, \
-    create_lot_offer
+    create_lot_offer, filter_lots
 from app.resources import UploadResource
 from flask import request
 import logging
@@ -57,6 +57,11 @@ class LotResource(Resource):
     @marshal_with(lot_fields)
     def get(self):
         """ GET /lots """
+        print "get lots: {0}".format(request.args)
+
+        if bool(request.args):
+            return filter_lots(request.args)
+
         return get_lots()
 
     def post(self):

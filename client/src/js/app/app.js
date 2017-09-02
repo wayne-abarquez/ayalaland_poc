@@ -14,11 +14,18 @@
             'md.data.table',
             'angularMoment',
             'smDateTimeRangePicker',
+            'ngMaterialDateRangePicker',
             'demoApp.home'
         ])
 
         .constant('APP_NAME', 'Ayala Land')
         .constant('BASE_URL', window.location.origin)
+
+        .constant('SBU_SELECTION', [
+            'AVIDA',
+            'SLMG',
+            'ALP'
+        ])
 
         .config(['RestangularProvider', function (RestangularProvider) {
             //set the base url for api calls on our RESTful services

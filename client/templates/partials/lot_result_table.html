@@ -1,0 +1,51 @@
+{% raw %}
+<md-dialog id="lot-result-table" ng-controller="lotResultTableController as lotResultTblCtl"
+           ng-hide="!lotResultTblCtl.lots || lotResultTblCtl.hideLotResultTable" ng-cloak>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>Lot Result</span>
+            <span flex></span>
+            <md-button ng-click="lotResultTblCtl.close()"><md-icon>close</md-icon></md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                    <tr>
+                        <th>Lot Offer No.</th>
+                        <th>Estate Name</th>
+                        <th>Project Name</th>
+                        <th>SBU</th>
+                        <th>Address</th>
+                        <th>Lot Status</th>
+                        <th>Legal Status</th>
+                        <th>Technical Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="lot in lotResultTblCtl.lots" data-lot-id="{{lot.id}}">
+                    <td md-cell>{{lot.id}}</td>
+                    <td md-cell>{{lot.estate_name}}</td>
+                    <td md-cell>{{lot.project_name}}</td>
+                    <td md-cell>{{lot.sbu}}</td>
+                    <td md-cell>{{lot.complete_address}}</td>
+                    <td md-cell>{{ lot.lot_status }}</td>
+                    <td md-cell>{{ lot.legal_status }}</td>
+                    <td md-cell>{{ lot.technical_status }}</td>
+                    <td md-cell>
+                        <md-button class="md-icon-button" ng-click="null">
+                            <md-icon>visibility</md-icon>
+                        </md-button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-dialog-content>
+
+</md-dialog>
+{% endraw %}

@@ -8,6 +8,7 @@ angular.module('demoApp.home')
         var vm = this;
 
         vm.createLotOffer = createLotOffer;
+        vm.searchLotOffer = searchLotOffer;
 
         initialize();
 
@@ -17,6 +18,10 @@ angular.module('demoApp.home')
 
         function createLotOffer (event) {
             modalServices.showCreateLotOfferForm(event);
+        }
+
+        function searchLotOffer (event) {
+            modalServices.showSearchLotOfferModal(event);
         }
     }
 }());

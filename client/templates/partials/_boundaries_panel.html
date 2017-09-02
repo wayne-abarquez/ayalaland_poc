@@ -14,29 +14,50 @@
             flex>
 
     <!-- PRIMARY TOOLBAR -->
-    <md-toolbar class="md-default">
+    <md-toolbar class="md-default" ng-hide="vm.showFilter">
         <div class="md-toolbar-tools">
             <span>
                 <h4>
-                <md-icon>filter_list</md-icon>
+                <md-icon>near_me</md-icon>
                 Boundaries
                 </h4>
             </span>
             <span flex></span>
+            <md-button class="md-icon-button md-default" ng-click="vm.showFilter = true">
+                <md-tooltip md-direction="left">Search Lot Offers</md-tooltip>
+                <md-icon>search</md-icon>
+            </md-button>
+            <!--
             <md-button class="md-fab"
                        type="file"
                        ngf-select="vm.uploadShapeFile($file, $invalidFiles, $event)">
                 <md-icon>file_upload</md-icon>
             </md-button>
+            -->
+        </div>
+    </md-toolbar>
+
+    <!-- FILTER TOOLBAR -->
+    <md-toolbar class="md-default" ng-show="vm.showFilter">
+        <div class="md-toolbar-tools">
+            <span>
+                <h4>
+                    <md-icon>filter_list</md-icon>
+                    Search Lot Offers
+                </h4>
+            </span>
+            <span flex></span>
+            <md-button class="md-icon-button md-default" ng-click="vm.showFilter = false">
+                <md-tooltip md-direction="left">Show Boundaries</md-tooltip>
+                <md-icon>near_me</md-icon>
+            </md-button>
         </div>
     </md-toolbar>
 
     <!-- BOUNDARIES WITH FILTER -->
-    <md-content layout="column" flex>
-
+    <md-content layout="column" ng-if="!vm.showFilter" flex>
         <div class="md-whiteframe-2dp" id="boundaries-container" layout-margin>
             <md-subheader class="md-primary">Boundaries</md-subheader>
-
             <v-accordion class="vAccordion--default" multiple
                          layout-margin>
                 <v-pane id="{{region.id}}"
@@ -54,8 +75,6 @@
                         </div>
                     </v-pane-header>
                     <v-pane-content>
-
-
                         <v-accordion class="vAccordion--default" multiple
                                      layout-margin>
                             <v-pane id="{{province.id}}"
@@ -73,7 +92,6 @@
                                     </div>
                                 </v-pane-header>
                                 <v-pane-content>
-
                                     <v-accordion class="vAccordion--default" multiple
                                                  layout-margin
                                                  ng-cloak
@@ -93,8 +111,6 @@
                                                 </div>
                                             </v-pane-header>
                                             <v-pane-content>
-
-
                                                 <md-list ng-if="city.children">
                                                     <md-list-item ng-repeat="brgy in city.children"
                                                                   id="{{brgy.id}}"
@@ -109,22 +125,70 @@
                                                         </div>
                                                     </md-list-item>
                                                 </md-list>
-
-
                                             </v-pane-content>
                                         </v-pane>
                                     </v-accordion>
-
                                 </v-pane-content>
                             </v-pane>
                         </v-accordion>
-
                     </v-pane-content>
                 </v-pane>
             </v-accordion>
-
         </div>
+    </md-content>
 
+    <!-- BOUNDARIES WITH FILTER -->
+    <md-content ng-controller="searchLotOfferController as searchLotOfferCtl" layout-padding layout="column" ng-if="vm.showFilter" flex>
+        <form name="searchLotOfferCtl.lotFilterForm">
+            <md-select ng-model="searchLotOfferCtl.filter.region" placeholder="Region" ng-change="searchLotOfferCtl.regionChanged(searchLotOfferCtl.filter.region)">
+                <md-option ng-value="region.id" ng-repeat="region in searchLotOfferCtl.regions">{{ region.name }}</md-option>
+            </md-select>
+
+            <md-select ng-model="searchLotOfferCtl.filter.province" placeholder="Province"
+                       ng-change="searchLotOfferCtl.provinceChanged(searchLotOfferCtl.filter.province)"
+                       ng-if="searchLotOfferCtl.provinces.length">
+                <md-option ng-value="province.id" ng-repeat="province in searchLotOfferCtl.provinces">{{ province.name }}</md-option>
+            </md-select>
+
+            <md-select ng-model="searchLotOfferCtl.filter.city" placeholder="City|Municipality"
+                       ng-change="searchLotOfferCtl.cityChanged(searchLotOfferCtl.filter.city)"
+                       ng-if="searchLotOfferCtl.cities.length">
+                <md-option ng-value="city.id"
+                           ng-repeat="city in searchLotOfferCtl.cities">{{ city.name }}
+                </md-option>
+            </md-select>
+
+            <fieldset>
+                <legend>Lot Details</legend>
+                <div layout="column">
+                    <md-input-container md-no-float class="md-block">
+                        <input type="text" placeholder="Filter by date range" ng-model="searchLotOfferCtl.dateRangeFormatted"
+                               ng-click="searchLotOfferCtl.pickDateRange($event, true)">
+                    </md-input-container>
+
+                    <!--
+                    <md-select ng-model="searchLotOfferCtl.filter.source_of_lot_offer" placeholder="Source of lot offer">
+                    </md-select>
+                    -->
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>ALI Details</legend>
+                <div layout="column">
+                    <md-select ng-model="searchLotOfferCtl.filter.sbu" placeholder="SBU">
+                        <md-option ng-value="sbu" ng-repeat="sbu in searchLotOfferCtl.sbuList">{{sbu}}</md-option>
+                    </md-select>
+                </div>
+            </fieldset>
+
+
+            <div layout="row">
+                <md-button class="md-raised" ng-click="searchLotOfferCtl.clearFilter()">Clear</md-button>
+                <span flex></span>
+                <md-button class="md-raised md-primary" ng-click="searchLotOfferCtl.search(searchLotOfferCtl.filter)">Search</md-button>
+            </div>
+        </form>
     </md-content>
 
 </md-sidenav>
