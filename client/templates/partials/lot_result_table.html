@@ -1,6 +1,6 @@
 {% raw %}
 <md-dialog id="lot-result-table" ng-controller="lotResultTableController as lotResultTblCtl"
-           ng-hide="!lotResultTblCtl.lots || lotResultTblCtl.hideLotResultTable" ng-cloak>
+           ng-show="lotResultTblCtl.lots" ng-cloak>
 
     <md-toolbar>
         <div class="md-toolbar-tools">
