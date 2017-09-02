@@ -7,7 +7,7 @@ angular.module('demoApp.home')
     function lotResultTableController ($rootScope) {
         var vm = this;
 
-        vm.hideLotResultTable = true;
+        var lotsTemp = [];
 
         vm.close = close;
 
@@ -20,7 +20,8 @@ angular.module('demoApp.home')
         }
 
         function close () {
-            vm.hideLotResultTable = true;
+            lotsTemp = angular.copy(vm.lots);
+            vm.lots = [];
         }
 
     }
