@@ -14,12 +14,6 @@ angular.module('demoApp.home')
         };
 
         Restangular.extendModel('boundaries', function (model) {
-
-            model.getRadius = function (boundaryId) {
-                return model
-                    .one('boundaries', boundaryId);
-            };
-
             return model;
         });
 

@@ -2,10 +2,20 @@
     'use strict';
 
     angular.module('demoApp')
-        .controller('mainController', ['$rootScope', 'APP_NAME', '$mdSidenav', 'userSessionService', mainController]);
+        .controller('mainController', ['$rootScope', '$scope', 'APP_NAME', '$mdSidenav', 'userSessionService', 'drawingServices', 'gmapServices', mainController]);
 
-    function mainController($rootScope, APP_NAME, $mdSidenav, userSessionService) {
+    function mainController($rootScope, $scope, APP_NAME, $mdSidenav, userSessionService, drawingServices, gmapServices) {
         var vm = this;
+
+        var autocomplete,
+            place;
+
+        // drawing tools
+        vm.drawBtn = {
+            save: false,
+            delete: false,
+            cancel: false
+        };
 
         $rootScope.appName = APP_NAME;
 
@@ -42,6 +52,10 @@
         vm.toggleMainMenu = buildToggler('mainMenuSidenav');
         vm.onMenuItemClick = onMenuItemClick;
 
+        vm.stopDrawing = stopDrawing;
+        vm.saveArea = saveArea;
+        vm.deleteSelected = deleteSelected;
+
         initialize();
 
         function initialize() {
@@ -57,6 +71,47 @@
 
             $rootScope.$on('modal-closed', function () {
                 $rootScope.hasOpenedModal = false;
+            });
+
+            $rootScope.$on('start-drawing', function (e, params) {
+                var strokeColor = params && params.strokeColor ? params.strokeColor : '#1abc9c';
+                startDrawing(strokeColor);
+            });
+
+            $rootScope.$on('edit-drawing-polygon', function (e, params) {
+                // Show Cancel Map button
+                vm.drawBtn.cancel = true;
+                vm.drawBtn.save = true;
+            });
+
+            $rootScope.$on('end-drawing', function () {
+                stopDrawing();
+            });
+
+            $rootScope.$on('overlay-complete', function () {
+                $scope.$apply(function () {
+                    vm.drawBtn.save = true;
+                    vm.drawBtn.delete = true;
+                });
+            });
+
+            /* Address Search */
+            autocomplete = gmapServices.initializeAutocomplete('address-search-input');
+
+            autocomplete.addListener('place_changed', function(){
+                place = autocomplete.getPlace();
+
+                if (!place.geometry) {
+                    alert("Autocomplete's returned place contains no geometry");
+                    return;
+                }
+
+                if (place.geometry.viewport) {
+                    gmapServices.map.fitBounds(place.geometry.viewport);
+                } else {
+                    gmapServices.setZoomIfGreater(17);
+                    gmapServices.map.panTo(place.geometry.location);
+                }
             });
         }
 
@@ -84,5 +139,57 @@
                 userSessionService.userLogout();
             }
         }
+
+        /* Drawing Functions */
+
+        function startDrawing(strokeColor) {
+            drawingServices.startDrawingMode(strokeColor);
+            // Show Cancel Map button
+            vm.drawBtn.cancel = true;
+        }
+
+
+        /* Drawing Functions */
+        function saveArea() {
+            if (drawingServices.drawPolygon) {
+                $rootScope.$broadcast('save-drawing');
+                for (var key in vm.drawBtn) vm.drawBtn[key] = false;
+                return;
+            }
+
+            if (!drawingServices.overlay) {
+                console.log('Cannot proceed. No Overlay Drawn.')
+                return;
+            }
+
+            var area = drawingServices.overlayDataArray;
+            $rootScope.$broadcast('save-area', {area: area});
+            vm.stopDrawing();
+        }
+
+        function deleteSelected() {
+            if (drawingServices.overlay) {
+                drawingServices.clearOverlay();
+                vm.drawBtn.save = false;
+                vm.drawBtn.delete = false;
+            }
+
+            $rootScope.$broadcast('delete-selected');
+        }
+
+        function stopDrawing() {
+            if (drawingServices.drawPolygon) gmapServices.setPolygonEditable(drawingServices.drawPolygon, false);
+
+            $rootScope.$emit('terminate-drawing');
+
+            drawingServices.stopDrawingMode();
+
+            //projectAreaDrawingServices.stopDrawing();
+
+            // hide draw buttons
+            for (var key in vm.drawBtn) vm.drawBtn[key] = false;
+        }
+
+
     }
 }());

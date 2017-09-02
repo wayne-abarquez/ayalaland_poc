@@ -1,0 +1,42 @@
+#address-search-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  padding: 5px 0px 0 5px;
+  height: auto;
+  width: 25%;
+
+  md-card-content {
+    padding: 0 5px;
+
+    md-input-container {
+      margin: 0px;
+      height: 40px;
+      padding-right: 5px;
+
+      input {
+        height: 30px;
+        border: none;
+      }
+    }
+
+    button {
+      margin-top: 5px;
+    }
+  }
+
+  @media screen and (max-width: 456px) {
+    width: 95%;
+    padding: 8px 8px 0 8px;
+
+    md-input-container {
+      height: 40px;
+
+      input {
+        height: 40px;
+      }
+    }
+  }
+
+}

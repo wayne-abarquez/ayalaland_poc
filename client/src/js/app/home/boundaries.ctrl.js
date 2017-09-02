@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', '$timeout', 'lotService', boundariesController]);
+        .controller('boundariesController', ['Boundaries', 'boundariesService', 'gmapServices', '$timeout', boundariesController]);
 
-    function boundariesController(Boundaries, boundariesService, gmapServices, $timeout, lotService) {
+    function boundariesController(Boundaries, boundariesService, gmapServices, $timeout) {
         var vm = this;
 
         var polygon,
@@ -26,7 +26,6 @@
                     console.log('failed to load: ', error);
                 });
 
-            lotService.loadLots();
         }
 
         function showBoundary(brgy) {

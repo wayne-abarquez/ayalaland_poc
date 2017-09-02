@@ -2,38 +2,21 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .controller('indexController', ['$mdSidenav', indexController]);
+    .controller('indexController', ['lotService', 'modalServices', indexController]);
 
-    function indexController ($mdSidenav) {
+    function indexController (lotService, modalServices) {
         var vm = this;
 
-        vm.initialize = initialize;
-        vm.toggleLayerPanel = buildToggler('layerPanel');
-        vm.toggleSearchPanel = buildToggler('searchPanel');
-        vm.closeSideNav = closeSideNav;
+        vm.createLotOffer = createLotOffer;
 
-        vm.lastSideNavOpenId = '';
-
-        vm.initialize();
+        initialize();
 
         function initialize() {
-            console.log('initialize called from index controller');
+            lotService.loadLots();
         }
 
-        function buildToggler(navID) {
-            return function () {
-                if (vm.lastSideNavOpenId && vm.lastSideNavOpenId !== navID) {
-                    closeSideNav(vm.lastSideNavOpenId);
-                }
-
-                $mdSidenav(navID).toggle();
-
-                vm.lastSideNavOpenId = navID;
-            }
-        }
-
-        function closeSideNav(navID) {
-            $mdSidenav(navID).close();
+        function createLotOffer (event) {
+            modalServices.showCreateLotOfferForm(event);
         }
     }
 }());

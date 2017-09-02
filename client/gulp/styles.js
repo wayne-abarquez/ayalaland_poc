@@ -18,7 +18,8 @@ gulp.task('vendor-css', function () {
    return gulp.src([
        paths.bower + 'angular-material/angular-material.min.css',
        paths.bower + 'sweetalert/dist/sweetalert.css',
-       paths.bower + 'angular-material-data-table/dist/md-data-table.min.css'
+       paths.bower + 'angular-material-data-table/dist/md-data-table.min.css',
+       paths.bower + 'smDateTimeRangePicker/src/picker.css'
    ])
        .pipe($.concatCss('vendor.min.css'))
        .pipe($.csso())

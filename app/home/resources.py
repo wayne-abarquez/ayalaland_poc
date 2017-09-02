@@ -1,8 +1,9 @@
 from flask.ext.restful import Resource, marshal_with, marshal, abort
-from .fields import boundary_fields, boundary_complete_fields, lot_fields
+from .fields import boundary_fields, boundary_complete_fields, lot_fields, lot_offer_create_fields
 from app import rest_api
-from app.fields import success_with_result_fields
-from app.home.services import get_boundaries, get_boundary_detail, get_places_by_boundary, get_lots, upload_shape_file
+# from app.fields import success_with_result_fields
+from app.home.services import get_boundaries, get_boundaries_by_type, get_boundary_detail, get_places_by_boundary, get_lots, upload_shape_file, \
+    create_lot_offer
 from app.resources import UploadResource
 from flask import request
 import logging
@@ -19,9 +20,12 @@ class BoundaryResource(Resource):
     def get(self):
         """ GET /boundaries """
 
-        parent_id = request.args['parent_id'] if 'parent_id' in request.args else None
+        if 'parent_id' in request.args:
+            return get_boundaries(request.args['parent_id'])
+        elif 'type_id' in request.args:
+            return get_boundaries_by_type(request.args['type_id'])
 
-        return get_boundaries(parent_id)
+        return get_boundaries()
 
 
 class BoundaryDetailResource(Resource):
@@ -54,6 +58,17 @@ class LotResource(Resource):
     def get(self):
         """ GET /lots """
         return get_lots()
+
+    def post(self):
+        form_data = request.json
+        log.debug('Create Lot Offer request: {0}'.format(form_data))
+        # form = AddBranchForm.from_json(form_data)
+        # if form.validate():
+        obj = create_lot_offer(form_data)
+        result = dict(status=200, message='OK', lot=obj)
+        return marshal(result, lot_offer_create_fields)
+        # else:
+        #     abort(400, message="Invalid Parameters", errors=form.errors)
 
 
 class LotUploadResource(UploadResource):

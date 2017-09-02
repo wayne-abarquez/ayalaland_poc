@@ -11,6 +11,8 @@ angular.module('demoApp.home')
 
         service.loadBoundaries = loadBoundaries;
         service.uploadShapeFile = uploadShapeFile;
+        service.loadBoundariesByType = loadBoundariesByType;
+        service.getBoundaryDetails = getBoundaryDetails;
 
         function loadBoundaries (parentid) {
             var dfd = $q.defer();
@@ -19,7 +21,9 @@ angular.module('demoApp.home')
 
             //Boundaries.getList({parent_id: pid})
             Boundaries.customGET(null, {parent_id: pid})
-                .then(function (list) {
+                .then(function (response) {
+                    var list = response.plain();
+
                     service.boundaries = list.map(function (item) {
                         item['isExpanded'] = false;
                         return item;
@@ -53,6 +57,34 @@ angular.module('demoApp.home')
 
                 });
             }
+
+            return dfd.promise;
+        }
+
+        function loadBoundariesByType (typeid) {
+            var dfd = $q.defer();
+
+            Boundaries.customGET(null, {type_id: typeid})
+                .then(function (response) {
+                    dfd.resolve(response.plain());
+                }, function (error) {
+                    console.log('failed to load: ', error);
+                    dfd.reject(error);
+                });
+
+            return dfd.promise;
+        }
+
+        function getBoundaryDetails (boundaryId) {
+            var dfd = $q.defer();
+
+             Boundaries.get(boundaryId)
+                .then(function (response) {
+                    dfd.resolve(response.plain());
+                }, function (error) {
+                    console.log('failed to load: ', error);
+                    dfd.reject(error);
+                });
 
             return dfd.promise;
         }

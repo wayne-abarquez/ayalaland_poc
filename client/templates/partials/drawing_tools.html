@@ -1,0 +1,32 @@
+{% raw %}
+<section id="drawing-tools">
+
+    <!-- Save -->
+    <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+               ng-show="mainCtl.drawBtn.save"
+               ng-click="mainCtl.saveArea()"
+               ng-cloak>
+        <md-tooltip md-direction="top">Save</md-tooltip>
+        <md-icon>save</md-icon>
+    </md-button>
+
+    <!-- Delete Selected -->
+    <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+               ng-show="mainCtl.drawBtn.delete"
+               ng-click="mainCtl.deleteSelected()"
+               ng-cloak>
+        <md-tooltip md-direction="top">Delete Selected</md-tooltip>
+        <md-icon>delete</md-icon>
+    </md-button>
+
+    <!-- Cancel Drawing Button -->
+    <md-button id="admin-cancel-drawing-btn"
+               class="square-icon-button md-raised"
+               ng-click="mainCtl.stopDrawing()"
+               ng-show="mainCtl.drawBtn.cancel">
+        <md-tooltip md-direction="top">Cancel Drawing</md-tooltip>
+        <md-icon>clear</md-icon>
+    </md-button>
+
+</section>
+{% endraw %}

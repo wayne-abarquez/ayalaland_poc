@@ -2,22 +2,27 @@
 
 {% block content %}
     {% raw %}
+    <div id="index-container" layout="row" ng-controller="indexController as indexCtl" flex>
+        <!-- map canvas dimensions will be computed during map initialization -->
+        <div ng-controller="gmapController as gmapCtl" id="map-canvas" flex-gt-xs="80" flex="100"></div>
 
-    <!--<div id="index-container" layout="row" ng-controller="indexController as indexCtl">-->
-            <!-- map canvas dimensions will be computed during map initialization -->
-            <div ng-controller="gmapController as gmapCtl" id="map-canvas" flex-gt-xs="80" flex="100"></div>
+        {% endraw %}
+                <!-- Map Drawing Panel -->
+                {% include "partials/_boundaries_panel.html" %}
+        {% raw %}
 
+        <md-button class="md-fab md-primary"
+                   id="create-lot-offer-btn"
+                   ng-click="indexCtl.createLotOffer($event)">
+            <md-tooltip md-direction="left">Create lot offer</md-tooltip>
+            <md-icon>add</md-icon>
+        </md-button>
+
+        <div id="powered-by" layout="row">
+            <a href="http://navagis.com" target="_blank">
+                <img src="/resources/images/navagis_powered.png">
+            </a>
+        </div>
     {% endraw %}
-            <!-- Map Drawing Panel -->
-            {% include "partials/_boundaries_panel.html" %}
-    {% raw %}
-
-    <div id="powered-by" layout="row">
-        <a href="http://navagis.com" target="_blank">
-            <img src="/resources/images/navagis_powered.png">
-        </a>
     </div>
-    <!--</div>-->
-    {% endraw %}
-
 {% endblock %}

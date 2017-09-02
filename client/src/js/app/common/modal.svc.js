@@ -7,15 +7,12 @@
     function modalServices($q, $mdDialog, $mdMedia, $rootScope) {
         var service = {};
 
-        //var customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        var customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
-        //var addProjectModal,
-        //    projectDetailModal
-        //;
+        var createLotOfferModal;
 
         /* Service Functions */
-        //service.showAddProject = showAddProject;
-        //service.showProjectDetail = showProjectDetail;
+        service.showCreateLotOfferForm = showCreateLotOfferForm;
         service.hideResolveModal = hideResolveModal;
         service.closeModal = closeModal;
 
@@ -39,46 +36,31 @@
             return dfd.promise;
         }
 
-        //function showAddProject(ev, _position) {
-        //    var opts = {
-        //        controller: 'addProjectController',
-        //        controllerAs: 'vm',
-        //        templateUrl: '/partials/modals/_add-project.tmpl.html',
-        //        parent: angular.element(document.querySelector('#admin-container')),
-        //        targetEvent: ev,
-        //        hasBackdrop: false,
-        //        locals: {position: _position},
-        //        fullscreen: $mdMedia('xs'),
-        //        onComplete: function (scope, element, options) {
-        //            $('.md-scroll-mask').css('z-index', '-1');
-        //        }
-        //    };
-        //
-        //    return showModal(addProjectModal, opts);
-        //}
-        //
-        //function showProjectDetail(proj) {
-        //    var opts = {
-        //        controller: 'projectDetailsController',
-        //        controllerAs: 'vm',
-        //        templateUrl: '/partials/modals/_view-project.tmpl.html',
-        //        parent: angular.element(document.querySelector('#admin-container')),
-        //        hasBackdrop: false,
-        //        locals: {project: proj},
-        //        fullscreen: $mdMedia('xs'),
-        //        onComplete: function (scope, element, options) {
-        //            $('.md-scroll-mask').css('z-index', '-1');
-        //        }
-        //    };
-        //    return showModal(projectDetailModal, opts);
-        //}
+        function showCreateLotOfferForm(ev) {
+            var opts = {
+                controller: 'createLotOfferFormController',
+                controllerAs: 'vm',
+                templateUrl: '/partials/modals/create_lot_offer_form.html',
+                parent: angular.element(document.querySelector('#index-container')),
+                targetEvent: ev,
+                hasBackdrop: false,
+                fullscreen: customFullscreen,
+                onComplete: function (scope, element, options) {
+                    $('.md-scroll-mask').css('z-index', '-1');
+                }
+            };
+
+            return showModal(createLotOfferModal, opts);
+        }
 
         function hideResolveModal(response) {
+            $rootScope.$broadcast("modal-closed");
             $mdDialog.hide(response);
         }
 
         // Close Modal
         function closeModal() {
+            $rootScope.$broadcast("modal-closed");
             $mdDialog.cancel();
         }
 

@@ -40,6 +40,12 @@ lot_fields = dict(
     technical_status=fields.String
 )
 
+lot_offer_create_fields = dict(
+    status=fields.String,
+    message=fields.String,
+    lot=fields.Nested(lot_fields, allow_null=False)
+)
+
 boundary_complete_fields = copy(boundary_fields)
 boundary_complete_fields['type'] = fields.Nested(boundary_type_fields)
 boundary_complete_fields['geometry'] = PolygonToLatLng(attribute='geometry')

@@ -14,6 +14,7 @@ from werkzeug import secure_filename
 from shapely.geometry import shape
 from app.utils.forms_helper import parse_area
 
+
 log = logging.getLogger(__name__)
 
 
@@ -22,6 +23,10 @@ def get_boundaries(parentid=None):
         return BoundaryTable.query.filter(BoundaryTable.typeid == 3).order_by(BoundaryTable.id).all()
     else:
         return BoundaryTable.query.filter(BoundaryTable.parentid == parentid).order_by(BoundaryTable.id).all()
+
+
+def get_boundaries_by_type(typeid):
+    return BoundaryTable.query.filter(BoundaryTable.typeid == typeid).order_by(BoundaryTable.id).all()
 
 
 def get_boundary_detail(boundary_id):
@@ -114,3 +119,21 @@ def upload_shape_file(file):
         db.session.add(lot)
         db.session.commit()
 
+
+def create_lot_offer(data):
+    # Prepare Data
+    lot = Lots.from_dict(data)
+    lot.geom = parse_area(data['area'])
+
+    if 'city' in data:
+        lot.boundaryid = data['city']
+    elif 'province' in data:
+        lot.boundaryid = data['province']
+    elif 'region' in data:
+        lot.boundaryid = data['region']
+
+    # Persist
+    db.session.add(lot)
+    db.session.commit()
+
+    return lot

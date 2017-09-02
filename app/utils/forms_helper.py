@@ -11,7 +11,7 @@ def parse_coordinates(coordinates):
         return dumps(point)
 
 
-def parse_area(area, isshape):
+def parse_area(area, isshape=False):
     if area is None:
         return area
 

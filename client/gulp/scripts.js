@@ -15,8 +15,8 @@ gulp.task('vendor-scripts', function () {
         paths.bower + 'restangular/dist/restangular.min.js',
         paths.bower + 'angular-local-storage/dist/angular-local-storage.min.js',
         paths.bower + 'angular-animate/angular-animate.min.js',
-            paths.bower + 'angular-messages/angular-messages.min.js',
-            paths.bower + 'angular-aria/angular-aria.min.js',
+        paths.bower + 'angular-messages/angular-messages.min.js',
+        paths.bower + 'angular-aria/angular-aria.min.js',
         paths.bower + 'angular-cookies/angular-cookies.min.js',
         paths.bower + 'angular-sanitize/angular-sanitize.min.js',
         paths.bower + 'angular-material/angular-material.js',
@@ -26,7 +26,8 @@ gulp.task('vendor-scripts', function () {
         paths.bower + 'ng-file-upload/ng-file-upload.min.js',
         paths.bower + 'angular-material-data-table/dist/md-data-table.min.js',
         paths.bower + 'moment/min/moment.min.js',
-        paths.bower + 'angular-moment/angular-moment.min.js'
+        paths.bower + 'angular-moment/angular-moment.min.js',
+        paths.bower + 'smDateTimeRangePicker/src/picker.js',
     ])
         .pipe($.plumber())
         .pipe($.concat('vendor.min.js'))
@@ -50,6 +51,7 @@ gulp.task('app-scripts', function () {
         .pipe($.concat('app.min.js'))
         .pipe($.if(args.production, $.uglify()))
         .pipe($.if(args.production, $.jsObfuscator()))
+        .pipe($.chmod(774))
         .pipe(gulp.dest(paths.destJs))
         .pipe($.size());
 });
@@ -61,6 +63,7 @@ gulp.task('login-scripts', function () {
         .pipe($.ngAnnotate())
         .pipe($.concat('login.min.js'))
         .pipe($.uglify({mangle: true}).on('error', $.util.log))
+        .pipe($.chmod(774))
         .pipe(gulp.dest(paths.destJs))
         .pipe($.size());
 });

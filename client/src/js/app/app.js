@@ -13,6 +13,7 @@
             'vAccordion',
             'md.data.table',
             'angularMoment',
+            'smDateTimeRangePicker',
             'demoApp.home'
         ])
 

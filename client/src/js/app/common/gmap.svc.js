@@ -93,6 +93,7 @@
         service.resetPolygonFill = resetPolygonFill;
         service.fillPolygon = fillPolygon;
         service.panToPolygon = panToPolygon;
+        service.fitToBoundsByLatLngArray = fitToBoundsByLatLngArray;
         service.createPolyline = createPolyline;
         service.createDashedPolyline = createDashedPolyline;
         service.updatePolyline = updatePolyline;
@@ -121,6 +122,14 @@
         service.createMapIconLabel = createMapIconLabel;
         service.setlatLngArrayToLatLngObjects = setlatLngArrayToLatLngObjects;
         service.fitToBoundsByPolygon = fitToBoundsByPolygon;
+        service.setPolygonEditable = setPolygonEditable;
+        service.getLatLngArrayLiteralPolygon = getLatLngArrayLiteralPolygon;
+        service.getPolygonCenter = getPolygonCenter
+
+        service.createDrawingManager = createDrawingManager;
+        service.changeDrawingManagerStrokeColor = changeDrawingManagerStrokeColor;
+        service.showDrawingManager = showDrawingManager;
+        service.hideDrawingManager = hideDrawingManager;
 
         function apiAvailable() {
             return typeof window.google === 'object';
@@ -404,6 +413,16 @@
             }
         }
 
+        function getPolygonCenter (polygon) {
+            var bounds = new google.maps.LatLngBounds();
+
+            polygon.getPath().forEach(function(latlng){
+                bounds.extend(latlng);
+            });
+
+            return bounds.getCenter().toJSON();
+        }
+
         function setMapCenter(coordinates) {
             if (service.map) {
                 service.map.setCenter(coordinates);
@@ -614,7 +633,7 @@
 
             var polygonOptions = {
                 path: path,
-                clickable: false,
+                //clickable: false,
                 draggable: false,
                 editable: false,
                 fillColor: strokeColor,
@@ -670,6 +689,18 @@
 
             service.map.panToBounds(bounds);
             console.log('panToPolygon: ', polygon);
+        }
+
+        function fitToBoundsByLatLngArray (arrayLatLng) {
+            var bounds = new google.maps.LatLngBounds();
+
+            arrayLatLng.forEach(function (latlng) {
+                bounds.extend(latlng);
+            });
+
+            service.map.fitBounds(bounds);
+
+            return bounds;
         }
 
         function createPolyline(path, lineColor) {
@@ -765,7 +796,9 @@
         }
 
         function reverseGeocode(latLng) {
-            if (!service.geocoder) return;
+            if (!service.geocoder) {
+                service.geocoder = new google.maps.Geocoder();
+            }
 
             var dfd = $q.defer();
 
@@ -900,10 +933,13 @@
         function initializeAutocomplete(elementId) {
             var input = document.getElementById(elementId);
             var autocomplete = new google.maps.places.Autocomplete(input, {
-                types: ["geocode"]
+                types: ["geocode"],
+                componentRestrictions: {
+                    country: 'PH'
+                }
             });
 
-            autocomplete.bindTo('bounds', service.map);
+            //autocomplete.bindTo('bounds', service.map);
 
             return autocomplete;
         }
@@ -958,6 +994,119 @@
             });
         }
 
+        function setPolygonEditable(polygon, bool) {
+            if (!service.map || !polygon) return;
+
+            polygon.setOptions({draggable: bool, editable: bool});
+        }
+
+        function getLatLngArrayLiteralPolygon (polygon) {
+            var result = [];
+
+            polygon.getPath().forEach(function(latlng){
+                result.push(latlng.toJSON());
+            });
+
+            console.log('getLatLngArrayLiteralPolygon result: ',result);
+
+            return result;
+        }
+
+        /* Drawing functions */
+
+        function createDrawingManager(_color, fillOpac) {
+            if (!service.apiAvailable()) return null;
+
+            var strokeColor = _color || '#0000ff';
+
+            var drawingManager = new google.maps.drawing.DrawingManager({
+                drawingMode: null,
+                drawingControl: true,
+                drawingControlOptions: {
+                    position: google.maps.ControlPosition.TOP_CENTER,
+                    drawingModes: [
+                        google.maps.drawing.OverlayType.POLYGON,
+                        google.maps.drawing.OverlayType.RECTANGLE
+                    ]
+                },
+                polygonOptions: {
+                    clickable: true,
+                    draggable: true,
+                    editable: true,
+                    geodesic: true,
+                    //fillColor: '#ffffff',
+                    fillColor: strokeColor,
+                    fillOpacity: fillOpac || 0,
+                    strokeColor: strokeColor,
+                    strokeOpacity: 0.9,
+                    strokeWeight: 2,
+                    zIndex: 1
+                },
+                rectangleOptions: {
+                    clickable: true,
+                    draggable: true,
+                    editable: true,
+                    //fillColor: '#ffffff',
+                    fillColor: strokeColor,
+                    fillOpacity: fillOpac || 0,
+                    strokeColor: strokeColor,
+                    strokeOpacity: 0.9,
+                    strokeWeight: 2,
+                    zIndex: 1
+                }
+            });
+            service.drawingManager = drawingManager;
+            return drawingManager;
+        }
+
+        function changeDrawingManagerStrokeColor(color, fillOpac) {
+            if (!service.apiAvailable() && !service.drawingManager) return null;
+
+            var strokeColor = color || '#0000ff';
+
+            service.drawingManager.setOptions({
+                polygonOptions: {
+                    clickable: true,
+                    draggable: true,
+                    editable: true,
+                    geodesic: true,
+                    fillColor: strokeColor,
+                    fillOpacity: fillOpac || 0,
+                    strokeColor: strokeColor,
+                    strokeOpacity: 0.9,
+                    strokeWeight: 2,
+                    zIndex: 1
+                },
+                rectangleOptions: {
+                    clickable: true,
+                    draggable: true,
+                    editable: true,
+                    fillColor: strokeColor,
+                    fillOpacity: fillOpac || 0,
+                    strokeColor: strokeColor,
+                    strokeOpacity: 0.9,
+                    strokeWeight: 2,
+                    zIndex: 1
+                }
+            });
+
+        }
+
+        function showDrawingManager(drawingManager) {
+            if (drawingManager) {
+                if (!drawingManager.getMap()) {
+                    drawingManager.setMap(service.map);
+                }
+                service.setEnableDrawingManager(drawingManager, true);
+            }
+        }
+
+        function hideDrawingManager(drawingManager) {
+            if (drawingManager) {
+                drawingManager.setMap(null);
+                service.setEnableDrawingManager(drawingManager, false);
+            }
+        }
         return service;
     }
 }());

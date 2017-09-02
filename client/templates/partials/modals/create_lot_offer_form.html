@@ -1,0 +1,87 @@
+<md-dialog class="stick-right-modal md-whiteframe-3dp" flex="100">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Create Lot Offer</h2>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <form name="vm.form">
+            <md-content class="main-form" layout-padding>
+
+                <md-select ng-model="vm.newLot.region" placeholder="Region" ng-change="vm.regionChanged(vm.newLot.region)">
+                    <md-option ng-value="region.id" ng-repeat="region in vm.regions">{{ region.name }}</md-option>
+                </md-select>
+
+                <md-select ng-model="vm.newLot.province" placeholder="Province"
+                           ng-change="vm.provinceChanged(vm.newLot.province)"
+                           ng-if="vm.provinces.length">
+                    <md-option ng-value="province.id" ng-repeat="province in vm.provinces">{{ province.name }}</md-option>
+                </md-select>
+
+                <md-select ng-model="vm.newLot.city" placeholder="City|Municipality"
+                           ng-change="vm.cityChanged(vm.newLot.city)"
+                           ng-if="vm.cities.length">
+                    <md-option ng-value="city.id"
+                               ng-repeat="city in vm.cities">{{ city.name }}</md-option>
+                </md-select>
+
+                <fieldset>
+                    <legend>Owner Details</legend>
+                    <div layout="column">
+                        <md-input-container class="md-block">
+                            <label>Lastname</label>
+                            <input ng-model="vm.newLot.owner_lastname">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Firstname</label>
+                            <input ng-model="vm.newLot.owner_firstname">
+                        </md-input-container>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Lot Details</legend>
+                    <div layout="column">
+
+                        <md-button class="md-raised" layout-margin ng-click="vm.drawBorder()" flex>
+                            <md-icon>format_shapes</md-icon>
+                            Draw Border
+                        </md-button>
+
+                        <sm-date-time-picker
+                                fname="field"
+                                label="Date Offered"
+                                ng-model="vm.newLot.date_offered"
+                                flex="50"
+                                flex-sm="100"
+                                flex-xs="100"
+                                is-required="false"
+                                format="YYYY-MM-DD"
+                                mode="date"
+                                max-date="vm.maxDate"
+                                week-start-day="Monday">
+                        </sm-date-time-picker>
+
+                        <md-input-container class="md-block">
+                            <label>Actual address</label>
+                            <textarea ng-model="vm.newLot.complete_address" md-maxlength="150" rows="5"
+                                      md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </fieldset>
+
+            </md-content>
+        </form>
+
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+        <md-button class="md-raised" ng-click="vm.close()">Cancel</md-button>
+    </md-dialog-actions>
+
+</md-dialog>

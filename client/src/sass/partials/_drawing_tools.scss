@@ -1,0 +1,18 @@
+#drawing-tools {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: calc(3% + 10px);
+  //left: 0;
+  left: -10%;
+  z-index: 2;
+  text-align: center;
+
+  button {
+    margin: 2px;
+  }
+
+  .screenshot-actions-panel {
+    display: inline-block;
+  }
+}
