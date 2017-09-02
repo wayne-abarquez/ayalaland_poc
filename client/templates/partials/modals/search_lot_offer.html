@@ -1,0 +1,33 @@
+<md-dialog id="search-lot-offer-modal" class="md-whiteframe-3dp" flex>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <p>Search Lot Offer</p>
+            <span flex></span>
+            <md-button><md-icon>close</md-icon></md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <md-content layout-padding>
+
+            <md-select ng-model="vm.filter.region" placeholder="Region" ng-change="vm.regionChanged(vm.filter.region)">
+                <md-option ng-value="region.id" ng-repeat="region in vm.regions">{{ region.name }}</md-option>
+            </md-select>
+
+            <md-select ng-model="vm.filter.province" placeholder="Province"
+                       ng-change="vm.provinceChanged(vm.filter.province)"
+                       ng-if="vm.provinces.length">
+                <md-option ng-value="province.id" ng-repeat="province in vm.provinces">{{ province.name }}</md-option>
+            </md-select>
+
+            <md-select ng-model="vm.filter.city" placeholder="City|Municipality"
+                       ng-change="vm.cityChanged(vm.filter.city)"
+                       ng-if="vm.cities.length">
+                <md-option ng-value="city.id"
+                           ng-repeat="city in vm.cities">{{ city.name }}</md-option>
+            </md-select>
+
+        </md-content>
+    </md-dialog-content>
+</md-dialog>

@@ -27,6 +27,11 @@
   }
 }
 
+.full-width-dialog-container {
+  flex: 1 0 100% !important;
+  max-width: 100% !important;
+}
+
 .error-container {
   > div {
     color: rgb(221, 44, 0);

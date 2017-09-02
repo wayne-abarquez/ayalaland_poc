@@ -14,6 +14,7 @@ angular.module('demoApp.home')
         service.loadLots = loadLots;
         service.addLot = addLot;
         service.saveLot = saveLot;
+        service.filterLot = filterLot;
 
         function loadLots () {
             Lot.getList()
@@ -78,6 +79,21 @@ angular.module('demoApp.home')
                         dfd.reject(error);
                     });
             }
+
+            return dfd.promise;
+        }
+
+        function filterLot (filterData) {
+            var dfd = $q.defer();
+
+            Lot.getList(filterData)
+                .then(function(response){
+                    var resp = response.plain();
+                    console.log('filterLot result: ', resp);
+                    dfd.resolve(resp);
+                }, function (error){
+                    dfd.reject(error);
+                });
 
             return dfd.promise;
         }

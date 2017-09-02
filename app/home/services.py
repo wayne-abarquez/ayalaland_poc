@@ -14,7 +14,6 @@ from werkzeug import secure_filename
 from shapely.geometry import shape
 from app.utils.forms_helper import parse_area
 
-
 log = logging.getLogger(__name__)
 
 
@@ -137,3 +136,27 @@ def create_lot_offer(data):
     db.session.commit()
 
     return lot
+
+
+def filter_lots(filter_data):
+    boundaryid = None
+
+    query = Lots.query
+
+    if 'city' in filter_data:
+        boundaryid = filter_data['city']
+    elif 'province' in filter_data:
+        boundaryid = filter_data['city']
+    elif 'region' in filter_data:
+        boundaryid = filter_data['region']
+
+    if boundaryid:
+        query = query.filter(Lots.boundaryid == boundaryid)
+
+    if 'date_start' in filter_data and 'date_end' in filter_data:
+        query = query.filter(Lots.date_offered.between(filter_data['date_start'], filter_data['date_end']))
+
+    if 'sbu' in filter_data:
+        query = query.filter(Lots.sbu == filter_data['sbu'])
+
+    return query.all()
