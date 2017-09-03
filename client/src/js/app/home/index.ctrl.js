@@ -2,9 +2,9 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .controller('indexController', ['lotService', 'modalServices', indexController]);
+    .controller('indexController', ['gmapServices', 'lotService', 'modalServices', indexController]);
 
-    function indexController (lotService, modalServices) {
+    function indexController (gmapServices, lotService, modalServices) {
         var vm = this;
 
         vm.createLotOffer = createLotOffer;
@@ -13,7 +13,19 @@ angular.module('demoApp.home')
         initialize();
 
         function initialize() {
+            gmapServices.createMap('map-canvas');
+
             lotService.loadLots();
+
+            $(document).on('click', '#show-lot-details-btn', function (){
+               var lotId = $(this).data('lot-id');
+               lotService.showLotDetails(lotId);
+            });
+
+            $(document).on('click', '#report-lot-issue-btn', function (){
+                var lotId = $(this).data('lot-id');
+                lotService.reportIssue(lotId);
+            });
         }
 
         function createLotOffer (event) {

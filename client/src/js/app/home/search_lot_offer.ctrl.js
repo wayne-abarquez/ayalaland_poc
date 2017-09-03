@@ -2,9 +2,9 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .controller('searchLotOfferController', ['$rootScope', '$mdDateRangePicker', 'modalServices', 'boundariesService', 'gmapServices', 'SBU_SELECTION', 'lotService', searchLotOfferController]);
+    .controller('searchLotOfferController', ['$rootScope', '$mdDateRangePicker', 'modalServices', 'boundariesService', 'gmapServices', 'SBU_SELECTION', 'lotService', 'alertServices', searchLotOfferController]);
 
-    function searchLotOfferController ($rootScope, $mdDateRangePicker, modalServices, boundariesService, gmapServices, SBU_SELECTION, lotService) {
+    function searchLotOfferController ($rootScope, $mdDateRangePicker, modalServices, boundariesService, gmapServices, SBU_SELECTION, lotService, alertServices) {
         var vm = this;
 
         var bounds;
@@ -96,21 +96,31 @@ angular.module('demoApp.home')
             vm.dateRangeFormatted += ' - ' + momentDateEnd.format('MMM D, YYYY');
         }
 
+        function clearDateRange () {
+            vm.dateRangeFormatted = '';
+            delete vm.filter.date_start;
+            delete vm.filter.date_end;
+        }
+
         function pickDateRange($event, showTemplate) {
             vm.selectedRange.showTemplate = showTemplate;
             $mdDateRangePicker.show({
                 targetEvent: $event,
                 model: vm.selectedRange
             }).then(function (result) {
-                if (result) formatDateRangeResult(result);
+                console.log('pick date result: ',result);
+                if (result.dateStart && result.dateEnd) formatDateRangeResult(result);
+                else clearDateRange();
             })
         }
 
         function search (filterData) {
-            //console.log('search: ',filterData);
+            $rootScope.$broadcast('show-lot-filter-result', {result: []});
+
             lotService.filterLot(filterData)
                 .then(function(lots){
-                    $rootScope.$broadcast('show-lot-filter-result', {result: lots});
+                    if (lots.length === 0) alertServices.showInfo('No lot offers found');
+                    else $rootScope.$broadcast('show-lot-filter-result', {result: lots});
                 });
         }
 

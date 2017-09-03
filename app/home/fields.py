@@ -51,3 +51,5 @@ boundary_complete_fields['type'] = fields.Nested(boundary_type_fields)
 boundary_complete_fields['geometry'] = PolygonToLatLng(attribute='geometry')
 boundary_complete_fields['geometry2'] = PolygonToLatLng(attribute='geometry2')
 
+lot_complete_fields = copy(lot_fields)
+

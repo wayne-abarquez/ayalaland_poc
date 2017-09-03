@@ -3,8 +3,9 @@
 {% block content %}
     {% raw %}
     <div id="index-container" layout="row" ng-controller="indexController as indexCtl" flex>
+
         <!-- map canvas dimensions will be computed during map initialization -->
-        <div ng-controller="gmapController as gmapCtl" id="map-canvas" flex-gt-xs="80" flex="100"></div>
+        <div id="map-canvas" flex-gt-xs="{{ hasOpenedModal ? 100 : 80 }}" flex="100"></div>
 
         {% endraw %}
                 <!-- Map Drawing Panel -->

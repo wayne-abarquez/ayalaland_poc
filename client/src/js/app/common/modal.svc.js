@@ -10,12 +10,14 @@
         var customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
         var createLotOfferModal,
-            searchLotOfferModal;
+            searchLotOfferModal,
+            lotDetailsModal;
 
         /* Service Functions */
         service.showCreateLotOfferForm = showCreateLotOfferForm;
         service.showSearchLotOfferModal = showSearchLotOfferModal;
         service.hideResolveModal = hideResolveModal;
+        service.showLotDetailsModal = showLotDetailsModal;
         service.closeModal = closeModal;
 
         function showModal(modalObj, modalParams) {
@@ -70,6 +72,23 @@
             };
 
             return showModal(searchLotOfferModal, opts);
+        }
+
+        function showLotDetailsModal (lotData) {
+            var opts = {
+                controller: 'lotDetailsModalController',
+                controllerAs: 'vm',
+                templateUrl: '/partials/modals/lot_details.html',
+                parent: angular.element(document.querySelector('#index-container')),
+                locals: {lot: lotData},
+                hasBackdrop: false,
+                fullscreen: customFullscreen,
+                onComplete: function (scope, element, options) {
+                    $('.md-scroll-mask').css('z-index', '-1');
+                }
+            };
+
+            return showModal(lotDetailsModal, opts);
         }
 
         function hideResolveModal(response) {

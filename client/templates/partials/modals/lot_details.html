@@ -1,0 +1,41 @@
+<md-dialog id="lot-details-modal" class="stick-right-modal md-whiteframe-3dp" flex="100">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <p>Lot Details</p>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.close()"><md-icon>close</md-icon></md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <form name="vm.form">
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Basic Info">
+                    <md-content>
+                        <md-table-container>
+                        <table md-table>
+                            <tbody md-body>
+                                <tr ng-repeat="(key, value) in vm.lot">
+                                    <td md-cell>{{ key | underscoreless | uppercase }}</td>
+                                    <td md-cell>{{ value }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </md-table-container>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Additional Info">
+                    <md-content class="md-padding"></md-content>
+                </md-tab>
+                <md-tab label="Landbank">
+                    <md-content class="md-padding"></md-content>
+                </md-tab>
+            </md-tabs>
+        </form>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+    </md-dialog-actions>
+</md-dialog>

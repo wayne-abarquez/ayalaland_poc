@@ -2,6 +2,7 @@ from app.home.models import BoundaryTable, BoundaryType, Lots
 from .exceptions import BoundaryNotFound
 from sqlalchemy import func, select
 from sqlalchemy.sql.expression import join
+from geoalchemy2 import Geography, Geometry
 from app import db
 import shapefile
 import zipfile
@@ -13,6 +14,7 @@ from app import app, db
 from werkzeug import secure_filename
 from shapely.geometry import shape
 from app.utils.forms_helper import parse_area
+from sqlalchemy.sql.expression import cast
 
 log = logging.getLogger(__name__)
 
@@ -88,6 +90,10 @@ def get_lots():
     return Lots.query.all()
 
 
+def get_lot_details (lotid):
+    return Lots.query.get(lotid)
+
+
 def upload_shape_file(file):
     filename = secure_filename(file.filename)
     path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -146,12 +152,13 @@ def filter_lots(filter_data):
     if 'city' in filter_data:
         boundaryid = filter_data['city']
     elif 'province' in filter_data:
-        boundaryid = filter_data['city']
+        boundaryid = filter_data['province']
     elif 'region' in filter_data:
         boundaryid = filter_data['region']
 
-    if boundaryid:
-        query = query.filter(Lots.boundaryid == boundaryid)
+    if boundaryid is not None:
+        subq = db.session.query(BoundaryTable.geometry.label('bounds')).filter(BoundaryTable.id == boundaryid).subquery()
+        query = query.filter(func.ST_Intersects(cast(subq.c.bounds, Geography), cast(Lots.geom, Geography)))
 
     if 'date_start' in filter_data and 'date_end' in filter_data:
         query = query.filter(Lots.date_offered.between(filter_data['date_start'], filter_data['date_end']))

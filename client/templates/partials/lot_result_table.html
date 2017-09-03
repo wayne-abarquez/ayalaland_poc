@@ -1,12 +1,13 @@
 {% raw %}
 <md-dialog id="lot-result-table" ng-controller="lotResultTableController as lotResultTblCtl"
-           ng-show="lotResultTblCtl.lots" ng-cloak>
+           ng-show="lotResultTblCtl.lots.length && !hasOpenedModal"
+           ng-cloak>
 
     <md-toolbar>
         <div class="md-toolbar-tools">
             <span>Lot Result</span>
             <span flex></span>
-            <md-button ng-click="lotResultTblCtl.close()"><md-icon>close</md-icon></md-button>
+            <md-button class="md-icon-button" ng-click="lotResultTblCtl.close()"><md-icon>close</md-icon></md-button>
         </div>
     </md-toolbar>
 
@@ -27,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody md-body>
-                <tr md-row ng-repeat="lot in lotResultTblCtl.lots" data-lot-id="{{lot.id}}">
+                <tr md-row ng-repeat="lot in lotResultTblCtl.lots" data-lot-id="{{lot.id}}" ng-click="lotResultTblCtl.rowOnClick(lot.id)">
                     <td md-cell>{{lot.id}}</td>
                     <td md-cell>{{lot.estate_name}}</td>
                     <td md-cell>{{lot.project_name}}</td>
@@ -37,8 +38,13 @@
                     <td md-cell>{{ lot.legal_status }}</td>
                     <td md-cell>{{ lot.technical_status }}</td>
                     <td md-cell>
-                        <md-button class="md-icon-button" ng-click="null">
+                        <md-button class="md-icon-button" ng-click="lotResultTblCtl.showLotDetails(lot.id)">
+                            <md-tooltip md-direction="top">Show Details</md-tooltip>
                             <md-icon>visibility</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="lotResultTblCtl.reportLotIssue(lot.id)">
+                            <md-tooltip md-direction="top">Report Issue</md-tooltip>
+                            <md-icon>warning</md-icon>
                         </md-button>
                     </td>
                 </tr>
