@@ -1,0 +1,85 @@
+<md-dialog id="report-issue-modal" class="stick-right-modal md-whiteframe-3dp" flex="100">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <p>Report Issue</p>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.close()"><md-icon>close</md-icon></md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content layout-padding>
+
+        <form name="vm.form">
+
+            <fieldset>
+                <legend>Lot Info</legend>
+                    <table md-table>
+                        <tbody md-body>
+                            <tr>
+                                <td>Lot Offer No.</td>
+                                <td>{{ vm.lot.id }}</td>
+                            </tr>
+                            <tr>
+                                <td>Estate Name</td>
+                                <td>{{ vm.lot.estate_name | capitalize}}</td>
+                            </tr>
+                            <tr>
+                                <td>Project Name</td>
+                                <td>{{ vm.lot.project_name | capitalize }}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>{{ vm.lot.complete_address | capitalize }}</td>
+                            </tr>
+                            <tr>
+                                <td>SBU</td>
+                                <td>{{ vm.lot.sbu }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Issue Details</legend>
+
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <textarea ng-model="vm.issue.description" md-maxlength="150" rows="5"
+                              md-select-on-focus></textarea>
+                </md-input-container>
+
+                <md-select ng-model="vm.issue.status" placeholder="{{vm.statusLabel}}">
+                    <md-option ng-value="status"
+                               ng-repeat="status in vm.issueStatusSelection">{{status | capitalize}}</md-option>
+                </md-select>
+
+                <sm-date-time-picker
+                        fname="field"
+                        label="Date Reported"
+                        ng-model="vm.issue.date_reported"
+                        flex="50"
+                        flex-sm="100"
+                        flex-xs="100"
+                        is-required="false"
+                        format="YYYY-MM-DD"
+                        mode="date"
+                        max-date="vm.maxDate"
+                        week-start-day="Monday">
+                </sm-date-time-picker>
+
+                <md-input-container class="md-block">
+                    <label>Action Item</label>
+                    <textarea ng-model="vm.issue.action_item" md-maxlength="150" rows="5"
+                              md-select-on-focus></textarea>
+                </md-input-container>
+
+            </fieldset>
+
+        </form>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-raised md-primary" ng-click="vm.save()">Save</md-button>
+    </md-dialog-actions>
+</md-dialog>

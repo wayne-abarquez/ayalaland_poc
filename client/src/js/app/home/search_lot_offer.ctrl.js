@@ -2,12 +2,14 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .controller('searchLotOfferController', ['$rootScope', '$mdDateRangePicker', 'modalServices', 'boundariesService', 'gmapServices', 'SBU_SELECTION', 'lotService', 'alertServices', searchLotOfferController]);
+    .controller('searchLotOfferController', ['$rootScope', '$mdDateRangePicker', 'modalServices', 'boundariesService', 'gmapServices', 'SBU_SELECTION', 'lotService', 'alertServices', 'userSessionService', searchLotOfferController]);
 
-    function searchLotOfferController ($rootScope, $mdDateRangePicker, modalServices, boundariesService, gmapServices, SBU_SELECTION, lotService, alertServices) {
+    function searchLotOfferController ($rootScope, $mdDateRangePicker, modalServices, boundariesService, gmapServices, SBU_SELECTION, lotService, alertServices, userSessionService) {
         var vm = this;
 
         var bounds;
+
+        vm.lotStatusList = [];
 
         vm.sbuList = SBU_SELECTION;
 
@@ -32,6 +34,7 @@ angular.module('demoApp.home')
         vm.regionChanged = regionChanged;
         vm.provinceChanged = provinceChanged;
         vm.cityChanged = cityChanged;
+        vm.lotStatusChanged = lotStatusChanged;
         vm.close = close;
         vm.pickDateRange = pickDateRange;
 
@@ -44,8 +47,14 @@ angular.module('demoApp.home')
             // load regions typeid = 3
             boundariesService.loadBoundariesByType(3)
                 .then(function (regions) {
-                    vm.regions = angular.copy(regions);
+                    vm.regions = [''].concat(angular.copy(regions));
                 });
+
+            $rootScope.$watch('currentUser', function (user) {
+                if (!user) return;
+
+                vm.lotStatusList = [''].concat(lotService.getLotStatusSelectionByRole(user.role));
+            });
         }
 
         function close () {
@@ -53,30 +62,40 @@ angular.module('demoApp.home')
         }
 
         function regionChanged(regionId) {
+            if (!regionId && vm.filter.hasOwnProperty('region')) delete vm.filter.region;
+
             // fit to bounds
             panToBoundary(regionId);
 
             // load province
             boundariesService.loadBoundaries(regionId)
                 .then(function (provinces) {
-                    vm.provinces = angular.copy(provinces);
+                    vm.provinces = [''].concat(angular.copy(provinces));
                 });
         }
 
         function provinceChanged(provinceId) {
+            if (!provinceId && vm.filter.hasOwnProperty('province')) delete vm.filter.province;
+
             // fit to bounds
             panToBoundary(provinceId);
 
             // load cities
             boundariesService.loadBoundaries(provinceId)
                 .then(function (cities) {
-                    vm.cities = angular.copy(cities);
+                    vm.cities = [''].concat(angular.copy(cities));
                 });
         }
 
         function cityChanged(cityId) {
+            if (!cityId && vm.filter.hasOwnProperty('city')) delete vm.filter.city;
+
             // fit to bounds
             panToBoundary(cityId);
+        }
+
+        function lotStatusChanged(status) {
+            if (!status && vm.filter.hasOwnProperty('lot_status')) delete vm.filter.lot_status;
         }
 
         function panToBoundary(boundaryId) {

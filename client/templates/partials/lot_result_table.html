@@ -42,7 +42,7 @@
                             <md-tooltip md-direction="top">Show Details</md-tooltip>
                             <md-icon>visibility</md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" ng-click="lotResultTblCtl.reportLotIssue(lot.id)">
+                        <md-button class="md-icon-button" ng-click="lotResultTblCtl.reportLotIssue(lot.id)" ng-if="['MDC', 'LEGAL'].indexOf(currentUser.role) > -1  && lot.lot_status == 'DUE DILIGENCE IN PROGRESS'">
                             <md-tooltip md-direction="top">Report Issue</md-tooltip>
                             <md-icon>warning</md-icon>
                         </md-button>

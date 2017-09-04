@@ -2,22 +2,24 @@
     'use strict';
 
     angular.module('demoApp')
-        .factory('modalServices', ['$q', '$mdDialog', '$mdMedia', '$rootScope', modalServices]);
+        .factory('modalServices', ['$q', '$mdDialog', '$mdMedia', '$rootScope', 'Lot', modalServices]);
 
-    function modalServices($q, $mdDialog, $mdMedia, $rootScope) {
+    function modalServices($q, $mdDialog, $mdMedia, $rootScope, Lot) {
         var service = {};
 
         var customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
         var createLotOfferModal,
             searchLotOfferModal,
-            lotDetailsModal;
+            lotDetailsModal,
+            reportIssueModal;
 
         /* Service Functions */
         service.showCreateLotOfferForm = showCreateLotOfferForm;
         service.showSearchLotOfferModal = showSearchLotOfferModal;
         service.hideResolveModal = hideResolveModal;
         service.showLotDetailsModal = showLotDetailsModal;
+        service.showReportIssueModal = showReportIssueModal;
         service.closeModal = closeModal;
 
         function showModal(modalObj, modalParams) {
@@ -89,6 +91,28 @@
             };
 
             return showModal(lotDetailsModal, opts);
+        }
+
+        function showReportIssueModal (userParam, lotId) {
+            var opts = {
+                controller: 'reportIssueModalController',
+                controllerAs: 'vm',
+                templateUrl: '/partials/modals/report_issue_form.html',
+                parent: angular.element(document.querySelector('#index-container')),
+                locals: {user: userParam, lotId: lotId},
+                resolve: {
+                    lot: function (){
+                        return Lot.get(lotId);
+                    }
+                },
+                hasBackdrop: false,
+                fullscreen: customFullscreen,
+                onComplete: function (scope, element, options) {
+                    $('.md-scroll-mask').css('z-index', '-1');
+                }
+            };
+
+            return showModal(reportIssueModal, opts);
         }
 
         function hideResolveModal(response) {

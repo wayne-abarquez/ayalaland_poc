@@ -141,8 +141,11 @@
     <!-- BOUNDARIES WITH FILTER -->
     <md-content ng-controller="searchLotOfferController as searchLotOfferCtl" layout-padding layout="column" ng-if="vm.showFilter" flex>
         <form name="searchLotOfferCtl.lotFilterForm">
-            <md-select ng-model="searchLotOfferCtl.filter.region" placeholder="Region" ng-change="searchLotOfferCtl.regionChanged(searchLotOfferCtl.filter.region)">
-                <md-option ng-value="region.id" ng-repeat="region in searchLotOfferCtl.regions">{{ region.name }}</md-option>
+
+            <md-select ng-model="searchLotOfferCtl.filter.region" placeholder="Region"
+                       ng-change="searchLotOfferCtl.regionChanged(searchLotOfferCtl.filter.region)">
+                <md-option ng-value="region.id" ng-repeat="region in searchLotOfferCtl.regions">{{ region.name }}
+                </md-option>
             </md-select>
 
             <md-select ng-model="searchLotOfferCtl.filter.province" placeholder="Province"
@@ -161,6 +164,14 @@
 
             <fieldset>
                 <legend>Lot Details</legend>
+
+                <md-select ng-model="searchLotOfferCtl.filter.lot_status" placeholder="Lot Status"
+                           ng-change="searchLotOfferCtl.lotStatusChanged(searchLotOfferCtl.filter.lot_status)">
+                    <md-option ng-value="status" ng-repeat="status in searchLotOfferCtl.lotStatusList">{{status | capitalize}}
+                    </md-option>
+                </md-select>
+
+
                 <div layout="column">
                     <md-input-container md-no-float class="md-block">
                         <input type="text" placeholder="Filter by date range" ng-model="searchLotOfferCtl.dateRangeFormatted"

@@ -1,4 +1,5 @@
-from app.home.models import BoundaryTable, BoundaryType, Lots
+from app.home.models import BoundaryTable, BoundaryType, Lots, LotIssues, LotStatus, LegalStatus, TechnicalStatus
+from app.authentication.models import Users
 from .exceptions import BoundaryNotFound
 from sqlalchemy import func, select
 from sqlalchemy.sql.expression import join
@@ -160,6 +161,9 @@ def filter_lots(filter_data):
         subq = db.session.query(BoundaryTable.geometry.label('bounds')).filter(BoundaryTable.id == boundaryid).subquery()
         query = query.filter(func.ST_Intersects(cast(subq.c.bounds, Geography), cast(Lots.geom, Geography)))
 
+    if 'lot_status' in filter_data:
+        query = query.filter(Lots.lot_status == filter_data['lot_status'])
+
     if 'date_start' in filter_data and 'date_end' in filter_data:
         query = query.filter(Lots.date_offered.between(filter_data['date_start'], filter_data['date_end']))
 
@@ -167,3 +171,38 @@ def filter_lots(filter_data):
         query = query.filter(Lots.sbu == filter_data['sbu'])
 
     return query.all()
+
+
+def create_lot_issue(lotid, userid, data):
+    user = Users.query.get_or_404(userid)
+    lot = Lots.query.get_or_404(lotid)
+
+    if user.role.name == 'LEGAL':
+        if lot.legal_status == LegalStatus.LDD_COMPLETED:
+            lot.lot_status = LotStatus.DUE_DILIGENCE_COMPLETED
+        else:
+            lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
+
+        lot.legal_status = LegalStatus.WITH_ISSUE
+        type = 'LEGAL'
+    elif user.role.name == 'MDC':
+        if lot.technical_status == TechnicalStatus.TDD_COMPLETED:
+            lot.lot_status = LotStatus.DUE_DILIGENCE_COMPLETED
+        else:
+            lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
+
+        lot.technical_status = TechnicalStatus.WITH_ISSUE
+        type = 'TECHNICAL'
+
+    issue = LotIssues.from_dict(data)
+    issue.lotid = lotid
+    issue.userid = userid
+
+    if type:
+        issue.type = type
+
+    # Persist
+    db.session.add(issue)
+    db.session.commit()
+
+    return issue

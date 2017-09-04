@@ -10,16 +10,28 @@ users = [
         'roleid': 1
     },
     {
-        'username': 'usersales1',
+        'username': 'user1',
         'roleid': 2
     },
     {
-        'username': 'usersales2',
-        'roleid': 2
+        'username': 'user2',
+        'roleid': 3
     },
     {
-        'username': 'usersales3',
-        'roleid': 2
+        'username': 'user3',
+        'roleid': 4
+    },
+    {
+        'username': 'user4',
+        'roleid': 5
+    },
+    {
+        'username': 'user5',
+        'roleid': 6
+    },
+    {
+        'username': 'user6',
+        'roleid': 7
     }
 ]
 

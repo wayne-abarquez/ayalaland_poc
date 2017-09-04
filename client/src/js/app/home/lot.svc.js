@@ -2,22 +2,60 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .factory('lotService', ['Lot', 'gmapServices', '$q', 'modalServices', lotService]);
+    .factory('lotService', ['$rootScope', 'Lot', 'LOT_STATUS_SELECTION', 'gmapServices', '$q', 'modalServices', lotService]);
 
-    function lotService (Lot, gmapServices, $q, modalServices) {
+    function lotService ($rootScope, Lot, LOT_STATUS_SELECTION, gmapServices, $q, modalServices) {
         var service = {};
 
         var infowindow = gmapServices.createInfoWindow('');
 
         var lots = [];
 
+        service.getLotStatusSelectionByRole = getLotStatusSelectionByRole;
         service.loadLots = loadLots;
         service.addLot = addLot;
         service.saveLot = saveLot;
         service.filterLot = filterLot;
         service.showLot = showLot;
         service.showLotDetails = showLotDetails;
-        service.reportIssue = reportIssue
+        service.showReportIssueModal = showReportIssueModal;
+        service.reportIssue = reportIssue;
+
+        function getLotStatusSelectionByRole (role) {
+            var lotStatuses = LOT_STATUS_SELECTION;
+
+            switch(role) {
+                case 'ADMIN':
+                    return lotStatuses;
+                    break;
+                case 'CLAU SECRETARY':
+                    return lotStatuses;
+                    break;
+                case 'LEGAL':
+                    return lotStatuses.filter(function(status){
+                        return ['ACTIVE', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                    });
+                    break;
+                case 'MDC':
+                    return lotStatuses.filter(function (status) {
+                        return ['ACTIVE', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                    });
+                    break;
+                case 'SBU BUSINESS DEV':
+                    return lotStatuses.filter(function (status) {
+                        return ['ACTIVE', 'FOR DUE DILIGENCE', 'DUE DILIGENCE IN PROGRESS'].indexOf(status) === -1;
+                    });
+                    break;
+                case 'CLAU ANALYST':
+                    return lotStatuses;
+                    break;
+                case 'C&A':
+                    return lotStatuses;
+                    break;
+                default:
+
+            }
+        }
 
         function loadLots () {
             Lot.getList()
@@ -43,7 +81,11 @@ angular.module('demoApp.home')
             polygon.content += '<h4 class="no-margin text-muted padding-left-5">Lot Status: ' + (item.lot_status ? item.lot_status : '') + '</h4>';
             /* Action Buttons */
             polygon.content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
-            polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
+
+            if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
+                polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
+            }
+
             polygon.content += '</div>';
 
             gmapServices.addListener(polygon, 'click', function(e){
@@ -148,8 +190,31 @@ angular.module('demoApp.home')
                 });
         }
 
-        function reportIssue (lotId) {
-            console.log('reportIssue: ', lotId);
+        function showReportIssueModal (lotId) {
+            modalServices.showReportIssueModal($rootScope.currentUser, lotId)
+                .finally(function () {
+                    //console.log('modal lot details finally');
+                    //lots.forEach(function (item) {
+                    //    if (item.id != lotId) {
+                    //        item.setMap(gmapServices.map);
+                    //    }
+                    //})
+                });
+        }
+
+        function reportIssue (lotId, issueData) {
+            var dfd = $q.defer();
+
+            Lot.cast(lotId).customPOST(issueData, 'issues')
+                .then(function(response){
+                    var resp = response.plain();
+                    console.log('report issue response ',resp);
+                    dfd.resolve(resp);
+                }, function(error){
+                    dfd.reject(error);
+                });
+
+            return dfd.promise;
         }
 
         return service;

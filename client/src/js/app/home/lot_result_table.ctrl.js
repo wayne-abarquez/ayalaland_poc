@@ -31,7 +31,7 @@ angular.module('demoApp.home')
         }
 
         function reportLotIssue (lotId) {
-            lotService.reportIssue(lotId);
+            lotService.showReportIssueModal(lotId);
         }
 
         function close () {

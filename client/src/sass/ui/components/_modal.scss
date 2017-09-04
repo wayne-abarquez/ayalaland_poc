@@ -67,6 +67,12 @@
       margin: 8px 0;
     }
 
+    sm-date-time-picker {
+      md-input-container {
+        margin: 40px 0 20px 0;
+      }
+    }
+
     .date-picker-field-group {
       padding-left: 2rem;
 
@@ -118,8 +124,10 @@
   md-dialog-content, md-tabs, form {
     height: 100%;
   }
+
   md-dialog-content {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   md-tab-content {

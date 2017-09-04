@@ -10,27 +10,133 @@
 
     <md-dialog-content>
         <form name="vm.form">
-            <md-tabs md-dynamic-height md-border-bottom>
+            <md-tabs>
+
                 <md-tab label="Basic Info">
-                    <md-content>
-                        <md-table-container>
+                    <md-content layout-padding>
+                        <md-input-container class="md-block">
+                            <label>Lot Offer No.</label>
+                            <input ng-model="vm.lot.id">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Estate Name</label>
+                            <input ng-model="vm.lot.estate_name">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Project Name</label>
+                            <input ng-model="vm.lot.project_name">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>SBU</label>
+                            <input ng-model="vm.lot.sbu">
+                        </md-input-container>
+
+                        <md-select ng-model="vm.lot.lot_status" placeholder="Lot Status">
+                            <label>Lot Status</label>
+                            <md-option ng-value="status"
+                                       ng-repeat="status in vm.lotStatusOptions">{{ status | capitalize }}</md-option>
+                        </md-select>
+
+                        <md-select ng-model="vm.lot.legal_status" placeholder="Legal Status">
+                            <label>Legal Status</label>
+                            <md-option ng-value="status"
+                                       ng-repeat="status in vm.legalStatusOptions">{{ status | capitalize }}</md-option>
+                        </md-select>
+
+                        <md-select ng-model="vm.lot.technical_status" placeholder="Technical Status">
+                            <label>Technical Status</label>
+                            <md-option ng-value="status"
+                                       ng-repeat="status in vm.technicalStatusOptions">{{ status | capitalize }}</md-option>
+                        </md-select>
+
+                        <md-input-container class="md-block">
+                            <label>Complete Address</label>
+                            <input ng-model="vm.lot.complete_address">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Date Offered</label>
+                            <input ng-model="vm.lot.date_offered">
+                        </md-input-container>
+
+                        <div layout="row">
+                            <md-input-container>
+                                <label>Owner Firstname</label>
+                                <input ng-model="vm.lot.owner_firstname">
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Owner Lastname</label>
+                                <input ng-model="vm.lot.owner_lastname">
+                            </md-input-container>
+                        </div>
+
+                    </md-content>
+                </md-tab>
+
+                <md-tab label="Additional Info">
+                    <md-content class="md-padding">
                         <table md-table>
-                            <tbody md-body>
-                                <tr ng-repeat="(key, value) in vm.lot">
-                                    <td md-cell>{{ key | underscoreless | uppercase }}</td>
-                                    <td md-cell>{{ value }}</td>
+                            <tbody>
+                            <tr ng-repeat="(key, value) in vm.lot.details">
+                                <td>{{ key | underscoreless | capitalize }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-content>
+                </md-tab>
+
+                <md-tab label="Landbank">
+                    <md-content class="md-padding">
+                        <h3>Landbanks</h3>
+                        <table md-table>
+                            <tbody>
+                                <tr ng-repeat="lb in vm.lot.landbank">
+                                    <td>{{ lb.landbank_year}}</td>
+                                    <td>{{ lb.landbank_value }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        </md-table-container>
+                        <md-divider></md-divider>
+                        <h3>Acquired Launches</h3>
+                        <table md-table>
+                            <tbody>
+                            <tr ng-repeat="al in vm.lot.acquired_launches">
+                                <td>{{ al.year }}</td>
+                                <td>{{ al.launches }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </md-content>
                 </md-tab>
-                <md-tab label="Additional Info">
-                    <md-content class="md-padding"></md-content>
+
+                <md-tab layout-padding label="Issues">
+                    <table layout-margin md-table>
+                        <thead md-head>
+                            <tr>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Date Reported</th>
+                                <th>Description</th>
+                                <th>Action Item</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row
+                            ng-repeat="issue in vm.lot.issues">
+                            <td md-cell>{{ issue.type }}</td>
+                            <td md-cell>{{ issue.status }}</td>
+                            <td md-cell>{{ issue.date_reported }}</td>
+                            <td md-cell>{{ issue.description }}</td>
+                            <td md-cell>{{ issue.action_item }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </md-tab>
-                <md-tab label="Landbank">
-                    <md-content class="md-padding"></md-content>
-                </md-tab>
+
             </md-tabs>
         </form>
     </md-dialog-content>

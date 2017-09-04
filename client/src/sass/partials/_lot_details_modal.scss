@@ -6,13 +6,11 @@
 
   md-dialog-content {
     form {
-      table {
-        tbody {
-          tr {
-            td {
-              padding: 8px;
-            }
-          }
+      md-content {
+        padding-top: 20px;
+
+        md-input-container {
+          margin: 0;
         }
       }
     }

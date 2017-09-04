@@ -2,13 +2,12 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('lotDetailsModalController', ['lot', '$rootScope', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'alertServices', 'drawingServices', lotDetailsModalController]);
+        .controller('lotDetailsModalController', ['lot', '$rootScope', '$filter', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'alertServices', 'drawingServices', lotDetailsModalController]);
 
-    function lotDetailsModalController(lot, $rootScope, modalServices, boundariesService, gmapServices, lotService, alertServices, drawingServices) {
+    function lotDetailsModalController(lot, $rootScope, $filter, modalServices, boundariesService, gmapServices, lotService, alertServices, drawingServices) {
         var vm = this;
 
         var bounds;
-        var drawSiteListener;
 
         vm.maxDate = new Date();
 
@@ -21,23 +20,29 @@
         vm.regionChanged = regionChanged;
         vm.provinceChanged = provinceChanged;
         vm.cityChanged = cityChanged;
-        vm.drawBorder = drawBorder;
 
         initialize();
 
         function initialize() {
             vm.lot = lot;
-            vm.lotCopy = angular.copy(lot);
 
-            delete vm.lot.id;
-            delete vm.lot.boundaryid;
-            delete vm.lot.geom;
+            if (vm.lot.details) {
+                for (var key in vm.lot.details) {
+                    if (!isNaN(vm.lot.details[key])) {
+                        vm.lot.details[key] = $filter('number')(vm.lot.details[key], 2);
+                    }
+                }
+            }
 
             // load regions typeid = 3
             boundariesService.loadBoundariesByType(3)
                 .then(function(regions){
                     vm.regions = angular.copy(regions);
                 });
+
+            vm.lotStatusOptions = [vm.lot.lot_status];
+            vm.legalStatusOptions = [vm.lot.legal_status];
+            vm.technicalStatusOptions = [vm.lot.technical_status];
         }
 
         function save() {
@@ -95,31 +100,6 @@
         function cityChanged (cityId) {
             // fit to bounds
             panToBoundary(cityId);
-        }
-
-        function drawBorder () {
-            //if (drawingServices.drawPolygon && drawingServices.drawPolygon.getMap()) {
-            //    gmapServices.setPolygonEditable(drawingServices.drawPolygon, true);
-            //
-            //    $rootScope.$broadcast('edit-drawing-polygon');
-            //
-            //    drawSiteListener = $rootScope.$on('save-drawing', function (event, param) {
-            //        console.log('save-drawing event');
-            //        gmapServices.setPolygonEditable(drawingServices.drawPolygon, false);
-            //        vm.newLot.area = gmapServices.getLatLngArrayLiteralPolygon(drawingServices.drawPolygon);
-            //        console.log('lot area: ', vm.newLot.area);
-            //    });
-            //} else {
-            //    $rootScope.$broadcast('start-drawing');
-            //
-            //    drawSiteListener = $rootScope.$on('save-area', function (event, param) {
-            //        console.log('save area: ', param);
-            //        vm.newLot.area = param.area;
-            //        drawingServices.drawPolygon = gmapServices.createPolygon(param.area, '#2ecc71', true);
-            //        console.log('lot area: ', vm.newLot.area);
-            //    });
-            //}
-
         }
     }
 }());

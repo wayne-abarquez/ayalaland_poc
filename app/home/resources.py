@@ -1,10 +1,11 @@
 from flask.ext.restful import Resource, marshal_with, marshal, abort
-from .fields import boundary_fields, boundary_complete_fields, lot_fields, lot_complete_fields, lot_offer_create_fields
+from .fields import boundary_fields, boundary_complete_fields, lot_fields, lot_complete_fields, lot_offer_create_fields, \
+    lot_issue_create_fields
 from app import rest_api
 # from app.fields import success_with_result_fields
 from app.home.services import get_boundaries, get_boundaries_by_type, get_boundary_detail, get_places_by_boundary, get_lots, \
     get_lot_details, upload_shape_file, \
-    create_lot_offer, filter_lots
+    create_lot_offer, filter_lots, create_lot_issue
 from app.resources import UploadResource
 from flask import request
 import logging
@@ -88,6 +89,19 @@ class LotDetailsResource(Resource):
         return get_lot_details(lotid)
 
 
+class LotIssuesResource(Resource):
+    """
+    Resource for Lot Issues
+    """
+
+    def post(self, lotid):
+        form_data = request.json
+        log.debug('Create Lot Issue request: {0}'.format(form_data))
+        obj = create_lot_issue(lotid, form_data['userid'], form_data)
+        result = dict(status=200, message='OK', issue=obj)
+        return marshal(result, lot_issue_create_fields)
+
+
 class LotUploadResource(UploadResource):
     """
     Resource for Lot data uploads
@@ -115,6 +129,7 @@ rest_api.add_resource(BoundaryDetailResource, '/api/boundaries/<int:boundaryid>'
 rest_api.add_resource(BoundaryDetailCircleResource, '/api/boundaries/<int:boundaryid>/circle')
 rest_api.add_resource(LotResource, '/api/lots')
 rest_api.add_resource(LotDetailsResource, '/api/lots/<int:lotid>')
+rest_api.add_resource(LotIssuesResource, '/api/lots/<int:lotid>/issues')
 rest_api.add_resource(LotUploadResource, '/api/lots/upload')
 
 

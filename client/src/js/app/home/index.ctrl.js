@@ -24,7 +24,7 @@ angular.module('demoApp.home')
 
             $(document).on('click', '#report-lot-issue-btn', function (){
                 var lotId = $(this).data('lot-id');
-                lotService.reportIssue(lotId);
+                lotService.showReportIssueModal(lotId);
             });
         }
 

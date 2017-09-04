@@ -21,6 +21,29 @@ class BoundaryType(db.Model, OrmObject):
     name = db.Column(db.String(300), nullable=False)
 
 
+class LotStatus:
+    ACTIVE = 'ACTIVE'
+    FOR_DUE_DILIGENCE = 'FOR DUE DILIGENCE'
+    DUE_DILIGENCE_COMPLETED = 'DUE DILIGENCE COMPLETED'
+    DUE_DILIGENCE_IN_PROGRESS = 'DUE DILIGENCE IN PROGRESS'
+    FOR_IC_APPROVAL = 'FOR IC APPROVAL'
+    ACQUIRE = 'ACQUIRE'
+
+
+class LegalStatus:
+    OK = 'OK'
+    WITH_ISSUE = 'WITH ISSUE'
+    LDD_IN_PROGRESS = 'LDD IN PROGRESS'
+    LDD_COMPLETED = 'LDD COMPLETED'
+
+
+class TechnicalStatus:
+    OK = 'OK'
+    WITH_ISSUE = 'WITH ISSUE'
+    TDD_IN_PROGRESS = 'TDD IN PROGRESS'
+    TDD_COMPLETED = 'TDD COMPLETED'
+
+
 class Lots(BaseModel):
     lot_offer_no = db.Column(db.Integer, unique=True)
     boundaryid = db.Column(db.Integer, db.ForeignKey('boundary_table.id'))
@@ -34,9 +57,13 @@ class Lots(BaseModel):
     sbu = db.Column(db.String(20))
     total_land_value = db.Column(db.Numeric)
     total_value_of_ali_owned = db.Column(db.Numeric)
-    lot_status = db.Column(db.String(100), default='ACTIVE')
-    legal_status = db.Column(db.String(100), default='OK')
-    technical_status = db.Column(db.String(100), default='OK')
+    lot_status = db.Column(db.String(100), default=LotStatus.ACTIVE)
+    legal_status = db.Column(db.String(100), default=LegalStatus.OK)
+    technical_status = db.Column(db.String(100), default=TechnicalStatus.OK)
+
+    details = db.relationship('LotDetails', uselist=False)
+    landbank = db.relationship('LotLandbank')
+    acquired_launches = db.relationship('LotAcquiredLaunches')
 
 
 class LotDetails(BaseModel):
@@ -72,19 +99,13 @@ class LotAcquiredLaunches(BaseModel):
     ytd_landbank = db.Column(db.Numeric)
 
 
-class LotLegalIssues(BaseModel):
+class LotIssues(BaseModel):
     lotid = db.Column(db.Integer, db.ForeignKey('lots.id'), nullable=False)
     userid = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    type = db.Column(db.String(10), default='LEGAL')
     description = db.Column(db.Text)
     status = db.Column(db.String(100), default='OPEN')
-    datetime_reported = db.Column(db.DateTime, default=db.func.current_timestamp())
+    date_reported = db.Column(db.Date, default=db.func.current_timestamp())
     action_item = db.Column(db.Text)
 
-
-class LotTechnicalIssues(BaseModel):
-    lotid = db.Column(db.Integer, db.ForeignKey('lots.id'), nullable=False)
-    userid = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    description = db.Column(db.Text)
-    status = db.Column(db.String(100), default='OPEN')
-    datetime_reported = db.Column(db.DateTime, default=db.func.current_timestamp())
-    action_item = db.Column(db.Text)
+    lot = db.relationship(Lots, backref=db.backref('issues', cascade="all, delete-orphan"), lazy='joined')

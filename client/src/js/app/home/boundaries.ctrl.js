@@ -10,6 +10,8 @@
         var polygon,
             circle;
 
+        vm.showFilter = true;
+
         vm.showBoundary = showBoundary;
         vm.expandCallback = expandCallback;
         vm.uploadShapeFile = uploadShapeFile;

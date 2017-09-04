@@ -5,7 +5,7 @@ from app import app
 from app import db
 from app.authentication.models import Roles, Users
 from app.home.models import BoundaryTable, BoundaryType, Lots, LotDetails, LotLandbank, LotAcquiredLaunches, \
-    LotLegalIssues, LotTechnicalIssues
+    LotIssues
 from app.seeds.seeder import BaseSeeder
 
 manager = Manager(app)

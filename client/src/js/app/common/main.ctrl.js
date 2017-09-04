@@ -44,8 +44,7 @@
             {
                 link: '/logout',
                 title: 'Logout',
-                icon: 'exit_to_app',
-                can: ['ADMIN', 'SALES']
+                icon: 'exit_to_app'
             }
         ];
 
@@ -120,7 +119,7 @@
             var result = [];
 
             MENU_SELECTIONS.forEach(function (item) {
-                if (item.can.indexOf(user.role.toUpperCase()) > -1) return result.push(item);
+                if (!item.can || item.can.indexOf(user.role.toUpperCase()) > -1) return result.push(item);
             });
 
             return result;
@@ -138,6 +137,8 @@
                 // clean local storage
                 userSessionService.userLogout();
             }
+
+            window.location.href = item.link;
         }
 
         /* Drawing Functions */

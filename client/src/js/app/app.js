@@ -27,6 +27,29 @@
             'ALP'
         ])
 
+        .constant('LOT_STATUS_SELECTION', [
+            'ACTIVE',
+            'FOR DUE DILIGENCE',
+            'DUE DILIGENCE IN PROGRESS',
+            'DUE DILIGENCE COMPLETED',
+            'FOR IC APPROVAL',
+            'ACQUIRE'
+        ])
+
+        .constant('LEGAL_STATUS_SELECTION', [
+            'OK',
+            'WITH ISSUE',
+            'LDD IN PROGRESS',
+            'LDD COMPLETED'
+        ])
+
+        .constant('TECHNICAL_STATUS_SELECTION', [
+            'OK',
+            'WITH ISSUE',
+            'TDD IN PROGRESS',
+            'TDD COMPLETED'
+        ])
+
         .config(['RestangularProvider', function (RestangularProvider) {
             //set the base url for api calls on our RESTful services
             var baseUrl = window.location.origin + '/api';
@@ -60,6 +83,32 @@
         .filter('underscoreless', function () {
             return function (input) {
                 return input.replace(/_/g, ' ');
+            };
+        })
+
+        .filter('capitalize', function () {
+            return function (input) {
+                if (input.indexOf(' ') !== -1) {
+                    var inputPieces,
+                        i;
+
+                    input = input.toLowerCase();
+                    inputPieces = input.split(' ');
+
+                    for (i = 0; i < inputPieces.length; i++) {
+                        inputPieces[i] = capitalizeString(inputPieces[i]);
+                    }
+
+                    return inputPieces.toString().replace(/,/g, ' ');
+                }
+                else {
+                    input = input.toLowerCase();
+                    return capitalizeString(input);
+                }
+
+                function capitalizeString(inputString) {
+                    return inputString.substring(0, 1).toUpperCase() + inputString.substring(1);
+                }
             };
         })
     ;
