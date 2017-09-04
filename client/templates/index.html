@@ -19,6 +19,22 @@
             <md-icon>add</md-icon>
         </md-button>
 
+        <md-button ng-if="currentUser.role == 'LEGAL'"
+                   class="md-fab md-warn"
+                   id="show-legal-issues-btn"
+                   ng-click="indexCtl.showLegalIssues($event)">
+            <md-tooltip md-direction="left">Show Legal Issues</md-tooltip>
+            <md-icon>card_travel</md-icon>
+        </md-button>
+
+        <md-button ng-if="currentUser.role == 'MDC'"
+                class="md-fab md-default"
+                   id="show-technical-issues-btn"
+                   ng-click="indexCtl.showTechnicalIssues($event)">
+            <md-tooltip md-direction="left">Show Technical Issues</md-tooltip>
+            <md-icon>track_changes</md-icon>
+        </md-button>
+
         <!--
         <md-button class="md-fab md-default"
                    id="search-lot-btn"
