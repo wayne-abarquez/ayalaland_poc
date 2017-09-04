@@ -34,6 +34,7 @@ angular.module('demoApp.home')
                             vm.report.dataType = 'ISSUES';
 
                             if (issues.length > 0) {
+                                lotService.loadLots();
                                 vm.report.result = angular.copy(issues).map(function (item) {
                                     return Object.flatten(item);
                                 });
@@ -46,6 +47,8 @@ angular.module('demoApp.home')
                     vm.report.dataType = 'SBU';
 
                     vm.filter.sbuSelection = angular.copy(SBU_SELECTION);
+
+                    lotService.loadLots();
 
                     sbuChanged('SLMG');
 
@@ -97,6 +100,14 @@ angular.module('demoApp.home')
 
         function rowOnClick (item) {
             console.log('rowOnClick: ',item);
+            if (vm.report.dataType == 'ISSUES') {
+                lotService.showLot(item.lotid);
+            } else if(vm.report.dataType == 'LOTS') {
+                lotService.showLot(item.id);
+            } else if (vm.report.dataType == 'SBU') {
+                lotService.showLot(Math.abs(item.lotid));
+            }
+
         }
 
         function close () {

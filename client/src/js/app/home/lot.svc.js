@@ -68,7 +68,8 @@ angular.module('demoApp.home')
                 //    return lotStatuses;
                 //    break;
                 default:
-                    finalStatus = [lotStatus];
+                    if (lotStatus) finalStatus = [lotStatus];
+                    else finalStatus = lotStatuses;
             }
 
             if (lotStatus && finalStatus.indexOf(lotStatus) === -1) finalStatus.push(lotStatus);
@@ -195,7 +196,7 @@ angular.module('demoApp.home')
 
             lots.push(polygon);
 
-            gmapServices.fitToBoundsByPolygon(polygon);
+            //gmapServices.fitToBoundsByPolygon(polygon);
         }
 
         // if lotId is not null perform update otherwise perform create
@@ -266,7 +267,7 @@ angular.module('demoApp.home')
             var lot = _.findWhere(lots, {id: lotId});
 
             if (lot) {
-                gmapServices.panTo(lot.center);
+                gmapServices.fitToBoundsByPolygon(lot);
                 gmapServices.trigger(lot, 'click', {latLng: lot.center});
             }
         }
