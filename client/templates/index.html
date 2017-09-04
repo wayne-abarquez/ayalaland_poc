@@ -10,6 +10,7 @@
         {% endraw %}
                 <!-- Map Drawing Panel -->
                 {% include "partials/_boundaries_panel.html" %}
+                {% include "partials/lot_result_table.html" %}
         {% raw %}
 
         <md-button class="md-fab md-primary"
@@ -19,22 +20,6 @@
             <md-icon>add</md-icon>
         </md-button>
 
-        <md-button ng-if="currentUser.role == 'LEGAL'"
-                   class="md-fab md-warn"
-                   id="show-legal-issues-btn"
-                   ng-click="indexCtl.showLegalIssues($event)">
-            <md-tooltip md-direction="left">Show Legal Issues</md-tooltip>
-            <md-icon>card_travel</md-icon>
-        </md-button>
-
-        <md-button ng-if="currentUser.role == 'MDC'"
-                class="md-fab md-default"
-                   id="show-technical-issues-btn"
-                   ng-click="indexCtl.showTechnicalIssues($event)">
-            <md-tooltip md-direction="left">Show Technical Issues</md-tooltip>
-            <md-icon>track_changes</md-icon>
-        </md-button>
-
         <!--
         <md-button class="md-fab md-default"
                    id="search-lot-btn"
@@ -42,13 +27,13 @@
             <md-tooltip md-direction="left">Search Lot Offers</md-tooltip>
             <md-icon>search</md-icon>
         </md-button>
-        -->
 
         <div id="powered-by" layout="row">
             <a href="http://navagis.com" target="_blank">
                 <img src="/resources/images/navagis_powered.png">
             </a>
         </div>
+        -->
     {% endraw %}
     </div>
 {% endblock %}

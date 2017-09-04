@@ -1,10 +1,9 @@
-from app.home.models import BoundaryTable, BoundaryType, Lots, LotIssues, LotStatus, LegalStatus, TechnicalStatus
+from app.home.models import BoundaryTable, BoundaryType, Lots, LotIssues, LotStatus, LegalStatus, TechnicalStatus, LotDetails
 from app.authentication.models import Users
 from .exceptions import BoundaryNotFound
 from sqlalchemy import func, select
 from sqlalchemy.sql.expression import join
-from geoalchemy2 import Geography, Geometry
-from app import db
+from geoalchemy2 import Geography
 import shapefile
 import zipfile
 import StringIO
@@ -13,7 +12,6 @@ import shapely
 import os
 from app import app, db
 from werkzeug import secure_filename
-from shapely.geometry import shape
 from app.utils.forms_helper import parse_area
 from sqlalchemy.sql.expression import cast
 
@@ -223,3 +221,25 @@ def create_lot_issue(lotid, userid, data):
     db.session.commit()
 
     return issue
+
+
+def get_landbank_inventory(sbu):
+    result = db.session.query(
+        Lots.sbu,
+        Lots.total_land_value,
+        Lots.total_value_of_ali_owned,
+        LotDetails.lotid,
+        LotDetails.gfa,
+        Lots.id,
+        Lots.project_name
+    ).join(LotDetails, Lots.id == LotDetails.lotid)\
+        .filter(Lots.sbu == sbu.upper()).all()
+
+    # print result
+
+    items = map(lambda item : {'sbu': item[0], 'total_land_value': item[1], 'total_value_of_ali_owned': item[2], 'lotid': item[3], 'gfa': item[4], 'lot_offer_no': item[5], 'project_name': item[6]}, result)
+
+    print items
+
+    return items
+

@@ -1,5 +1,5 @@
 from flask.ext.restful import fields
-from app.utils.gis_json_fields import PolygonToLatLng, PointToLatLng
+from app.utils.gis_json_fields import PolygonToLatLng
 from copy import copy
 
 
@@ -19,6 +19,21 @@ boundary_fields = dict(
 
 boundary_type_fields = dict(
     name=fields.String
+)
+
+lot_minimum_fields = dict(
+    lot_offer_no=fields.Integer,
+    boundaryid=fields.Integer,
+    complete_address=fields.String,
+    owner_firstname=fields.String,
+    owner_lastname=fields.String,
+    date_offered=fields.DateTime('iso8601'),
+    estate_name=fields.String,
+    project_name=fields.String,
+    sbu=fields.String,
+    lot_status=fields.String,
+    legal_status=fields.String,
+    technical_status=fields.String
 )
 
 lot_fields = dict(

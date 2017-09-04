@@ -23,24 +23,18 @@
         vm.menu = [];
 
         var MENU_SELECTIONS = [
-            //{
-            //    link: '/',
-            //    title: 'Channel Diversification',
-            //    icon: 'track_changes',
-            //    can: ['ADMIN', 'SALES']
-            //},
-            //{
-            //    link: '/frauddetect',
-            //    title: 'Fraud Detection',
-            //    icon: 'fingerprint',
-            //    can: ['ADMIN']
-            //},
-            //{
-            //    link: '/productsaturation',
-            //    title: 'Product Saturation',
-            //    icon: 'assessment',
-            //    can: ['ADMIN']
-            //},
+            {
+                link: '/',
+                title: 'Home',
+                icon: 'home',
+                can: ['ALL']
+            },
+            {
+                link: '/reports',
+                title: 'Reports',
+                icon: 'assignment_late',
+                can: ['ADMIN', 'LEGAL', 'MDC', 'CLAU ANALYST', 'C&A']
+            },
             {
                 link: '/logout',
                 title: 'Logout',
@@ -115,11 +109,11 @@
         }
 
         function getUserMenu(user) {
-            // TODO: this must come from backend
             var result = [];
 
             MENU_SELECTIONS.forEach(function (item) {
-                if (!item.can || item.can.indexOf(user.role.toUpperCase()) > -1) return result.push(item);
+                if (item.can && item.can.indexOf('ALL') > -1) return result.push(item);
+                else if (!item.can || item.can.indexOf(user.role.toUpperCase()) > -1) return result.push(item);
             });
 
             return result;

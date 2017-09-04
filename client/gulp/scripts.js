@@ -28,7 +28,8 @@ gulp.task('vendor-scripts', function () {
         paths.bower + 'moment/min/moment.min.js',
         paths.bower + 'angular-moment/angular-moment.min.js',
         paths.bower + 'smDateTimeRangePicker/src/picker.js',
-        paths.bower + 'md-date-range-picker/dist/md-date-range-picker.min.js'
+        paths.bower + 'md-date-range-picker/dist/md-date-range-picker.min.js',
+        paths.srcLibJs + 'gmap-label.js'
     ])
         .pipe($.plumber())
         .pipe($.concat('vendor.min.js'))

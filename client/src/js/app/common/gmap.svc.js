@@ -119,12 +119,11 @@
         service.initializeAutocomplete = initializeAutocomplete;
         service.containsLocation = containsLocation;
         service.triggerEvent = triggerEvent;
-        service.createMapIconLabel = createMapIconLabel;
         service.setlatLngArrayToLatLngObjects = setlatLngArrayToLatLngObjects;
         service.fitToBoundsByPolygon = fitToBoundsByPolygon;
         service.setPolygonEditable = setPolygonEditable;
         service.getLatLngArrayLiteralPolygon = getLatLngArrayLiteralPolygon;
-        service.getPolygonCenter = getPolygonCenter
+        service.getPolygonCenter = getPolygonCenter;
 
         service.createDrawingManager = createDrawingManager;
         service.changeDrawingManagerStrokeColor = changeDrawingManagerStrokeColor;
@@ -952,28 +951,6 @@
 
         function triggerEvent(obj, event) {
             google.maps.event.trigger(obj, 'click');
-        }
-
-        function createMapIconLabel(latLng, type, color) {
-            return new Marker({
-                map: service.map,
-                position: latLng,
-                icon: {
-                    anchor: new google.maps.Point(-6, -10),
-                    path: MAP_PIN,
-                    fillColor: color || '#2ecc71',
-                    fillOpacity: 1,
-                    strokeColor: color ? '' : '#27ae60',
-                    strokeWeight: color ? 0 : 1
-                },
-                map_icon_label: '<span class="map-icon map-icon-' + type + '"></span>'
-            });
-        }
-
-        service.createFacilityMarker = createFacilityMarker;
-
-        function createFacilityMarker (latLng) {
-            return service.initMarker(latLng, 'resources/images/markers/wifi.png');
         }
 
         function fitToBoundsByPolygon(polygon) {

@@ -1,0 +1,49 @@
+{% raw %}
+<md-dialog id="reports-result-table" ng-controller="reportsResultTableController as reportResultCtl"
+           ng-show="showReportResultsTable"
+           ng-cloak>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>{{reportResultCtl.report.title}}</span>
+
+            <span flex></span>
+
+            <md-input-container ng-if="reportResultCtl.report.dataType == 'SBU'">
+                <label>SBU</label>
+                <md-select class="md-no-underline" ng-model="reportResultCtl.filter.sbuType"
+                           ng-change="reportResultCtl.sbuChanged(reportResultCtl.filter.sbuType)">
+                    <md-option ng-value="sbu" ng-repeat="sbu in reportResultCtl.filter.sbuSelection">
+                        {{sbu|uppercase}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-button class="md-icon-button" ng-click="reportResultCtl.close()"><md-icon>close</md-icon></md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                    <tr>
+                        <th ng-repeat="header in reportResultCtl.report.headers">{{header|underscoreless|uppercase}}</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="item in reportResultCtl.report.result" ng-click="reportResultCtl.rowOnClick(item)">
+                    <td md-cell ng-repeat="header in reportResultCtl.report.headers">{{item[header]}}</td>
+                </tr>
+                </tbody>
+                <tfoot ng-if="reportResultCtl.report.hasOwnProperty('totals')">
+                    <tr>
+                        <td></td>
+                        <td ng-repeat="(key,value) in reportResultCtl.report.totals">{{value|number:2}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </md-table-container>
+    </md-dialog-content>
+
+</md-dialog>
+{% endraw %}

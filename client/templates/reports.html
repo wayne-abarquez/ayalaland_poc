@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% raw %}
+    <div id="reports-page" layout="row" ng-controller="reportsPageController as reportCtl" flex>
+        <!-- map canvas dimensions will be computed during map initialization -->
+        <div id="map-canvas" flex="100"></div>
+        {% endraw %}
+
+        {% include "partials/reports_result_table.html" %}
+
+        {% raw %}
+
+        <md-button ng-hide="showReportResultsTable"
+                   class="md-fab md-default"
+                   id="show-reports-table-btn"
+                   ng-click="reportCtl.showReportsTable()">
+            <md-tooltip md-direction="left">Show Reports Table</md-tooltip>
+            <md-icon>view_list</md-icon>
+        </md-button>
+        {% endraw %}
+    </div>
+{% endblock %}

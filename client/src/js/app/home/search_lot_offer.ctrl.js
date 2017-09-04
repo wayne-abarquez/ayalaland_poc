@@ -138,7 +138,7 @@ angular.module('demoApp.home')
 
             lotService.filterLot(filterData)
                 .then(function(lots){
-                    if (lots.length === 0) alertServices.showInfo('No lot offers found');
+                    if (lots.length === 0) alertServices.showInfo('No lot offers found.');
                     else $rootScope.$broadcast('show-lot-filter-result', {result: lots});
                 });
         }

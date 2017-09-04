@@ -61,8 +61,9 @@ from .home import home as home_blueprint
 app.register_blueprint(home_blueprint)
 
 # Register Auth Blueprint
-# Uncomment this to enable authentication
 from .authentication import auth as auth_bp
 app.register_blueprint(auth_bp)
 
-
+# Register Reports Blueprint
+from .reports import reports as reports_bp
+app.register_blueprint(reports_bp)

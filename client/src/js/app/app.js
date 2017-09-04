@@ -15,7 +15,8 @@
             'angularMoment',
             'smDateTimeRangePicker',
             'ngMaterialDateRangePicker',
-            'demoApp.home'
+            'demoApp.home',
+            'demoApp.reports'
         ])
 
         .constant('APP_NAME', 'Ayala Land')
@@ -125,3 +126,22 @@ Date.prototype.addDays = function (days) {
     return dat;
 };
 
+Object.flatten = function (ob) {
+    var toReturn = {};
+
+    for (var i in ob) {
+        if (!ob.hasOwnProperty(i)) continue;
+
+        if ((typeof ob[i]) == 'object') {
+            var flatObject = Object.flatten(ob[i]);
+            for (var x in flatObject) {
+                if (!flatObject.hasOwnProperty(x)) continue;
+
+                toReturn[x] = flatObject[x];
+            }
+        } else {
+            toReturn[i] = ob[i];
+        }
+    }
+    return toReturn;
+};

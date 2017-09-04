@@ -1,0 +1,24 @@
+#show-legal-issues-btn {
+  position: absolute;
+  top: 120px;
+  right: calc(20% + 10px);
+}
+
+#show-technical-issues-btn {
+  position: absolute;
+  top: 120px;
+  //top: 190px;
+  right: calc(20% + 10px);
+}
+
+#show-reports-table-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+}
+
+#reports-page {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}

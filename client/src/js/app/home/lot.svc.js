@@ -20,6 +20,8 @@ angular.module('demoApp.home')
         service.showLotDetails = showLotDetails;
         service.showReportIssueModal = showReportIssueModal;
         service.reportIssue = reportIssue;
+        service.getLandBankDataBySBU = getLandBankDataBySBU;
+        service.getLandBankDataViaGIS = getLandBankDataViaGIS;
 
         function getLotStatusSelectionByRole (role) {
             var lotStatuses = LOT_STATUS_SELECTION;
@@ -66,36 +68,57 @@ angular.module('demoApp.home')
                 });
         }
 
-        function addLot (item) {
-            //console.log('add lot: ',item);
-            var polygon = gmapServices.createPolygon(item.geom, '#2ecc71', true);
+        function createLotPolygon (latlngArray, isReadOnly, latlngCenter, labelText) {
+            var polygon = gmapServices.createPolygon(latlngArray, '#2ecc71', true);
+
+            if (isReadOnly) {
+                polygon.inviMarker = gmapServices.initMarker(latlngCenter, null, {visible: false});
+                polygon.label = new Label({map: gmapServices.map, text: labelText});
+                polygon.label.bindTo('position', polygon.inviMarker, 'position');
+            }
+
+            return polygon;
+        }
+
+        function addLot (item, isReadOnly) {
+            var polygon;
+
+            if (isReadOnly) {
+                polygon = createLotPolygon(item.geom, isReadOnly, item.center, item.project_name);
+            } else {
+                polygon = createLotPolygon(item.geom);
+            }
 
             polygon = angular.merge(polygon, item);
 
-            polygon.center = gmapServices.getPolygonCenter(polygon);
-            //
-            polygon.content = '<div>';
-            polygon.content += '<h4 class="no-margin text-muted padding-left-5">Project Name: ' + (item.project_name ? item.project_name : '') + '</h4>';
-            polygon.content += '<h4 class="no-margin padding-left-5">Estate Name: <b>' + (item.estate_name ? item.estate_name : '') + '</b></h4>';
-            polygon.content += '<h4 class="no-margin text-muted padding-left-5">SBU: ' + (item.sbu ? item.sbu : '') + '</h4>';
-            polygon.content += '<h4 class="no-margin text-muted padding-left-5">Lot Status: ' + (item.lot_status ? item.lot_status : '') + '</h4>';
-            /* Action Buttons */
-            polygon.content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
+            if (!isReadOnly) {
+                polygon.center = gmapServices.getPolygonCenter(polygon);
 
-            //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
-            if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
-                polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
+                polygon.content = '<div>';
+                polygon.content += '<h4 class="no-margin text-muted padding-left-5">Project Name: ' + (item.project_name ? item.project_name : '') + '</h4>';
+                polygon.content += '<h4 class="no-margin padding-left-5">Estate Name: <b>' + (item.estate_name ? item.estate_name : '') + '</b></h4>';
+                polygon.content += '<h4 class="no-margin text-muted padding-left-5">SBU: ' + (item.sbu ? item.sbu : '') + '</h4>';
+                polygon.content += '<h4 class="no-margin text-muted padding-left-5">Lot Status: ' + (item.lot_status ? item.lot_status : '') + '</h4>';
+
+                /* Action Buttons */
+                polygon.content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
+
+                //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
+                if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
+                    polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
+                }
+
+                polygon.content += '</div>';
+
+                gmapServices.addListener(polygon, 'click', function(e){
+                    console.log('lot click: ',e);
+                    infowindow.open(gmapServices.map);
+                    infowindow.setPosition(e.latLng);
+                    //infowindow.setPosition(this.center);
+                    infowindow.setContent(this.content);
+                });
+
             }
-
-            polygon.content += '</div>';
-
-            gmapServices.addListener(polygon, 'click', function(e){
-                console.log('lot click: ',e);
-                infowindow.open(gmapServices.map);
-                infowindow.setPosition(e.latLng);
-                //infowindow.setPosition(this.center);
-                infowindow.setContent(this.content);
-            });
 
             lots.push(polygon);
 
@@ -203,13 +226,8 @@ angular.module('demoApp.home')
 
         function showReportIssueModal (lotId) {
             modalServices.showReportIssueModal($rootScope.currentUser, lotId)
-                .finally(function () {
-                    //console.log('modal lot details finally');
-                    //lots.forEach(function (item) {
-                    //    if (item.id != lotId) {
-                    //        item.setMap(gmapServices.map);
-                    //    }
-                    //})
+                .finally(function(){
+                    $rootScope.hasOpenedModal = false;
                 });
         }
 
@@ -222,6 +240,32 @@ angular.module('demoApp.home')
                     console.log('report issue response ',resp);
                     dfd.resolve(resp);
                 }, function(error){
+                    dfd.reject(error);
+                });
+
+            return dfd.promise;
+        }
+
+        function getLandBankDataBySBU (sbu) {
+            var dfd = $q.defer();
+
+            Lot.customGET('landbank-inventory', {sbu: sbu})
+                .then(function (response) {
+                    dfd.resolve(response.plain());
+                }, function (error) {
+                    dfd.reject(error);
+                });
+
+            return dfd.promise;
+        }
+
+        function getLandBankDataViaGIS () {
+            var dfd = $q.defer();
+
+            Lot.customGET('landbank-inventory-gis')
+                .then(function (response) {
+                    dfd.resolve(response.plain());
+                }, function (error) {
                     dfd.reject(error);
                 });
 

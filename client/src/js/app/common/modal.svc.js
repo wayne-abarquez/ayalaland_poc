@@ -12,7 +12,8 @@
         var createLotOfferModal,
             searchLotOfferModal,
             lotDetailsModal,
-            reportIssueModal;
+            reportIssueModal
+        ;
 
         /* Service Functions */
         service.showCreateLotOfferForm = showCreateLotOfferForm;
