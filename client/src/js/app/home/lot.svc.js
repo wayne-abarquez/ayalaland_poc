@@ -82,7 +82,8 @@ angular.module('demoApp.home')
             /* Action Buttons */
             polygon.content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
 
-            if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
+            //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
+            if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
                 polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
             }
 
