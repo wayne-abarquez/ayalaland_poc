@@ -11,6 +11,7 @@
         var drawSiteListener;
 
         vm.maxDate = new Date();
+        vm.selectedDate = null;
 
         vm.form = {};
         vm.newLot = {};
@@ -21,6 +22,7 @@
         vm.regionChanged = regionChanged;
         vm.provinceChanged = provinceChanged;
         vm.cityChanged = cityChanged;
+        vm.dateChanged = dateChanged;
         vm.drawBorder = drawBorder;
 
         initialize();
@@ -88,6 +90,11 @@
         function cityChanged (cityId) {
             // fit to bounds
             panToBoundary(cityId);
+        }
+
+        function dateChanged(selectedDate) {
+            var momentDate = moment(selectedDate);
+            vm.newLot.date_offered = momentDate.format('YYYY-MM-DD');
         }
 
         function drawBorder () {

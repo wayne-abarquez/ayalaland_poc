@@ -13,7 +13,6 @@
             'vAccordion',
             'md.data.table',
             'angularMoment',
-            'smDateTimeRangePicker',
             'ngMaterialDateRangePicker',
             'demoApp.home',
             'demoApp.reports'

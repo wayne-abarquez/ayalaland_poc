@@ -70,7 +70,7 @@ angular.module('demoApp.home')
 
             lotService.getLandBankDataBySBU(vm.filter.sbuType)
                 .then(function (result) {
-                    vm.report.result = angular.copy(result).map(function (item) {
+                    vm.report.result = result.map(function (item) {
                         for (var key in item) {
                             if (!isNaN(item[key])) {
                                 item[key] = $filter('number')(item[key], 2);

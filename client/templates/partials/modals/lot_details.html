@@ -41,15 +41,17 @@
                                        ng-repeat="status in vm.lotStatusOptions">{{ status | capitalize }}</md-option>
                         </md-select>
 
-                        <md-select ng-model="vm.lot.legal_status" placeholder="Legal Status">
+                        <md-select ng-model="vm.lot.legal_status" placeholder="Legal Status"
+                                   ng-if="vm.currentUser.role == 'LEGAL'">
                             <label>Legal Status</label>
-                            <md-option ng-value="status" ng-disabled="currentUser.role != 'LEGAL'"
+                            <md-option ng-value="status"
                                        ng-repeat="status in vm.legalStatusOptions">{{ status | capitalize }}</md-option>
                         </md-select>
 
-                        <md-select ng-model="vm.lot.technical_status" placeholder="Technical Status">
+                        <md-select ng-model="vm.lot.technical_status" placeholder="Technical Status"
+                                   ng-if="vm.currentUser.role == 'MDC'">
                             <label>Technical Status</label>
-                            <md-option ng-value="status" ng-disabled="currentUser.role != 'MDC'"
+                            <md-option ng-value="status"
                                        ng-repeat="status in vm.technicalStatusOptions">{{ status | capitalize }}</md-option>
                         </md-select>
 

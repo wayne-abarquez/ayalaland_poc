@@ -23,6 +23,10 @@ gulp.task('watch', function(event) {
         runSequence('app-scripts');
     });
 
+    gulp.watch(paths.srcLibJs + 'login.js', function (event) {
+        runSequence('login-scripts');
+    });
+
     gulp.watch(paths.bower + '**/*.js');
 
     // Watch Sass Files

@@ -155,6 +155,29 @@ def update_lot_offer(lotid, data):
     if 'technical_status' in data:
         lot.technical_status = data['technical_status']
 
+    if lot.legal_status == 'LDD IN PROGRESS' or lot.technical_status == 'TDD IN PROGRESS':
+        lot.lot_status = 'DUE DILIGENCE IN PROGRESS'
+    elif lot.legal_status == 'LDD COMPLETED' and lot.technical_status == 'TDD COMPLETED':
+        lot.lot_status = 'DUE DILIGENCE COMPLETED'
+
+    if 'estate_name' in data and data['estate_name'] != lot.estate_name:
+        lot.estate_name = data['estate_name']
+
+    if 'project_name' in data and data['project_name'] != lot.project_name:
+        lot.project_name = data['project_name']
+
+    if 'lot_offer_no' in data and data['lot_offer_no'] != lot.lot_offer_no:
+        lot.lot_offer_no = data['lot_offer_no']
+
+    if 'sbu' in data and data['sbu'] != lot.sbu:
+        lot.sbu = data['sbu']
+
+    if 'owner_firstname' in data and data['owner_firstname'] != lot.owner_firstname:
+        lot.owner_firstname = data['owner_firstname']
+
+    if 'owner_lastname' in data and data['owner_lastname'] != lot.owner_lastname:
+        lot.owner_lastname = data['owner_lastname']
+
     db.session.commit()
 
     return lot
@@ -235,11 +258,4 @@ def get_landbank_inventory(sbu):
     ).join(LotDetails, Lots.id == LotDetails.lotid)\
         .filter(Lots.sbu == sbu.upper()).all()
 
-    # print result
-
-    items = map(lambda item : {'sbu': item[0], 'total_land_value': item[1], 'total_value_of_ali_owned': item[2], 'lotid': item[3], 'gfa': item[4], 'lot_offer_no': item[5], 'project_name': item[6]}, result)
-
-    print items
-
-    return items
-
+    return map(lambda item : {'sbu': item[0], 'total_land_value': item[1], 'total_value_of_ali_owned': item[2], 'lotid': item[3], 'gfa': item[4], 'lot_offer_no': item[5], 'project_name': item[6]}, result)

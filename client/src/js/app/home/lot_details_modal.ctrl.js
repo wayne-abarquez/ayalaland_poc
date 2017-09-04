@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('lotDetailsModalController', ['lot', '$rootScope', '$filter', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'LEGAL_STATUS_SELECTION', 'TECHNICAL_STATUS_SELECTION', 'SBU_SELECTION', 'alertServices', lotDetailsModalController]);
+        .controller('lotDetailsModalController', ['lot', '$rootScope', '$filter', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'SBU_SELECTION', 'alertServices', lotDetailsModalController]);
 
-    function lotDetailsModalController(lot, $rootScope, $filter, modalServices, boundariesService, gmapServices, lotService, LEGAL_STATUS_SELECTION, TECHNICAL_STATUS_SELECTION, SBU_SELECTION, alertServices) {
+    function lotDetailsModalController(lot, $rootScope, $filter, modalServices, boundariesService, gmapServices, lotService, SBU_SELECTION, alertServices) {
         var vm = this;
 
         var bounds;
@@ -26,6 +26,15 @@
         function initialize() {
             vm.lot = lot;
 
+            $rootScope.$watch('currentUser', function (newValue) {
+                if (!newValue) return;
+                vm.currentUser = newValue;
+
+                vm.lotStatusOptions = lotService.getLotStatusSelectionByRole(vm.currentUser.role, vm.lot.lot_status);
+                vm.legalStatusOptions = lotService.getLegalStatusSelectionByRole(vm.currentUser.role, vm.lot.legal_status, vm.lot.lot_status);
+                vm.technicalStatusOptions = lotService.getTechnicalStatusSelectionByRole(vm.currentUser.role, vm.lot.technical_status, vm.lot.lot_status);
+            });
+
             if (vm.lot.details) {
                 for (var key in vm.lot.details) {
                     if (!isNaN(vm.lot.details[key])) {
@@ -41,10 +50,6 @@
                 });
 
             vm.sbuSelection = SBU_SELECTION;
-
-            vm.lotStatusOptions = lotService.getLotStatusSelectionByRole($rootScope.currentUser.role);
-            vm.legalStatusOptions = LEGAL_STATUS_SELECTION;
-            vm.technicalStatusOptions = TECHNICAL_STATUS_SELECTION;
         }
 
         function save() {
@@ -52,7 +57,7 @@
 
             lotService.saveLot(vm.lot, vm.lot.id)
                 .then(function(newLotData){
-                    // lotService.addLot(newLotData);
+                    // lotService.updateLot(vm.lot.id, newLotData);
                     alertServices.showSuccess('Offer for lot #'+ newLotData.id+' updated successfully!');
                     modalServices.hideResolveModal(newLotData);
                 });

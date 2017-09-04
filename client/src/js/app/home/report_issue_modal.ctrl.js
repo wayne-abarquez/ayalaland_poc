@@ -18,24 +18,32 @@ angular.module('demoApp.home')
             lotid: lot.id
         };
 
+        vm.maxDate = new Date();
+        vm.selectedDate = null;
+
         vm.save = save;
+        vm.dateChanged = dateChanged;
         vm.close = close;
 
         initialize();
-        
-        function initialize () {
-            console.log('lot resolved: ',lot);
 
+        function initialize () {
             if (user.role == 'MDC') vm.statusLabel = 'Technical Status';
             else if (user.role == 'LEGAL') vm.statusLabel = 'Legal Status';
         }
 
+        function dateChanged (selectedDate) {
+            var momentDate = moment(selectedDate);
+            vm.issue.date_reported = momentDate.format('YYYY-MM-DD');
+        }
+
         function save () {
-            console.log('save', vm.issue);
-            lotService.reportIssue(lot.id, vm.issue)
-                .then(function(issue){
+            lotService.reportIssue(vm.lot.id, vm.issue)
+                .then(function(){
+                    vm.issue = {};
                     alertServices.showSuccess('Issue Reported.');
-                    modalServices.hideResolveModal(issue);
+                }).finally(function(){
+                    modalServices.hideResolveModal();
                 });
         }
 

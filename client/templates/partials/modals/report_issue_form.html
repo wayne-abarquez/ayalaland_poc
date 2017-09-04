@@ -43,7 +43,14 @@
             <fieldset>
                 <legend>Issue Details</legend>
 
-                <md-input-container class="md-block">
+                <div class="padding-10">
+                    <md-datepicker ng-model="vm.selectedDate"
+                                   ng-change="vm.dateChanged(vm.selectedDate)"
+                                   md-placeholder="Date Reported"
+                                   md-max-date="vm.maxDate"></md-datepicker>
+                </div>
+
+                <md-input-container class="md-block margin-35">
                     <label>Description</label>
                     <textarea ng-model="vm.issue.description" md-maxlength="150" rows="5"
                               md-select-on-focus></textarea>
@@ -54,6 +61,7 @@
                                ng-repeat="status in vm.issueStatusSelection">{{status | capitalize}}</md-option>
                 </md-select>
 
+                <!--
                 <sm-date-time-picker
                         fname="field"
                         label="Date Reported"
@@ -67,8 +75,9 @@
                         max-date="vm.maxDate"
                         week-start-day="Monday">
                 </sm-date-time-picker>
+                -->
 
-                <md-input-container class="md-block">
+                <md-input-container class="md-block margin-35" layout-padding>
                     <label>Action Item</label>
                     <textarea ng-model="vm.issue.action_item" md-maxlength="150" rows="5"
                               md-select-on-focus></textarea>

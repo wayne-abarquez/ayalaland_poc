@@ -1,9 +1,6 @@
 from app import db
 from app.authentication.models import Roles, Users
 from app.seeds.datasource import roles, users
-from datetime import datetime
-import time
-from itertools import groupby
 from faker import Factory
 from datetime import datetime
 

@@ -52,6 +52,14 @@
                             Draw Border
                         </md-button>
 
+                        <div class="margin-35">
+                            <md-datepicker ng-model="vm.selectedDate"
+                                           ng-change="vm.dateChanged(vm.selectedDate)"
+                                           md-placeholder="Date Reported"
+                                           md-max-date="vm.maxDate"></md-datepicker>
+                        </div>
+
+                        <!--
                         <sm-date-time-picker
                                 fname="field"
                                 label="Date Offered"
@@ -65,6 +73,7 @@
                                 max-date="vm.maxDate"
                                 week-start-day="Monday">
                         </sm-date-time-picker>
+                        -->
 
                         <md-input-container class="md-block">
                             <label>Actual address</label>

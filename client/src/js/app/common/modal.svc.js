@@ -117,14 +117,14 @@
         }
 
         function hideResolveModal(response) {
-            $rootScope.$broadcast("modal-closed");
             $mdDialog.hide(response);
+            $rootScope.$broadcast("modal-closed");
         }
 
         // Close Modal
         function closeModal() {
-            $rootScope.$broadcast("modal-closed");
             $mdDialog.cancel();
+            $rootScope.$broadcast("modal-closed");
         }
 
         return service;

@@ -18,7 +18,7 @@
 <body ng-cloak>
 {% raw %}
 
-<div class="full-height full-bg-image">
+<div class="full-height full-bg-image" ng-controller="loginPageController as vm">
     <div id="ui-login" class="login-frame" layout-fill flex layout="column">
         <div layout="row" flex layout-padding layout-fill layout-align="center center">
             <div flex="40" flex-lg="50" flex-md="70" flex-sm="100">
@@ -38,9 +38,29 @@
                         </div>
                     </md-toolbar>
 
-                    <md-content class="md-padding" style="">
+                    <md-content class="md-padding">
+
+                        <div layout-align="end center" layout="row">
+
+                            <md-button class="md-raised md-accent" ng-click="vm.showUsersList=true"
+                                       ng-hide="vm.showUsersList">Go to Users List</md-button>
+                            <md-button class="md-raised" ng-click="vm.showUsersList=false"
+                                       ng-show="vm.showUsersList">Show Login Form
+                            </md-button>
+                        </div>
+
+                        <div ng-show="vm.showUsersList" flex>
+                            <md-input-container class="md-block">
+                                <label>Users List</label>
+                                <md-select ng-model="vm.selectedUser" ng-change="vm.userChanged(vm.selectedUser)">
+                                    <md-option ng-value="user.username" ng-repeat="user in vm.users">{{ user.username }} - {{ user.role }}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-button class="md-primary md-raised md-block" flex="100" ng-click="vm.proceed()" style="margin:0;width: 100%;">Proceed</md-button>
+                        </div>
+
                         {% endraw %}
-                        <form name="login" action="" method="POST" novalidate>
+                        <form class="loginForm" name="login" action="" method="POST" novalidate ng-hide="vm.showUsersList">
                             {{ form.csrf_token }}
 
                             <div class="login-errors">

@@ -2,9 +2,9 @@
 'use strict';
 
 angular.module('demoApp.home')
-    .factory('lotService', ['$rootScope', 'Lot', 'LOT_STATUS_SELECTION', 'gmapServices', '$q', 'modalServices', lotService]);
+    .factory('lotService', ['$rootScope', 'Lot', 'LOT_STATUS_SELECTION', 'LEGAL_STATUS_SELECTION', 'TECHNICAL_STATUS_SELECTION', 'gmapServices', '$q', 'modalServices', lotService]);
 
-    function lotService ($rootScope, Lot, LOT_STATUS_SELECTION, gmapServices, $q, modalServices) {
+    function lotService ($rootScope, Lot, LOT_STATUS_SELECTION, LEGAL_STATUS_SELECTION, TECHNICAL_STATUS_SELECTION, gmapServices, $q, modalServices) {
         var service = {};
 
         var infowindow = gmapServices.createInfoWindow('');
@@ -22,41 +22,114 @@ angular.module('demoApp.home')
         service.reportIssue = reportIssue;
         service.getLandBankDataBySBU = getLandBankDataBySBU;
         service.getLandBankDataViaGIS = getLandBankDataViaGIS;
+        service.getLegalStatusSelectionByRole = getLegalStatusSelectionByRole;
+        service.getTechnicalStatusSelectionByRole = getTechnicalStatusSelectionByRole;
 
-        function getLotStatusSelectionByRole (role) {
+        function getLotStatusSelectionByRole (role, lotStatus) {
             var lotStatuses = LOT_STATUS_SELECTION;
+            var finalStatus = [];
 
             switch(role) {
                 case 'ADMIN':
-                    return lotStatuses;
+                    finalStatus = lotStatuses;
                     break;
                 case 'CLAU SECRETARY':
-                    return lotStatuses;
+                    finalStatus = lotStatuses;
                     break;
                 case 'LEGAL':
-                    return lotStatuses.filter(function(status){
-                        return ['FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                    finalStatus = lotStatuses.filter(function(status){
+                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'MDC':
-                    return lotStatuses.filter(function (status) {
-                        return ['FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                    finalStatus = lotStatuses.filter(function (status) {
+                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'SBU BUSINESS DEV':
-                    return lotStatuses.filter(function (status) {
-                        return ['FOR DUE DILIGENCE', 'DUE DILIGENCE IN PROGRESS'].indexOf(status) === -1;
+                    var lotStatusFiltered = lotStatuses.filter(function (status) {
+                        return ['DUE DILIGENCE IN PROGRESS', 'DUE DILIGENCE COMPLETED'].indexOf(status) === -1;
                     });
+
+                    if (lotStatus && lotStatus == 'ACTIVE') {
+                        finalStatus = ['ACTIVE', 'FOR DUE DILIGENCE'];
+                    } else if (lotStatus && lotStatus == 'FOR DUE DILIGENCE') {
+                        finalStatus = ['FOR DUE DILIGENCE'];
+                    } else if (lotStatus && lotStatus == 'DUE DILIGENCE COMPLETED') {
+                        finalStatus = ['FOR IC APPROVAL', 'ACQUIRE'];
+                    } else {
+                        finalStatus = lotStatusFiltered;
+                    }
                     break;
-                case 'CLAU ANALYST':
-                    return lotStatuses;
+                //case 'CLAU ANALYST':
+                //    return lotStatuses;
+                //    break;
+                //case 'C&A':
+                //    return lotStatuses;
+                //    break;
+                default:
+                    finalStatus = [lotStatus];
+            }
+
+            if (lotStatus && finalStatus.indexOf(lotStatus) === -1) finalStatus.push(lotStatus);
+
+            return finalStatus;
+        }
+
+        function getLegalStatusSelectionByRole (role, currentlegalStatus, currentLotStatus) {
+            var legalStatuses = LEGAL_STATUS_SELECTION;
+            var finalStatus = [];
+
+            switch (role) {
+                case 'ADMIN':
+                    finalStatus = legalStatuses;
                     break;
-                case 'C&A':
-                    return lotStatuses;
+                case 'LEGAL':
+                    if (currentLotStatus === 'FOR DUE DILIGENCE') {
+                        finalStatus = ['OK', 'LDD IN PROGRESS'];
+                    } else if (currentLotStatus === 'DUE DILIGENCE IN PROGRESS') {
+                        finalStatus = ['LDD IN PROGRESS', 'LDD COMPLETED'];
+                    } else {
+                        finalStatus = ['OK'];
+                    }
                     break;
                 default:
-
+                    finalStatus = [currentlegalStatus];
             }
+
+            if (finalStatus.indexOf(currentlegalStatus) === -1) finalStatus.push(currentlegalStatus);
+
+            return finalStatus;
+        }
+
+        function getTechnicalStatusSelectionByRole(role, currentTechnicalStatus, currentLotStatus) {
+            var technicalStatuses = TECHNICAL_STATUS_SELECTION;
+            var finalStatus = [];
+
+            switch (role) {
+                case 'ADMIN':
+                    finalStatus = technicalStatuses;
+                    break;
+                case 'MDC':
+                    if (currentLotStatus === 'FOR DUE DILIGENCE') {
+                        finalStatus = ['OK', 'TDD IN PROGRESS'];
+                    } else if (currentLotStatus === 'DUE DILIGENCE IN PROGRESS') {
+                        if (currentTechnicalStatus == 'OK') {
+                            finalStatus = ['OK', 'TDD IN PROGRESS'];
+                        } else {
+                            finalStatus = ['TDD IN PROGRESS', 'TDD COMPLETED'];
+                        }
+                    } else {
+                        finalStatus = ['OK'];
+                    }
+                    break;
+                default:
+                    finalStatus = [currentTechnicalStatus];
+            }
+
+            if (finalStatus.indexOf(currentTechnicalStatus) === -1) finalStatus.push(currentTechnicalStatus);
+
+            return finalStatus;
         }
 
         function loadLots () {
@@ -105,7 +178,7 @@ angular.module('demoApp.home')
 
                 //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
                 if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
-                    polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn" md-warn">Report Issue</button>';
+                    polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn">Report Issue</button>';
                 }
 
                 polygon.content += '</div>';
@@ -214,7 +287,6 @@ angular.module('demoApp.home')
 
                     modalServices.showLotDetailsModal(resp)
                         .finally(function(){
-                            console.log('modal lot details finally');
                             lots.forEach(function (item) {
                                 if (item.id != lotId) {
                                     item.setMap(gmapServices.map);
@@ -236,9 +308,7 @@ angular.module('demoApp.home')
 
             Lot.cast(lotId).customPOST(issueData, 'issues')
                 .then(function(response){
-                    var resp = response.plain();
-                    console.log('report issue response ',resp);
-                    dfd.resolve(resp);
+                    dfd.resolve(response.plain());
                 }, function(error){
                     dfd.reject(error);
                 });

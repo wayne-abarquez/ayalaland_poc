@@ -121,11 +121,7 @@ class LotUploadResource(UploadResource):
         log.debug("POST Upload Shape File request : {0}".format(data))
 
         uploaded_file = request.files['file']
-
-        # print uploaded_file.__dict__
-
         upload_shape_file(uploaded_file)
-
         # if uploaded_file and self.allowed_excel_file(uploaded_file.filename):
         #     result = upload_fraud_data(uploaded_file)
         #     return marshal(dict(status=200, message="OK", result=result), success_with_result_fields)
