@@ -29,10 +29,11 @@
                             <input ng-model="vm.lot.project_name">
                         </md-input-container>
 
-                        <md-input-container class="md-block">
+                        <md-select ng-model="vm.lot.sbu" placeholder="SBU">
                             <label>SBU</label>
-                            <input ng-model="vm.lot.sbu">
-                        </md-input-container>
+                            <md-option ng-value="sbu"
+                                       ng-repeat="sbu in vm.sbuSelection">{{ sbu | uppercase}}</md-option>
+                        </md-select>
 
                         <md-select ng-model="vm.lot.lot_status" placeholder="Lot Status">
                             <label>Lot Status</label>
@@ -42,13 +43,13 @@
 
                         <md-select ng-model="vm.lot.legal_status" placeholder="Legal Status">
                             <label>Legal Status</label>
-                            <md-option ng-value="status"
+                            <md-option ng-value="status" ng-disabled="currentUser.role != 'LEGAL'"
                                        ng-repeat="status in vm.legalStatusOptions">{{ status | capitalize }}</md-option>
                         </md-select>
 
                         <md-select ng-model="vm.lot.technical_status" placeholder="Technical Status">
                             <label>Technical Status</label>
-                            <md-option ng-value="status"
+                            <md-option ng-value="status" ng-disabled="currentUser.role != 'MDC'"
                                        ng-repeat="status in vm.technicalStatusOptions">{{ status | capitalize }}</md-option>
                         </md-select>
 

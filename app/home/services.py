@@ -145,6 +145,23 @@ def create_lot_offer(data):
     return lot
 
 
+def update_lot_offer(lotid, data):
+    lot = Lots.query.get_or_404(lotid)
+
+    if 'lot_status' in data:
+        lot.lot_status = data['lot_status']
+
+    if 'legal_status' in data:
+        lot.legal_status = data['legal_status']
+
+    if 'technical_status' in data:
+        lot.technical_status = data['technical_status']
+
+    db.session.commit()
+
+    return lot
+
+
 def filter_lots(filter_data):
     boundaryid = None
 

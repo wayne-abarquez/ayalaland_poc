@@ -5,7 +5,7 @@ from app import rest_api
 # from app.fields import success_with_result_fields
 from app.home.services import get_boundaries, get_boundaries_by_type, get_boundary_detail, get_places_by_boundary, get_lots, \
     get_lot_details, upload_shape_file, \
-    create_lot_offer, filter_lots, create_lot_issue
+    create_lot_offer, filter_lots, create_lot_issue, update_lot_offer
 from app.resources import UploadResource
 from flask import request
 import logging
@@ -87,6 +87,15 @@ class LotDetailsResource(Resource):
     def get(self, lotid):
         """ GET /lots/<lotid> """
         return get_lot_details(lotid)
+
+    def put(self, lotid):
+        form_data = request.json
+
+        print "Update Lot id={0}: {1}".format(lotid, form_data)
+
+        obj = update_lot_offer(lotid, form_data)
+        result = dict(status=200, message='OK', lot=obj)
+        return marshal(result, lot_offer_create_fields)
 
 
 class LotIssuesResource(Resource):

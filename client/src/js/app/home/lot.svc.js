@@ -33,17 +33,17 @@ angular.module('demoApp.home')
                     break;
                 case 'LEGAL':
                     return lotStatuses.filter(function(status){
-                        return ['ACTIVE', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                        return ['FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'MDC':
                     return lotStatuses.filter(function (status) {
-                        return ['ACTIVE', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                        return ['FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'SBU BUSINESS DEV':
                     return lotStatuses.filter(function (status) {
-                        return ['ACTIVE', 'FOR DUE DILIGENCE', 'DUE DILIGENCE IN PROGRESS'].indexOf(status) === -1;
+                        return ['FOR DUE DILIGENCE', 'DUE DILIGENCE IN PROGRESS'].indexOf(status) === -1;
                     });
                     break;
                 case 'CLAU ANALYST':
@@ -106,10 +106,20 @@ angular.module('demoApp.home')
             var dfd = $q.defer();
 
             if (lotId) { // update
-                Lot.get(lotId)
-                    .customPUT(data)
+                Lot.cast(lotId)
+                    .customPUT(lotData)
                     .then(function (response) {
-                        dfd.resolve(response.plain());
+                        var resp = response.plain();
+
+                        var index = _.findIndex(lots, {id: resp.lot.id});
+
+                        if (index > -1) {
+                            lots[index].lot_status = resp.lot.lot_status;
+                            lots[index].legal_status = resp.lot.legal_status;
+                            lots[index].technical_status = resp.lot.technical_status;
+                        }
+
+                        dfd.resolve(resp.lot);
                     }, function (error) {
                         dfd.reject(error);
                     });

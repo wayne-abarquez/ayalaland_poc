@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('demoApp.home')
-        .controller('lotDetailsModalController', ['lot', '$rootScope', '$filter', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'alertServices', 'drawingServices', lotDetailsModalController]);
+        .controller('lotDetailsModalController', ['lot', '$rootScope', '$filter', 'modalServices', 'boundariesService', 'gmapServices', 'lotService', 'LEGAL_STATUS_SELECTION', 'TECHNICAL_STATUS_SELECTION', 'SBU_SELECTION', 'alertServices', lotDetailsModalController]);
 
-    function lotDetailsModalController(lot, $rootScope, $filter, modalServices, boundariesService, gmapServices, lotService, alertServices, drawingServices) {
+    function lotDetailsModalController(lot, $rootScope, $filter, modalServices, boundariesService, gmapServices, lotService, LEGAL_STATUS_SELECTION, TECHNICAL_STATUS_SELECTION, SBU_SELECTION, alertServices) {
         var vm = this;
 
         var bounds;
@@ -12,7 +12,7 @@
         vm.maxDate = new Date();
 
         vm.form = {};
-        vm.newLot = {};
+        vm.lot = {};
 
         vm.save = save;
         vm.close = close;
@@ -40,23 +40,22 @@
                     vm.regions = angular.copy(regions);
                 });
 
-            vm.lotStatusOptions = [vm.lot.lot_status];
-            vm.legalStatusOptions = [vm.lot.legal_status];
-            vm.technicalStatusOptions = [vm.lot.technical_status];
+            vm.sbuSelection = SBU_SELECTION;
+
+            vm.lotStatusOptions = lotService.getLotStatusSelectionByRole($rootScope.currentUser.role);
+            vm.legalStatusOptions = LEGAL_STATUS_SELECTION;
+            vm.technicalStatusOptions = TECHNICAL_STATUS_SELECTION;
         }
 
         function save() {
-            //console.log('save lot offer', vm.newLot);
-            //lotService.saveLot(vm.newLot)
-            //    .then(function(newLotData){
-            //        if (drawingServices.drawPolygon) {
-            //            drawingServices.drawPolygon.setMap(null);
-            //            drawingServices.drawPolygon = null;
-            //        }
-            //        lotService.addLot(newLotData);
-            //        alertServices.showSuccess('Offer for lot #'+ newLotData.id+' created successfully!');
-            //        modalServices.hideResolveModal(newLotData);
-            //    });
+            delete vm.lot.geom;
+
+            lotService.saveLot(vm.lot, vm.lot.id)
+                .then(function(newLotData){
+                    // lotService.addLot(newLotData);
+                    alertServices.showSuccess('Offer for lot #'+ newLotData.id+' updated successfully!');
+                    modalServices.hideResolveModal(newLotData);
+                });
         }
 
         function close() {
@@ -70,7 +69,7 @@
 
                     gmapServices.reverseGeocode(bounds.getCenter())
                         .then(function(addressList){
-                            if (addressList.length) vm.newLot.complete_address = addressList[0].formatted_address;
+                            if (addressList.length) vm.lot.complete_address = addressList[0].formatted_address;
                         });
                 });
         }
