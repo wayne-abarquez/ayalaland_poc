@@ -168,8 +168,6 @@ def update_lot_offer(lotid, data):
     if 'technical_status' in data:
         lot.technical_status = data['technical_status']
 
-    print "update lot offer status: {0}".format(data['lot_status'])
-
     if 'lot_status' in data and 'FOR IC APPROVAL - ACQUIRE' == data['lot_status']:
         lot.lot_status = data['lot_status']
     elif lot.legal_status == 'LDD IN PROGRESS' or lot.technical_status == 'TDD IN PROGRESS':
@@ -232,19 +230,19 @@ def create_lot_issue(lotid, userid, data):
     user = Users.query.get_or_404(userid)
     lot = Lots.query.get_or_404(lotid)
 
-    if user.role.name == 'LEGAL':
-        if lot.legal_status == LegalStatus.LDD_COMPLETED:
+    if user.role.name == 'LEGAL' :
+        if lot.legal_status == LegalStatus.LDD_COMPLETED and lot.technical_status == TechnicalStatus.TDD_COMPLETED:
             lot.lot_status = LotStatus.DUE_DILIGENCE_COMPLETED
-        else:
-            lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
+        # else:
+        #     lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
 
         lot.legal_status = LegalStatus.WITH_ISSUE
         type = 'LEGAL'
     elif user.role.name == 'MDC':
-        if lot.technical_status == TechnicalStatus.TDD_COMPLETED:
+        if lot.technical_status == TechnicalStatus.TDD_COMPLETED and lot.legal_status == LegalStatus.LDD_COMPLETED:
             lot.lot_status = LotStatus.DUE_DILIGENCE_COMPLETED
-        else:
-            lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
+        # else:
+        #     lot.lot_status = LotStatus.DUE_DILIGENCE_IN_PROGRESS
 
         lot.technical_status = TechnicalStatus.WITH_ISSUE
         type = 'TECHNICAL'
