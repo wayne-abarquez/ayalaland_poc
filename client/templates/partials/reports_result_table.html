@@ -35,12 +35,14 @@
                     <td md-cell ng-repeat="header in reportResultCtl.report.headers">{{item[header]}}</td>
                 </tr>
                 </tbody>
+                <!--
                 <tfoot ng-if="reportResultCtl.report.hasOwnProperty('totals')">
                     <tr>
                         <td></td>
                         <td ng-repeat="(key,value) in reportResultCtl.report.totals">{{value|number:2}}</td>
                     </tr>
                 </tfoot>
+                -->
             </table>
         </md-table-container>
     </md-dialog-content>

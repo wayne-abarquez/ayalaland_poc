@@ -7,7 +7,7 @@ angular.module('demoApp.home')
     function reportIssueModalController (user, lot, modalServices, lotService, alertServices) {
         var vm = this;
 
-        vm.issueStatusSelection = ['OPEN'];
+        vm.issueStatusSelection = ['OPEN', 'CLOSED'];
 
         vm.lot = lot;
 

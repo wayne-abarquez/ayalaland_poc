@@ -57,7 +57,6 @@
 
             lotService.saveLot(vm.lot, vm.lot.id)
                 .then(function(newLotData){
-                    // lotService.updateLot(vm.lot.id, newLotData);
                     alertServices.showSuccess('Offer for lot #'+ newLotData.id+' updated successfully!');
                     modalServices.hideResolveModal(newLotData);
                 });

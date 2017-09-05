@@ -32,8 +32,7 @@
             'FOR DUE DILIGENCE',
             'DUE DILIGENCE IN PROGRESS',
             'DUE DILIGENCE COMPLETED',
-            'FOR IC APPROVAL',
-            'ACQUIRE'
+            'FOR IC APPROVAL - ACQUIRE'
         ])
 
         .constant('LEGAL_STATUS_SELECTION', [

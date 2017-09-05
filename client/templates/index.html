@@ -15,7 +15,8 @@
 
         <md-button class="md-fab md-primary"
                    id="create-lot-offer-btn"
-                   ng-click="indexCtl.createLotOffer($event)">
+                   ng-click="indexCtl.createLotOffer($event)"
+                   ng-if="['LEGAL', 'MDC'].indexOf(currentUser.role) === -1">
             <md-tooltip md-direction="left">Create lot offer</md-tooltip>
             <md-icon>add</md-icon>
         </md-button>

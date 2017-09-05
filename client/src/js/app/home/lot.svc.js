@@ -38,17 +38,17 @@ angular.module('demoApp.home')
                     break;
                 case 'LEGAL':
                     finalStatus = lotStatuses.filter(function(status){
-                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL - ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'MDC':
                     finalStatus = lotStatuses.filter(function (status) {
-                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL', 'ACQUIRE'].indexOf(status) === -1;
+                        return ['DUE DILIGENCE COMPLETED', 'FOR IC APPROVAL - ACQUIRE'].indexOf(status) === -1;
                     });
                     break;
                 case 'SBU BUSINESS DEV':
                     var lotStatusFiltered = lotStatuses.filter(function (status) {
-                        return ['DUE DILIGENCE IN PROGRESS', 'DUE DILIGENCE COMPLETED'].indexOf(status) === -1;
+                        return ['DUE DILIGENCE IN PROGRESS'].indexOf(status) === -1;
                     });
 
                     if (lotStatus && lotStatus == 'ACTIVE') {
@@ -56,7 +56,7 @@ angular.module('demoApp.home')
                     } else if (lotStatus && lotStatus == 'FOR DUE DILIGENCE') {
                         finalStatus = ['FOR DUE DILIGENCE'];
                     } else if (lotStatus && lotStatus == 'DUE DILIGENCE COMPLETED') {
-                        finalStatus = ['FOR IC APPROVAL', 'ACQUIRE'];
+                        finalStatus = ['FOR IC APPROVAL - ACQUIRE'];
                     } else {
                         finalStatus = lotStatusFiltered;
                     }
@@ -167,25 +167,11 @@ angular.module('demoApp.home')
 
             if (!isReadOnly) {
                 polygon.center = gmapServices.getPolygonCenter(polygon);
-
-                polygon.content = '<div>';
-                polygon.content += '<h4 class="no-margin text-muted padding-left-5">Project Name: ' + (item.project_name ? item.project_name : '') + '</h4>';
-                polygon.content += '<h4 class="no-margin padding-left-5">Estate Name: <b>' + (item.estate_name ? item.estate_name : '') + '</b></h4>';
-                polygon.content += '<h4 class="no-margin text-muted padding-left-5">SBU: ' + (item.sbu ? item.sbu : '') + '</h4>';
-                polygon.content += '<h4 class="no-margin text-muted padding-left-5">Lot Status: ' + (item.lot_status ? item.lot_status : '') + '</h4>';
-
-                /* Action Buttons */
-                polygon.content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
-
-                //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
-                if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
-                    polygon.content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn">Report Issue</button>';
-                }
-
-                polygon.content += '</div>';
+                polygon.content = createInfowindowContent(item);
 
                 gmapServices.addListener(polygon, 'click', function(e){
                     console.log('lot click: ',e);
+                    infowindow.lotid = polygon.id;
                     infowindow.open(gmapServices.map);
                     infowindow.setPosition(e.latLng);
                     //infowindow.setPosition(this.center);
@@ -199,6 +185,22 @@ angular.module('demoApp.home')
             //gmapServices.fitToBoundsByPolygon(polygon);
         }
 
+        function createInfowindowContent (item) {
+            var content = '<div>';
+            content += '<h4 class="no-margin text-muted padding-left-5">Project Name: ' + (item.project_name ? item.project_name : '') + '</h4>';
+            content += '<h4 class="no-margin padding-left-5">Estate Name: <b>' + (item.estate_name ? item.estate_name : '') + '</b></h4>';
+            content += '<h4 class="no-margin text-muted padding-left-5">SBU: ' + (item.sbu ? item.sbu : '') + '</h4>';
+            content += '<h4 class="no-margin text-muted padding-left-5">Lot Status: ' + (item.lot_status ? item.lot_status : '') + '</h4>';
+            /* Action Buttons */
+            content += '<button id="show-lot-details-btn" data-lot-id="' + item.id + '" class="md-button md-raised">Show Details</button>';
+            //if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1 && item.lot_status == 'DUE DILIGENCE IN PROGRESS') {
+            if (['MDC', 'LEGAL'].indexOf($rootScope.currentUser.role) > -1) {
+                content += '<button id="report-lot-issue-btn" data-lot-id="' + item.id + '" class="md-button md-raised md-warn">Report Issue</button>';
+            }
+            content += '</div>';
+            return content;
+        }
+
         // if lotId is not null perform update otherwise perform create
         function saveLot (lotData, lotId) {
             var dfd = $q.defer();
@@ -209,13 +211,33 @@ angular.module('demoApp.home')
                     .then(function (response) {
                         var resp = response.plain();
 
+                        console.log('update lot : ',resp);
+
                         var index = _.findIndex(lots, {id: resp.lot.id});
 
                         if (index > -1) {
                             lots[index].lot_status = resp.lot.lot_status;
                             lots[index].legal_status = resp.lot.legal_status;
                             lots[index].technical_status = resp.lot.technical_status;
+
+                            lots[index].lot_offer_no = resp.lot.lot_offer_no;
+                            lots[index].estate_name = resp.lot.estate_name;
+                            lots[index].project_name = resp.lot.project_name;
+                            lots[index].sbu = resp.lot.sbu;
+                            lots[index].date_offered = resp.lot.date_offered;
+
+                            lots[index].owner_firstname = resp.lot.owner_firstname;
+                            lots[index].owner_lastname = resp.lot.owner_lastname;
+
+                            // update infowindow
+                            lots[index].content = createInfowindowContent(resp.lot);
+
+                            if (infowindow.lotid == resp.lot.id) {
+                                infowindow.setContent(lots[index].content);
+                            }
                         }
+
+                        $rootScope.$broadcast('lot-updated', {lotid: resp.lot.id, lot: resp.lot});
 
                         dfd.resolve(resp.lot);
                     }, function (error) {

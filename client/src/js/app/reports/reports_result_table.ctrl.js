@@ -43,14 +43,14 @@ angular.module('demoApp.home')
                         });
                 } else if (newValue.role == 'C&A') {
                     vm.report.title = 'Landbank Inventory Analytics';
-                    vm.report.headers = ['project_name', 'total_land_value', 'total_value_of_ali_owned', 'gfa'];
+                    vm.report.headers = ['total_land_value', 'total_value_of_ali_owned', 'gfa'];
                     vm.report.dataType = 'SBU';
 
-                    vm.filter.sbuSelection = angular.copy(SBU_SELECTION);
+                    vm.filter.sbuSelection = ['ALL'].concat(SBU_SELECTION);
 
                     lotService.loadLots();
 
-                    sbuChanged('SLMG');
+                    sbuChanged('ALL');
 
                 } else if (newValue.role == 'CLAU ANALYST') {
                     vm.report.title = 'Landbank Inventory Report via GIS';
@@ -73,28 +73,28 @@ angular.module('demoApp.home')
 
             lotService.getLandBankDataBySBU(vm.filter.sbuType)
                 .then(function (result) {
-                    vm.report.result = result.map(function (item) {
-                        for (var key in item) {
-                            if (!isNaN(item[key])) {
-                                item[key] = $filter('number')(item[key], 2);
-                            }
-                        }
-                        return item;
-                    });
+                    //vm.report.result = result.map(function (item) {
+                    //    for (var key in item) {
+                    //        if (!isNaN(item[key])) {
+                    //            item[key] = $filter('number')(item[key], 2);
+                    //        }
+                    //    }
+                    //    return item;
+                    //});
 
-                    vm.report.totals = {
-                        'total_land_value': _.pluck(result, 'total_land_value').reduce(function (sum, value) {
+                    vm.report.result = [{
+                        'total_land_value': $filter('number')(_.pluck(result, 'total_land_value').reduce(function (sum, value) {
                             return sum + value;
-                        }, 0),
+                        }, 0),2),
 
-                        'total_value_of_ali_owned': _.pluck(result, 'total_value_of_ali_owned').reduce(function (sum, value) {
+                        'total_value_of_ali_owned': $filter('number')(_.pluck(result, 'total_value_of_ali_owned').reduce(function (sum, value) {
                             return sum + value;
-                        }, 0),
+                        }, 0), 2),
 
-                        'gfa': _.pluck(result, 'gfa').reduce(function (sum, value) {
+                        'gfa': $filter('number')(_.pluck(result, 'gfa').reduce(function (sum, value) {
                             return sum + value;
-                        }, 0)
-                    };
+                        }, 0), 2)
+                    }];
                 });
         }
 

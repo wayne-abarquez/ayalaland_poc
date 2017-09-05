@@ -86,7 +86,15 @@ def get_places_by_boundary(boundary_id):
 
 
 def get_lots():
-    return Lots.query.all()
+    q = Lots.query
+
+    # q = q.add_column(func.ST_PointOnSurface(Lots.geom).label('center'))
+
+    return q.all()
+    # print result
+    # items = map(lambda item: item[0], result)
+    # print items
+    # return items
 
 
 def get_lot_details (lotid):
@@ -129,6 +137,8 @@ def create_lot_offer(data):
     lot = Lots.from_dict(data)
     lot.geom = parse_area(data['area'])
 
+    lot.project_name = 'Unnamed Project'
+
     if 'city' in data:
         lot.boundaryid = data['city']
     elif 'province' in data:
@@ -166,8 +176,8 @@ def update_lot_offer(lotid, data):
     if 'project_name' in data and data['project_name'] != lot.project_name:
         lot.project_name = data['project_name']
 
-    if 'lot_offer_no' in data and data['lot_offer_no'] != lot.lot_offer_no:
-        lot.lot_offer_no = data['lot_offer_no']
+    # if 'lot_offer_no' in data and data['lot_offer_no'] != lot.lot_offer_no:
+    #     lot.lot_offer_no = data['lot_offer_no']
 
     if 'sbu' in data and data['sbu'] != lot.sbu:
         lot.sbu = data['sbu']
@@ -247,7 +257,7 @@ def create_lot_issue(lotid, userid, data):
 
 
 def get_landbank_inventory(sbu):
-    result = db.session.query(
+    q = db.session.query(
         Lots.sbu,
         Lots.total_land_value,
         Lots.total_value_of_ali_owned,
@@ -255,7 +265,11 @@ def get_landbank_inventory(sbu):
         LotDetails.gfa,
         Lots.id,
         Lots.project_name
-    ).join(LotDetails, Lots.id == LotDetails.lotid)\
-        .filter(Lots.sbu == sbu.upper()).all()
+    ).join(LotDetails, Lots.id == LotDetails.lotid)
+
+    if sbu != 'ALL':
+        q = q.filter(Lots.sbu == sbu.upper())
+
+    result = q.all()
 
     return map(lambda item : {'sbu': item[0], 'total_land_value': item[1], 'total_value_of_ali_owned': item[2], 'lotid': item[3], 'gfa': item[4], 'lot_offer_no': item[5], 'project_name': item[6]}, result)

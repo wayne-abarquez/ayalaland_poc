@@ -20,6 +20,16 @@ angular.module('demoApp.home')
             $rootScope.$on('show-lot-filter-result', function (e, params) {
                 if (params.result) vm.lots = angular.copy(params.result);
             });
+
+            $rootScope.$on('lot-updated', function (e, params){
+                if (!params.lotid && !params.lot) return;
+
+                var foundIndex = _.findIndex(vm.lots, {id: params.lotid});
+
+                if (foundIndex > -1) {
+                    vm.lots[foundIndex] = params.lot;
+                }
+            });
         }
 
         function rowOnClick (lotId) {
