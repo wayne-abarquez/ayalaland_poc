@@ -150,6 +150,9 @@ def create_lot_offer(data):
     db.session.add(lot)
     db.session.commit()
 
+    lot.lot_offer_no = lot.id
+    db.session.commit()
+
     return lot
 
 
