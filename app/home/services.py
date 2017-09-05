@@ -90,7 +90,7 @@ def get_lots():
 
     # q = q.add_column(func.ST_PointOnSurface(Lots.geom).label('center'))
 
-    return q.all()
+    return q.order_by(Lots.id).all()
     # print result
     # items = map(lambda item: item[0], result)
     # print items
@@ -168,7 +168,11 @@ def update_lot_offer(lotid, data):
     if 'technical_status' in data:
         lot.technical_status = data['technical_status']
 
-    if lot.legal_status == 'LDD IN PROGRESS' or lot.technical_status == 'TDD IN PROGRESS':
+    print "update lot offer status: {0}".format(data['lot_status'])
+
+    if 'lot_status' in data and 'FOR IC APPROVAL - ACQUIRE' == data['lot_status']:
+        lot.lot_status = data['lot_status']
+    elif lot.legal_status == 'LDD IN PROGRESS' or lot.technical_status == 'TDD IN PROGRESS':
         lot.lot_status = 'DUE DILIGENCE IN PROGRESS'
     elif lot.legal_status == 'LDD COMPLETED' and lot.technical_status == 'TDD COMPLETED':
         lot.lot_status = 'DUE DILIGENCE COMPLETED'
@@ -221,7 +225,7 @@ def filter_lots(filter_data):
     if 'sbu' in filter_data:
         query = query.filter(Lots.sbu == filter_data['sbu'])
 
-    return query.all()
+    return query.order_by(Lots.id).all()
 
 
 def create_lot_issue(lotid, userid, data):
@@ -273,6 +277,6 @@ def get_landbank_inventory(sbu):
     if sbu != 'ALL':
         q = q.filter(Lots.sbu == sbu.upper())
 
-    result = q.all()
+    result = q.order_by(Lots.id).all()
 
     return map(lambda item : {'sbu': item[0], 'total_land_value': item[1], 'total_value_of_ali_owned': item[2], 'lotid': item[3], 'gfa': item[4], 'lot_offer_no': item[5], 'project_name': item[6]}, result)
