@@ -29,7 +29,7 @@ angular.module('demoApp.home')
                 if (['LEGAL', 'MDC'].indexOf(newValue.role) > -1) {
                     issuesService.getIssuesByUserRole(newValue.role)
                         .then(function(issues){
-                            vm.report.title = 'LEGAL' == newValue ? 'Legal Issues' : 'Technical Issues';
+                            vm.report.title = 'LEGAL' == newValue.role ? 'Legal Issues' : 'Technical Issues';
                             vm.report.headers = ['lot_offer_no', 'project_name', 'date_reported', 'description', 'action_item', 'status'];
                             vm.report.dataType = 'ISSUES';
 
