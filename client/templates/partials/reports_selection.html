@@ -1,0 +1,17 @@
+{% raw %}
+<md-card id="reports-selection"
+         ng-if="showReportResultsSelection"
+         ng-cloak>
+    <md-card-content layout="row">
+
+        <md-input-container md-no-float flex-xs="85" flex="100">
+            <md-select ng-model="reportCtl.selectedReportType" ng-change="reportCtl.reportTypeChanged(reportCtl.selectedReportType)" placeholder="Select Report Type">
+                <md-option ng-repeat="type in reportCtl.reportsType" ng-value="type.value">
+                    {{type.label|capitalize}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+
+    </md-card-content>
+</md-card>
+{% endraw %}
